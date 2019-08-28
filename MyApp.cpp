@@ -383,14 +383,14 @@ ev->addOnProcessEventHandler(&onProcessEventHandler);
 }
 
 int MyApp::main(int argc, char** argv) {
-    bool iWantToProgramMyOwnCode = true;//false;
-
-    if (iWantToProgramMyOwnCode) {
-	this->builAndRunSimulationdModel();
-    } else { // runs GenesysConsole application (under development)
-	GenesysConsole* console = new GenesysConsole();
-	console->main(argc, argv);
-    }
+//    bool iWantToProgramMyOwnCode = true;//false;
+//
+//    if (iWantToProgramMyOwnCode) {
+//	this->builAndRunSimulationdModel();
+//    } else { // runs GenesysConsole application (under development)
+//	GenesysConsole* console = new GenesysConsole();
+//	console->main(argc, argv);
+//    }
 
     return 0;
 }
