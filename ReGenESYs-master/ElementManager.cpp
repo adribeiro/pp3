@@ -81,6 +81,14 @@ unsigned int ElementManager::getNumberOfElements(std::string infraTypename) {
     return listElements->size();
 }
 
+unsigned int ElementManager::getNumberOfElements() {
+    unsigned int total = 0;
+    for (std::map<std::string, List<ModelElement*>*>::iterator it = _elements->begin(); it != _elements->end(); it++) {
+	total += (*it).second->size();
+    }
+    return total;
+}
+
 void ElementManager::show() {
     _model->getTraceManager()->trace(Util::TraceLevel::mostDetailed, "Model Elements:");
     //std::map<std::string, List<ModelElement*>*>* _elements;
@@ -104,7 +112,7 @@ void ElementManager::show() {
     Util::DecIndent();
 }
 
-Model* ElementManager::getModel() const {
+Model* ElementManager::getParentModel() const {
     return _model;
 }
 

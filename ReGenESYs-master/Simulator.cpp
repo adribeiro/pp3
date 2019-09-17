@@ -17,7 +17,7 @@
 
 Simulator::Simulator() {
     // This is the ONLY method in the entire software where std::cout is allowed.
-    std::cout << "RUNNING " << _name << " version " << _version << std::endl;
+    std::cout << "RUNNING " << _name << ", version " << _version << std::endl;
     _licenceManager = new LicenceManager(this);
     _pluginManager = new PluginManager(this);
     _modelManager = new ModelManager(this);
@@ -42,6 +42,10 @@ ToolManager* Simulator::getToolManager() const {
 
 TraceManager* Simulator::getTraceManager() const {
     return _traceManager;
+}
+
+ParserManager* Simulator::getParserManager() const {
+    return _parserManager;
 }
 
 Simulator::Simulator(const Simulator& orig) {

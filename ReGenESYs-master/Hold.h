@@ -14,14 +14,32 @@
 #ifndef HOLD_H
 #define HOLD_H
 
-class Hold {
-public:
-    Hold();
+#include "ModelComponent.h"
+
+/*!
+ This component ...
+ */
+class Hold : public ModelComponent {
+public: // constructors
+    Hold(Model* model);
     Hold(const Hold& orig);
     virtual ~Hold();
-private:
-
+public:  // virtual
+    virtual std::string show();
+public:  // static
+    static PluginInformation* GetPluginInformation();
+    static ModelComponent* LoadInstance(Model* model, std::map<std::string, std::string>* fields);
+protected:  // virtual
+    virtual void _execute(Entity* entity);
+    virtual void _initBetweenReplications();
+    virtual bool _loadInstance(std::map<std::string, std::string>* fields);
+    virtual std::map<std::string, std::string>* _saveInstance();
+    virtual bool _check(std::string* errorMessage);
+private: // methods
+private: // attributes 1:1
+private: // attributes 1:n
 };
+
 
 #endif /* HOLD_H */
 

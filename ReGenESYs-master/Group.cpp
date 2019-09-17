@@ -27,7 +27,7 @@ Group::Group(ElementManager* elems, std::string name) : ModelElement(Util::TypeO
 }
 
 void Group::_initCStats() {
-    _cstatNumberInGroup = new StatisticsCollector("Number In Group", this);
+    _cstatNumberInGroup = new StatisticsCollector(_elements, "Number In Group", this);
     _elements->insert(Util::TypeOf<StatisticsCollector>(), _cstatNumberInGroup);
 }
 
@@ -49,7 +49,7 @@ void Group::insertElement(Entity* element) {
 }
 
 void Group::removeElement(Entity* element) {
-    double tnow = this->_elements->getModel()->getSimulation()->getSimulatedTime();
+    double tnow = this->_elements->getParentModel()->getSimulation()->getSimulatedTime();
     _list->remove(element);
     this->_cstatNumberInGroup->getStatistics()->getCollector()->addValue(_list->size());
 }
@@ -71,7 +71,7 @@ Entity* Group::first() {
 //}
 
 PluginInformation* Group::GetPluginInformation() {
-    return new PluginInformation(Util::TypeOf<Group>(), &Group::LoadInstance);
+    PluginInformation* info = new PluginInformation(Util::TypeOf<Group>(), &Group::LoadInstance); return info;
 }
 
 ModelElement* Group::LoadInstance(ElementManager* elems, std::map<std::string, std::string>* fields) {

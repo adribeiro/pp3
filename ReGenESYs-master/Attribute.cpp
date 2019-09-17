@@ -34,8 +34,10 @@ bool Attribute::_loadInstance(std::map<std::string, std::string>* fields) {
     return ModelElement::_loadInstance(fields);
 }
 
-PluginInformation* Attribute::GetPluginInformation(){
-    return new PluginInformation(Util::TypeOf<Attribute>(), &Attribute::LoadInstance);
+PluginInformation* Attribute::GetPluginInformation() {
+    PluginInformation* info = new PluginInformation(Util::TypeOf<Attribute>(), &Attribute::LoadInstance);
+    return info;
+
 }
 
 ModelElement* Attribute::LoadInstance(ElementManager* elems, std::map<std::string, std::string>* fields) {

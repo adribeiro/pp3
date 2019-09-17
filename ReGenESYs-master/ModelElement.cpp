@@ -53,8 +53,13 @@ std::map<std::string, std::string>* ModelElement::_saveInstance() {
 }
 
 bool ModelElement::_check(std::string* errorMessage) {
-    return true;
+    return true; // if there is no ovveride, return true
 }
+
+ParserChangesInformation* ModelElement::_getParserChangesInformation() {
+    return new ParserChangesInformation(); // if there is no override, return no changes
+}
+
 /*
 std::list<std::map<std::string,std::string>*>* ModelElement::_saveInstance(std::string type) {
     std::list<std::map<std::string,std::string>*>* fields = ModelElement::_saveInstance();
@@ -66,6 +71,7 @@ std::list<std::map<std::string,std::string>*>* ModelElement::_saveInstance(std::
 std::string ModelElement::show() {
     return "id=" + std::to_string(_id) + ",name=\"" + _name + "\"";
 }
+
 
 Util::identitifcation ModelElement::getId() const {
     return _id;

@@ -68,7 +68,7 @@ public: // only gets
     ElementManager* getElementManager() const; ///< Provides access to the class that manages the most basic elements of the simulation model (such as queues, resources, variables, etc.).
     ComponentManager* getComponentManager() const; ///< The future events list chronologically sorted; Events are scheduled by components when processing other events, and a replication evolves over time by sequentially processing the very first event in this list. It's initialized with events first described by source components (SourceComponentModel).
     ModelInfo* getInfos() const;
-    Simulator* getParent() const;
+    Simulator* getParentSimulator() const;
     ModelSimulation* getSimulation() const; ///< Provides access to the class that manages the model simulation.
     // 1:n
     //List<ModelComponent*>* getComponents() const; ///< Returns the list of components (such as Create, Delay, Dispose, etc.) that make up the simulation model.
@@ -81,15 +81,16 @@ public: // only gets
      * PRIVATE
      */
 private:
-    void _showComponents();
-    void _showElements();
-
+    void _showComponents() const;
+    void _showElements() const;
+    void _showSimulationControls() const;
+    void _showSimulationResponses() const;
 private: // read only public access (gets)
     Util::identitifcation _id;
     Simulator* _parentSimulator; /*! The parente of the model */
     // 1:1 (associted classes)
     TraceManager* _traceManager;
-    OnEventManager* _eventHandler;
+    OnEventManager* _eventManager;
     ElementManager* _elementManager;
     ComponentManager* _componentManager;
     ModelInfo* _modelInfo;

@@ -14,24 +14,39 @@
 #include "StatisticsCollector.h"
 #include "Traits.h"
 
-StatisticsCollector::StatisticsCollector() : ModelElement(Util::TypeOf<StatisticsCollector>()) {
+typedef Traits<ModelComponent>::StatisticsCollector_StatisticsImplementation StatisticsClass;
+
+StatisticsCollector::StatisticsCollector(ElementManager* elems) : ModelElement(Util::TypeOf<StatisticsCollector>()) {
     _initStaticsAndCollector();
+    _addSimulationResponse(elems);
 }
 
-StatisticsCollector::StatisticsCollector(std::string name) : ModelElement(Util::TypeOf<StatisticsCollector>()) {
+StatisticsCollector::StatisticsCollector(ElementManager* elems,std::string name) : ModelElement(Util::TypeOf<StatisticsCollector>()) {
     _name = name;
     _initStaticsAndCollector();
+    _addSimulationResponse(elems);
 }
 
-StatisticsCollector::StatisticsCollector(std::string name, ModelElement* parent) : ModelElement(Util::TypeOf<StatisticsCollector>()) {
+StatisticsCollector::StatisticsCollector(ElementManager* elems,std::string name, ModelElement* parent) : ModelElement(Util::TypeOf<StatisticsCollector>()) {
     _name = name;
     _parent = parent;
     _initStaticsAndCollector();
+    _addSimulationResponse(elems);
+}
+
+void StatisticsCollector::_addSimulationResponse(ElementManager* elems) {
+    
+    GetterMember getterMember = DefineGetterMember<StatisticsClass>(static_cast<StatisticsClass*>(this->_statistics), &StatisticsClass::average); 
+    std::string parentName = "";
+    if (_parent != nullptr)
+	parentName = _parent->getName();
+    SimulationResponse* resp = new SimulationResponse(Util::TypeOf<StatisticsClass>(), parentName+":"+_name+".average", getterMember);
+    elems->getParentModel()->getResponses()->insert(resp);
 }
 
 void StatisticsCollector::_initStaticsAndCollector() {
     Collector_if* collector = new Traits<ModelComponent>::StatisticsCollector_CollectorImplementation();
-    _statistics = new Traits<ModelComponent>::StatisticsCollector_StatisticsImplementation(collector);
+    _statistics = new StatisticsClass(collector);//Traits<ModelComponent>::StatisticsCollector_StatisticsImplementation(collector);
 }
 
 StatisticsCollector::StatisticsCollector(const StatisticsCollector& orig) : ModelElement(orig) {
@@ -62,15 +77,14 @@ Statistics_if* StatisticsCollector::getStatistics() const {
     return _statistics;
 }
 
-PluginInformation* StatisticsCollector::GetPluginInformation(){
-    PluginInformation* pluginfo= new PluginInformation(Util::TypeOf<StatisticsCollector>(), &StatisticsCollector::LoadInstance);
-    pluginfo->generateReport=true;
-    return pluginfo;
+PluginInformation* StatisticsCollector::GetPluginInformation() {
+    PluginInformation* info = new PluginInformation(Util::TypeOf<StatisticsCollector>(), &StatisticsCollector::LoadInstance);
+    info->setGenerateReport(true);
+    return info;
 }
 
-
 ModelElement* StatisticsCollector::LoadInstance(ElementManager* elems, std::map<std::string, std::string>* fields) {
-    StatisticsCollector* newElement = new StatisticsCollector();
+    StatisticsCollector* newElement = new StatisticsCollector(elems);
     try {
 	newElement->_loadInstance(fields);
     } catch (const std::exception& e) {
@@ -80,21 +94,21 @@ ModelElement* StatisticsCollector::LoadInstance(ElementManager* elems, std::map<
 }
 
 bool StatisticsCollector::_loadInstance(std::map<std::string, std::string>* fields) {
-    bool res= ModelElement::_loadInstance(fields);
-    if(res){
+    bool res = ModelElement::_loadInstance(fields);
+    if (res) {
     }
     return res;
 }
 
 std::map<std::string, std::string>* StatisticsCollector::_saveInstance() {
     std::map<std::string, std::string>* fields = ModelElement::_saveInstance(); //Util::TypeOf<StatisticsCollector>());
-    std::string parentId = "",parentTypename="";
+    std::string parentId = "", parentTypename = "";
     if (this->_parent != nullptr) {
 	parentId = std::to_string(_parent->getId());
 	parentTypename = _parent->getTypename();
     }
-    fields->emplace("parentTypename" , parentTypename);
-    fields->emplace("parentId" , parentId);
+    fields->emplace("parentTypename", parentTypename);
+    fields->emplace("parentId", parentId);
     return fields;
 }
 

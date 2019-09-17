@@ -38,7 +38,7 @@ Model::Model(Simulator* simulator) {
     _parentSimulator = simulator; // a simulator is the "parent" of a model 
     // 1:1 associations (no Traits)
     _modelInfo = new ModelInfo();
-    _eventHandler = new OnEventManager(); // should be on .h (all that does not depends on THIS)
+    _eventManager = new OnEventManager(); // should be on .h (all that does not depends on THIS)
     _elementManager = new ElementManager(this);
     _componentManager = new ComponentManager(this);
     _traceManager = simulator->getTraceManager(); // every model starts with the same tracer, unless a specific one is set
@@ -138,12 +138,14 @@ void Model::show() {
 	Util::DecIndent();
 	_showComponents();
 	_showElements();
+	_showSimulationControls();
+	_showSimulationResponses();
     }
     Util::DecIndent();
     getTraceManager()->trace(Util::TraceLevel::report, "End of Simulation Model");
 }
 
-void Model::_showElements() {
+void Model::_showElements() const {
     getTraceManager()->trace(Util::TraceLevel::report, "Elements:");
     Util::IncIndent();
     {
@@ -169,10 +171,28 @@ void Model::_showElements() {
     Util::DecIndent();
 }
 
-void Model::_showComponents() {
+void Model::_showComponents() const {
     getTraceManager()->trace(Util::TraceLevel::report, "Components:");
     Util::IncIndent();
     for (std::list<ModelComponent*>::iterator it = getComponentManager()->begin(); it != getComponentManager()->end(); it++) {
+	getTraceManager()->trace(Util::TraceLevel::report, (*it)->show()); ////
+    }
+    Util::DecIndent();
+}
+
+void Model::_showSimulationControls() const {
+    getTraceManager()->trace(Util::TraceLevel::report, "Simulation Controls:");
+    Util::IncIndent();
+    for (std::list<SimulationControl*>::iterator it = _controls->getList()->begin(); it != _controls->getList()->end(); it++) {
+	getTraceManager()->trace(Util::TraceLevel::report, (*it)->show()); ////
+    }
+    Util::DecIndent();
+}
+
+void Model::_showSimulationResponses() const {
+    getTraceManager()->trace(Util::TraceLevel::report, "Simulation Responses:");
+    Util::IncIndent();
+    for (std::list<SimulationResponse*>::iterator it = _responses->getList()->begin(); it != _responses->getList()->end(); it++) {
 	getTraceManager()->trace(Util::TraceLevel::report, (*it)->show()); ////
     }
     Util::DecIndent();
@@ -204,10 +224,6 @@ bool Model::checkModel() {
 //}
 
 void Model::removeEntity(Entity* entity, bool collectStatistics) {
-    if (collectStatistics) {
-	double timeInSystem = this->getSimulation()->getSimulatedTime() - entity->getAttributeValue("Entity.ArrivalTime");
-	entity->getEntityType()->getCstatTotalTime()->getStatistics()->getCollector()->addValue(timeInSystem);
-    }
     /* TODO -: event onEntityRemove */
     std::string entId = std::to_string(entity->getEntityNumber());
     this->getElementManager()->remove(Util::TypeOf<Entity>(), entity);
@@ -239,7 +255,7 @@ List<SimulationResponse*>* Model::getResponses() const {
 }
 
 OnEventManager* Model::getOnEventManager() const {
-    return _eventHandler;
+    return _eventManager;
 }
 
 ElementManager* Model::getElementManager() const {
@@ -250,7 +266,7 @@ ModelInfo* Model::getInfos() const {
     return _modelInfo;
 }
 
-Simulator* Model::getParent() const {
+Simulator* Model::getParentSimulator() const {
     return _parentSimulator;
 }
 

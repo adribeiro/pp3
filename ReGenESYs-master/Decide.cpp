@@ -38,13 +38,13 @@ void Decide::_execute(Entity* entity) {
 	value = _model->parseExpression((*it));
 	_model->getTraceManager()->traceSimulation(Util::TraceLevel::blockInternal, _model->getSimulation()->getSimulatedTime(), entity, this, std::to_string(i + 1) + "th condition evaluated to " + std::to_string(value) + "  // " + (*it));
 	if (value) {
-	    _model->sendEntityToComponent(entity, this->getNextComponents()->getAtRank(i), 0.0);
+	    _model->sendEntityToComponent(entity, this->getNextComponents()->getConnectionAtRank(i), 0.0);
 	    return;
 	}
 	i++;
     }
     _model->getTraceManager()->traceSimulation(Util::TraceLevel::blockInternal, _model->getSimulation()->getSimulatedTime(), entity, this, "No condition has been evaluated true");
-    _model->sendEntityToComponent(entity, this->getNextComponents()->getAtRank(i), 0.0);
+    _model->sendEntityToComponent(entity, this->getNextComponents()->getConnectionAtRank(i), 0.0);
 }
 
 void Decide::_initBetweenReplications() {
@@ -55,7 +55,7 @@ bool Decide::_loadInstance(std::map<std::string, std::string>* fields) {
     if (res) {
 	unsigned int nv = std::stoi((*(fields->find("conditions"))).second);
 	for (unsigned int i = 0; i < nv; i++) {
-	    this->_conditions->insert((*(fields->find("condition"+std::to_string(i)))).second);
+	    this->_conditions->insert((*(fields->find("condition" + std::to_string(i)))).second);
 	}
     }
     return res;
@@ -82,7 +82,8 @@ bool Decide::_check(std::string* errorMessage) {
 }
 
 PluginInformation* Decide::GetPluginInformation() {
-    return new PluginInformation(Util::TypeOf<Decide>(), &Decide::LoadInstance);
+    PluginInformation* info = new PluginInformation(Util::TypeOf<Decide>(), &Decide::LoadInstance);
+    return info;
 }
 
 ModelComponent* Decide::LoadInstance(Model* model, std::map<std::string, std::string>* fields) {
