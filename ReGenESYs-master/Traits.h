@@ -36,14 +36,13 @@
 #include "BuildSimulationModel03.h"
 #include "FirstExampleOfSimulation.h"
 #include "SecondExampleOfSimulation.h"
+#include "ThirdExampleOfSimultion.h"
+#include "FourthExampleOfSimulation.h"
 #include "GenesysGUI.h"
 #include "GenesysConsole.h"
 #include "TestEnterLeaveRoute.h"
 #include "TestSimulationControlAndSimulationResponse.h"
-#include "TestCreateAssignDispose.h"
-#include "TestCreateDecideDispose.h"
 #include "Pp3Model.h"
-
 //  Default implementations
 //statistics
 #include "CollectorDefaultImpl1.h"
@@ -75,12 +74,11 @@ struct Traits {
 template <> struct Traits<GenesysApplication_if> {
     //typedef GenesysGUI Application;
     //typedef GenesysConsole Application;
-//    typedef FullSimulationOfComplexModel Application;
+    //typedef FullSimulationOfComplexModel Application;
     //typedef FirstExampleOfSimulation Application;
     //typedef SecondExampleOfSimulation Application;
+    typedef Pp3Model Application;
     //typedef TestSimulationControlAndSimulationResponse Application;
-    typedef TestCreateDecideDispose Application;
-//    typedef TestCreateAssignDispose Application;
 };
 
 

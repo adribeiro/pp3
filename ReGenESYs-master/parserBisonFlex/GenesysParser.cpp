@@ -49,7 +49,7 @@
 
 #line 51 "../GenesysParser.cpp" // lalr1.cc:412
 // Unqualified %code blocks.
-#line 35 "bisonparser.yy" // lalr1.cc:413
+#line 39 "bisonparser.yy" // lalr1.cc:413
 
 # include "Genesys++-driver.h"
 
@@ -254,71 +254,77 @@ namespace yy {
     {
       case 3: // NUMD
       case 4: // NUMH
-      case 5: // ATRIB
-      case 6: // VARI
-      case 7: // FORM
-      case 8: // QUEUE
-      case 9: // RES
-      case 10: // fTFIN
-      case 11: // fNR
-      case 12: // fMR
-      case 13: // fIRF
-      case 14: // fRESSEIZES
-      case 15: // fSTATE
-      case 16: // fNQ
-      case 17: // fFIRSTINQ
-      case 18: // fLASTINQ
-      case 19: // oLE
-      case 20: // oGE
-      case 21: // oEQ
-      case 22: // oNE
-      case 23: // oAND
-      case 24: // oOR
-      case 25: // oNOT
-      case 26: // fSIN
-      case 27: // fCOS
-      case 28: // fAINT
-      case 29: // fMOD
-      case 30: // fINT
-      case 31: // fFRAC
-      case 32: // fEXPO
-      case 33: // fNORM
-      case 34: // fUNIF
-      case 35: // fWEIB
-      case 36: // fLOGN
-      case 37: // fGAMM
-      case 38: // fERLA
-      case 39: // fTRIA
-      case 40: // fBETA
-      case 41: // fDISC
-      case 42: // fTNOW
-      case 43: // cIF
-      case 44: // cELSE
-      case 45: // cFOR
-      case 46: // cTO
-      case 47: // cDO
-      case 48: // ILLEGAL
-      case 66: // input
-      case 67: // programa
-      case 68: // expressao
-      case 69: // numero
-      case 70: // aritmetica
-      case 71: // relacional
-      case 72: // comando
-      case 73: // comandoIF
-      case 74: // comandoFOR
-      case 75: // funcao
-      case 76: // atributo
-      case 77: // atribuicao
-      case 78: // variavel
-      case 79: // formula
-      case 80: // funcaoTrig
-      case 81: // funcaoArit
-      case 82: // funcaoProb
-      case 83: // funcaoStrc
-      case 84: // funcaoUser
-      case 85: // listaparm
-      case 86: // illegal
+      case 5: // CTEZERO
+      case 6: // oLE
+      case 7: // oGE
+      case 8: // oEQ
+      case 9: // oNE
+      case 10: // oAND
+      case 11: // oOR
+      case 12: // oNOT
+      case 13: // fSIN
+      case 14: // fCOS
+      case 15: // fAINT
+      case 16: // fMOD
+      case 17: // fINT
+      case 18: // fFRAC
+      case 19: // fEXPO
+      case 20: // fNORM
+      case 21: // fUNIF
+      case 22: // fWEIB
+      case 23: // fLOGN
+      case 24: // fGAMM
+      case 25: // fERLA
+      case 26: // fTRIA
+      case 27: // fBETA
+      case 28: // fDISC
+      case 29: // fTNOW
+      case 30: // fTFIN
+      case 31: // cIF
+      case 32: // cELSE
+      case 33: // cFOR
+      case 34: // cTO
+      case 35: // cDO
+      case 36: // ATRIB
+      case 37: // ILLEGAL
+      case 38: // RESOURCE
+      case 39: // fNR
+      case 40: // fMR
+      case 41: // fIRF
+      case 42: // fRESSEIZES
+      case 43: // fSTATE
+      case 44: // fSETSUM
+      case 45: // QUEUE
+      case 46: // fNQ
+      case 47: // fFIRSTINQ
+      case 48: // fLASTINQ
+      case 49: // fSAQUE
+      case 50: // fNUMSET
+      case 51: // SET
+      case 52: // VARI
+      case 53: // FORM
+      case 71: // input
+      case 72: // programa
+      case 73: // expressao
+      case 74: // numero
+      case 75: // aritmetica
+      case 76: // relacional
+      case 77: // comando
+      case 78: // comandoIF
+      case 79: // comandoFOR
+      case 80: // funcao
+      case 81: // funcaoKernel
+      case 82: // funcaoTrig
+      case 83: // funcaoArit
+      case 84: // funcaoProb
+      case 85: // funcaoUser
+      case 86: // listaparm
+      case 87: // illegal
+      case 88: // atributo
+      case 89: // atribuicao
+      case 90: // variavel
+      case 91: // formula
+      case 92: // funcaoPlugin
         value.move< obj_t > (that.value);
         break;
 
@@ -339,71 +345,77 @@ namespace yy {
     {
       case 3: // NUMD
       case 4: // NUMH
-      case 5: // ATRIB
-      case 6: // VARI
-      case 7: // FORM
-      case 8: // QUEUE
-      case 9: // RES
-      case 10: // fTFIN
-      case 11: // fNR
-      case 12: // fMR
-      case 13: // fIRF
-      case 14: // fRESSEIZES
-      case 15: // fSTATE
-      case 16: // fNQ
-      case 17: // fFIRSTINQ
-      case 18: // fLASTINQ
-      case 19: // oLE
-      case 20: // oGE
-      case 21: // oEQ
-      case 22: // oNE
-      case 23: // oAND
-      case 24: // oOR
-      case 25: // oNOT
-      case 26: // fSIN
-      case 27: // fCOS
-      case 28: // fAINT
-      case 29: // fMOD
-      case 30: // fINT
-      case 31: // fFRAC
-      case 32: // fEXPO
-      case 33: // fNORM
-      case 34: // fUNIF
-      case 35: // fWEIB
-      case 36: // fLOGN
-      case 37: // fGAMM
-      case 38: // fERLA
-      case 39: // fTRIA
-      case 40: // fBETA
-      case 41: // fDISC
-      case 42: // fTNOW
-      case 43: // cIF
-      case 44: // cELSE
-      case 45: // cFOR
-      case 46: // cTO
-      case 47: // cDO
-      case 48: // ILLEGAL
-      case 66: // input
-      case 67: // programa
-      case 68: // expressao
-      case 69: // numero
-      case 70: // aritmetica
-      case 71: // relacional
-      case 72: // comando
-      case 73: // comandoIF
-      case 74: // comandoFOR
-      case 75: // funcao
-      case 76: // atributo
-      case 77: // atribuicao
-      case 78: // variavel
-      case 79: // formula
-      case 80: // funcaoTrig
-      case 81: // funcaoArit
-      case 82: // funcaoProb
-      case 83: // funcaoStrc
-      case 84: // funcaoUser
-      case 85: // listaparm
-      case 86: // illegal
+      case 5: // CTEZERO
+      case 6: // oLE
+      case 7: // oGE
+      case 8: // oEQ
+      case 9: // oNE
+      case 10: // oAND
+      case 11: // oOR
+      case 12: // oNOT
+      case 13: // fSIN
+      case 14: // fCOS
+      case 15: // fAINT
+      case 16: // fMOD
+      case 17: // fINT
+      case 18: // fFRAC
+      case 19: // fEXPO
+      case 20: // fNORM
+      case 21: // fUNIF
+      case 22: // fWEIB
+      case 23: // fLOGN
+      case 24: // fGAMM
+      case 25: // fERLA
+      case 26: // fTRIA
+      case 27: // fBETA
+      case 28: // fDISC
+      case 29: // fTNOW
+      case 30: // fTFIN
+      case 31: // cIF
+      case 32: // cELSE
+      case 33: // cFOR
+      case 34: // cTO
+      case 35: // cDO
+      case 36: // ATRIB
+      case 37: // ILLEGAL
+      case 38: // RESOURCE
+      case 39: // fNR
+      case 40: // fMR
+      case 41: // fIRF
+      case 42: // fRESSEIZES
+      case 43: // fSTATE
+      case 44: // fSETSUM
+      case 45: // QUEUE
+      case 46: // fNQ
+      case 47: // fFIRSTINQ
+      case 48: // fLASTINQ
+      case 49: // fSAQUE
+      case 50: // fNUMSET
+      case 51: // SET
+      case 52: // VARI
+      case 53: // FORM
+      case 71: // input
+      case 72: // programa
+      case 73: // expressao
+      case 74: // numero
+      case 75: // aritmetica
+      case 76: // relacional
+      case 77: // comando
+      case 78: // comandoIF
+      case 79: // comandoFOR
+      case 80: // funcao
+      case 81: // funcaoKernel
+      case 82: // funcaoTrig
+      case 83: // funcaoArit
+      case 84: // funcaoProb
+      case 85: // funcaoUser
+      case 86: // listaparm
+      case 87: // illegal
+      case 88: // atributo
+      case 89: // atribuicao
+      case 90: // variavel
+      case 91: // formula
+      case 92: // funcaoPlugin
         value.copy< obj_t > (that.value);
         break;
 
@@ -548,13 +560,13 @@ namespace yy {
 
 
     // User initialization code.
-    #line 28 "bisonparser.yy" // lalr1.cc:741
+    #line 32 "bisonparser.yy" // lalr1.cc:741
 {
   // Initialize the initial location.
   yyla.location.begin.filename = yyla.location.end.filename = &driver.getFile();
 }
 
-#line 558 "../GenesysParser.cpp" // lalr1.cc:741
+#line 570 "../GenesysParser.cpp" // lalr1.cc:741
 
     /* Initialize the stack.  The initial state will be set in
        yynewstate, since the latter expects the semantical and the
@@ -646,71 +658,77 @@ namespace yy {
     {
       case 3: // NUMD
       case 4: // NUMH
-      case 5: // ATRIB
-      case 6: // VARI
-      case 7: // FORM
-      case 8: // QUEUE
-      case 9: // RES
-      case 10: // fTFIN
-      case 11: // fNR
-      case 12: // fMR
-      case 13: // fIRF
-      case 14: // fRESSEIZES
-      case 15: // fSTATE
-      case 16: // fNQ
-      case 17: // fFIRSTINQ
-      case 18: // fLASTINQ
-      case 19: // oLE
-      case 20: // oGE
-      case 21: // oEQ
-      case 22: // oNE
-      case 23: // oAND
-      case 24: // oOR
-      case 25: // oNOT
-      case 26: // fSIN
-      case 27: // fCOS
-      case 28: // fAINT
-      case 29: // fMOD
-      case 30: // fINT
-      case 31: // fFRAC
-      case 32: // fEXPO
-      case 33: // fNORM
-      case 34: // fUNIF
-      case 35: // fWEIB
-      case 36: // fLOGN
-      case 37: // fGAMM
-      case 38: // fERLA
-      case 39: // fTRIA
-      case 40: // fBETA
-      case 41: // fDISC
-      case 42: // fTNOW
-      case 43: // cIF
-      case 44: // cELSE
-      case 45: // cFOR
-      case 46: // cTO
-      case 47: // cDO
-      case 48: // ILLEGAL
-      case 66: // input
-      case 67: // programa
-      case 68: // expressao
-      case 69: // numero
-      case 70: // aritmetica
-      case 71: // relacional
-      case 72: // comando
-      case 73: // comandoIF
-      case 74: // comandoFOR
-      case 75: // funcao
-      case 76: // atributo
-      case 77: // atribuicao
-      case 78: // variavel
-      case 79: // formula
-      case 80: // funcaoTrig
-      case 81: // funcaoArit
-      case 82: // funcaoProb
-      case 83: // funcaoStrc
-      case 84: // funcaoUser
-      case 85: // listaparm
-      case 86: // illegal
+      case 5: // CTEZERO
+      case 6: // oLE
+      case 7: // oGE
+      case 8: // oEQ
+      case 9: // oNE
+      case 10: // oAND
+      case 11: // oOR
+      case 12: // oNOT
+      case 13: // fSIN
+      case 14: // fCOS
+      case 15: // fAINT
+      case 16: // fMOD
+      case 17: // fINT
+      case 18: // fFRAC
+      case 19: // fEXPO
+      case 20: // fNORM
+      case 21: // fUNIF
+      case 22: // fWEIB
+      case 23: // fLOGN
+      case 24: // fGAMM
+      case 25: // fERLA
+      case 26: // fTRIA
+      case 27: // fBETA
+      case 28: // fDISC
+      case 29: // fTNOW
+      case 30: // fTFIN
+      case 31: // cIF
+      case 32: // cELSE
+      case 33: // cFOR
+      case 34: // cTO
+      case 35: // cDO
+      case 36: // ATRIB
+      case 37: // ILLEGAL
+      case 38: // RESOURCE
+      case 39: // fNR
+      case 40: // fMR
+      case 41: // fIRF
+      case 42: // fRESSEIZES
+      case 43: // fSTATE
+      case 44: // fSETSUM
+      case 45: // QUEUE
+      case 46: // fNQ
+      case 47: // fFIRSTINQ
+      case 48: // fLASTINQ
+      case 49: // fSAQUE
+      case 50: // fNUMSET
+      case 51: // SET
+      case 52: // VARI
+      case 53: // FORM
+      case 71: // input
+      case 72: // programa
+      case 73: // expressao
+      case 74: // numero
+      case 75: // aritmetica
+      case 76: // relacional
+      case 77: // comando
+      case 78: // comandoIF
+      case 79: // comandoFOR
+      case 80: // funcao
+      case 81: // funcaoKernel
+      case 82: // funcaoTrig
+      case 83: // funcaoArit
+      case 84: // funcaoProb
+      case 85: // funcaoUser
+      case 86: // listaparm
+      case 87: // illegal
+      case 88: // atributo
+      case 89: // atribuicao
+      case 90: // variavel
+      case 91: // formula
+      case 92: // funcaoPlugin
         yylhs.value.build< obj_t > ();
         break;
 
@@ -732,476 +750,505 @@ namespace yy {
           switch (yyn)
             {
   case 3:
-#line 142 "bisonparser.yy" // lalr1.cc:859
+#line 187 "bisonparser.yy" // lalr1.cc:859
     {YYACCEPT;}
-#line 738 "../GenesysParser.cpp" // lalr1.cc:859
-    break;
-
-  case 4:
-#line 143 "bisonparser.yy" // lalr1.cc:859
-    { driver.setResult(yystack_[0].value.as< obj_t > ().valor);}
-#line 744 "../GenesysParser.cpp" // lalr1.cc:859
-    break;
-
-  case 6:
-#line 145 "bisonparser.yy" // lalr1.cc:859
-    { yyerrok; }
-#line 750 "../GenesysParser.cpp" // lalr1.cc:859
-    break;
-
-  case 7:
-#line 148 "bisonparser.yy" // lalr1.cc:859
-    { yylhs.value.as< obj_t > ().valor = yystack_[0].value.as< obj_t > ().valor;}
 #line 756 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 8:
-#line 151 "bisonparser.yy" // lalr1.cc:859
-    {yylhs.value.as< obj_t > ().valor = yystack_[0].value.as< obj_t > ().valor;}
+  case 4:
+#line 188 "bisonparser.yy" // lalr1.cc:859
+    { driver.setResult(yystack_[0].value.as< obj_t > ().valor);}
 #line 762 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 9:
-#line 152 "bisonparser.yy" // lalr1.cc:859
-    {yylhs.value.as< obj_t > ().valor = yystack_[0].value.as< obj_t > ().valor;}
+  case 6:
+#line 190 "bisonparser.yy" // lalr1.cc:859
+    { yyerrok; }
 #line 768 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 10:
-#line 153 "bisonparser.yy" // lalr1.cc:859
-    {yylhs.value.as< obj_t > ().valor = yystack_[1].value.as< obj_t > ().valor;}
+  case 7:
+#line 193 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = yystack_[0].value.as< obj_t > ().valor;}
 #line 774 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 11:
-#line 154 "bisonparser.yy" // lalr1.cc:859
+  case 8:
+#line 196 "bisonparser.yy" // lalr1.cc:859
     {yylhs.value.as< obj_t > ().valor = yystack_[0].value.as< obj_t > ().valor;}
 #line 780 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 12:
-#line 155 "bisonparser.yy" // lalr1.cc:859
+  case 9:
+#line 197 "bisonparser.yy" // lalr1.cc:859
     {yylhs.value.as< obj_t > ().valor = yystack_[0].value.as< obj_t > ().valor;}
 #line 786 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 13:
-#line 156 "bisonparser.yy" // lalr1.cc:859
+  case 10:
+#line 198 "bisonparser.yy" // lalr1.cc:859
     {yylhs.value.as< obj_t > ().valor = yystack_[0].value.as< obj_t > ().valor;}
 #line 792 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 14:
-#line 157 "bisonparser.yy" // lalr1.cc:859
+  case 11:
+#line 199 "bisonparser.yy" // lalr1.cc:859
     {yylhs.value.as< obj_t > ().valor = yystack_[0].value.as< obj_t > ().valor;}
 #line 798 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 15:
-#line 158 "bisonparser.yy" // lalr1.cc:859
+  case 12:
+#line 200 "bisonparser.yy" // lalr1.cc:859
     {yylhs.value.as< obj_t > ().valor = yystack_[0].value.as< obj_t > ().valor;}
 #line 804 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 16:
-#line 159 "bisonparser.yy" // lalr1.cc:859
-    {}
+  case 13:
+#line 201 "bisonparser.yy" // lalr1.cc:859
+    {yylhs.value.as< obj_t > ().valor = yystack_[1].value.as< obj_t > ().valor;}
 #line 810 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 17:
-#line 162 "bisonparser.yy" // lalr1.cc:859
-    { yylhs.value.as< obj_t > ().valor = yystack_[0].value.as< obj_t > ().valor;}
+  case 14:
+#line 202 "bisonparser.yy" // lalr1.cc:859
+    {yylhs.value.as< obj_t > ().valor = yystack_[0].value.as< obj_t > ().valor;}
 #line 816 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 18:
-#line 163 "bisonparser.yy" // lalr1.cc:859
-    { yylhs.value.as< obj_t > ().valor = yystack_[0].value.as< obj_t > ().valor;}
+  case 15:
+#line 204 "bisonparser.yy" // lalr1.cc:859
+    {yylhs.value.as< obj_t > ().valor = yystack_[0].value.as< obj_t > ().valor;}
 #line 822 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 19:
-#line 166 "bisonparser.yy" // lalr1.cc:859
-    { yylhs.value.as< obj_t > ().valor = yystack_[2].value.as< obj_t > ().valor + yystack_[0].value.as< obj_t > ().valor;}
+  case 16:
+#line 206 "bisonparser.yy" // lalr1.cc:859
+    {yylhs.value.as< obj_t > ().valor = yystack_[0].value.as< obj_t > ().valor;}
 #line 828 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 20:
-#line 167 "bisonparser.yy" // lalr1.cc:859
-    { yylhs.value.as< obj_t > ().valor = yystack_[2].value.as< obj_t > ().valor - yystack_[0].value.as< obj_t > ().valor;}
+  case 17:
+#line 209 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = yystack_[0].value.as< obj_t > ().valor;}
 #line 834 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 21:
-#line 168 "bisonparser.yy" // lalr1.cc:859
-    { yylhs.value.as< obj_t > ().valor = yystack_[2].value.as< obj_t > ().valor / yystack_[0].value.as< obj_t > ().valor;}
+  case 18:
+#line 210 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = yystack_[0].value.as< obj_t > ().valor;}
 #line 840 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 22:
-#line 169 "bisonparser.yy" // lalr1.cc:859
-    { yylhs.value.as< obj_t > ().valor = yystack_[2].value.as< obj_t > ().valor * yystack_[0].value.as< obj_t > ().valor;}
+  case 19:
+#line 213 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = yystack_[2].value.as< obj_t > ().valor + yystack_[0].value.as< obj_t > ().valor;}
 #line 846 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 23:
-#line 170 "bisonparser.yy" // lalr1.cc:859
-    { yylhs.value.as< obj_t > ().valor = pow(yystack_[2].value.as< obj_t > ().valor,yystack_[0].value.as< obj_t > ().valor);}
+  case 20:
+#line 214 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = yystack_[2].value.as< obj_t > ().valor - yystack_[0].value.as< obj_t > ().valor;}
 #line 852 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 24:
-#line 171 "bisonparser.yy" // lalr1.cc:859
-    { yylhs.value.as< obj_t > ().valor = -yystack_[0].value.as< obj_t > ().valor;}
+  case 21:
+#line 215 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = yystack_[2].value.as< obj_t > ().valor / yystack_[0].value.as< obj_t > ().valor;}
 #line 858 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 25:
-#line 174 "bisonparser.yy" // lalr1.cc:859
-    { yylhs.value.as< obj_t > ().valor = (int) yystack_[2].value.as< obj_t > ().valor && (int) yystack_[0].value.as< obj_t > ().valor;}
+  case 22:
+#line 216 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = yystack_[2].value.as< obj_t > ().valor * yystack_[0].value.as< obj_t > ().valor;}
 #line 864 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 26:
-#line 175 "bisonparser.yy" // lalr1.cc:859
-    { yylhs.value.as< obj_t > ().valor = (int) yystack_[2].value.as< obj_t > ().valor || (int) yystack_[0].value.as< obj_t > ().valor;}
+  case 23:
+#line 217 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = pow(yystack_[2].value.as< obj_t > ().valor,yystack_[0].value.as< obj_t > ().valor);}
 #line 870 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 27:
-#line 176 "bisonparser.yy" // lalr1.cc:859
-    { yylhs.value.as< obj_t > ().valor = yystack_[2].value.as< obj_t > ().valor < yystack_[0].value.as< obj_t > ().valor ? 1 : 0;}
+  case 24:
+#line 218 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = -yystack_[0].value.as< obj_t > ().valor;}
 #line 876 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 28:
-#line 177 "bisonparser.yy" // lalr1.cc:859
-    { yylhs.value.as< obj_t > ().valor = yystack_[2].value.as< obj_t > ().valor <= yystack_[0].value.as< obj_t > ().valor ? 1 : 0;}
+  case 25:
+#line 221 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = (int) yystack_[2].value.as< obj_t > ().valor && (int) yystack_[0].value.as< obj_t > ().valor;}
 #line 882 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 29:
-#line 178 "bisonparser.yy" // lalr1.cc:859
-    { yylhs.value.as< obj_t > ().valor = yystack_[2].value.as< obj_t > ().valor > yystack_[0].value.as< obj_t > ().valor ? 1 : 0;}
+  case 26:
+#line 222 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = (int) yystack_[2].value.as< obj_t > ().valor || (int) yystack_[0].value.as< obj_t > ().valor;}
 #line 888 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 30:
-#line 179 "bisonparser.yy" // lalr1.cc:859
-    { yylhs.value.as< obj_t > ().valor = yystack_[2].value.as< obj_t > ().valor >= yystack_[0].value.as< obj_t > ().valor ? 1 : 0;}
+  case 27:
+#line 223 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = yystack_[2].value.as< obj_t > ().valor < yystack_[0].value.as< obj_t > ().valor ? 1 : 0;}
 #line 894 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 31:
-#line 180 "bisonparser.yy" // lalr1.cc:859
-    { yylhs.value.as< obj_t > ().valor = yystack_[2].value.as< obj_t > ().valor == yystack_[0].value.as< obj_t > ().valor ? 1 : 0;}
+  case 28:
+#line 224 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = yystack_[2].value.as< obj_t > ().valor <= yystack_[0].value.as< obj_t > ().valor ? 1 : 0;}
 #line 900 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 32:
-#line 181 "bisonparser.yy" // lalr1.cc:859
-    { yylhs.value.as< obj_t > ().valor = yystack_[2].value.as< obj_t > ().valor != yystack_[0].value.as< obj_t > ().valor ? 1 : 0;}
+  case 29:
+#line 225 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = yystack_[2].value.as< obj_t > ().valor > yystack_[0].value.as< obj_t > ().valor ? 1 : 0;}
 #line 906 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 35:
-#line 188 "bisonparser.yy" // lalr1.cc:859
-    {yylhs.value.as< obj_t > ().valor = yystack_[4].value.as< obj_t > ().valor != 0 ? yystack_[2].value.as< obj_t > ().valor : yystack_[0].value.as< obj_t > ().valor;}
+  case 30:
+#line 226 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = yystack_[2].value.as< obj_t > ().valor >= yystack_[0].value.as< obj_t > ().valor ? 1 : 0;}
 #line 912 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 36:
-#line 189 "bisonparser.yy" // lalr1.cc:859
-    {yylhs.value.as< obj_t > ().valor = yystack_[2].value.as< obj_t > ().valor != 0 ? yystack_[0].value.as< obj_t > ().valor : 0;}
+  case 31:
+#line 227 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = yystack_[2].value.as< obj_t > ().valor == yystack_[0].value.as< obj_t > ().valor ? 1 : 0;}
 #line 918 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 37:
-#line 192 "bisonparser.yy" // lalr1.cc:859
-    {yylhs.value.as< obj_t > ().valor = 0; }
+  case 32:
+#line 228 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = yystack_[2].value.as< obj_t > ().valor != yystack_[0].value.as< obj_t > ().valor ? 1 : 0;}
 #line 924 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 38:
-#line 193 "bisonparser.yy" // lalr1.cc:859
-    {yylhs.value.as< obj_t > ().valor = 0; }
+  case 35:
+#line 235 "bisonparser.yy" // lalr1.cc:859
+    {yylhs.value.as< obj_t > ().valor = yystack_[4].value.as< obj_t > ().valor != 0 ? yystack_[2].value.as< obj_t > ().valor : yystack_[0].value.as< obj_t > ().valor;}
 #line 930 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 39:
-#line 196 "bisonparser.yy" // lalr1.cc:859
-    { yylhs.value.as< obj_t > ().valor = yystack_[0].value.as< obj_t > ().valor; }
+  case 36:
+#line 236 "bisonparser.yy" // lalr1.cc:859
+    {yylhs.value.as< obj_t > ().valor = yystack_[2].value.as< obj_t > ().valor != 0 ? yystack_[0].value.as< obj_t > ().valor : 0;}
 #line 936 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 40:
-#line 197 "bisonparser.yy" // lalr1.cc:859
-    { yylhs.value.as< obj_t > ().valor = yystack_[0].value.as< obj_t > ().valor; }
+  case 37:
+#line 239 "bisonparser.yy" // lalr1.cc:859
+    {yylhs.value.as< obj_t > ().valor = 0; }
 #line 942 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 41:
-#line 198 "bisonparser.yy" // lalr1.cc:859
-    { yylhs.value.as< obj_t > ().valor = yystack_[0].value.as< obj_t > ().valor; }
+  case 38:
+#line 240 "bisonparser.yy" // lalr1.cc:859
+    {yylhs.value.as< obj_t > ().valor = 0; }
 #line 948 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 42:
-#line 199 "bisonparser.yy" // lalr1.cc:859
+  case 39:
+#line 243 "bisonparser.yy" // lalr1.cc:859
     { yylhs.value.as< obj_t > ().valor = yystack_[0].value.as< obj_t > ().valor; }
 #line 954 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 43:
-#line 200 "bisonparser.yy" // lalr1.cc:859
+  case 40:
+#line 244 "bisonparser.yy" // lalr1.cc:859
     { yylhs.value.as< obj_t > ().valor = yystack_[0].value.as< obj_t > ().valor; }
 #line 960 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 44:
-#line 205 "bisonparser.yy" // lalr1.cc:859
+  case 41:
+#line 245 "bisonparser.yy" // lalr1.cc:859
     { yylhs.value.as< obj_t > ().valor = yystack_[0].value.as< obj_t > ().valor; }
 #line 966 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 45:
-#line 209 "bisonparser.yy" // lalr1.cc:859
+  case 42:
+#line 246 "bisonparser.yy" // lalr1.cc:859
     { yylhs.value.as< obj_t > ().valor = yystack_[0].value.as< obj_t > ().valor; }
 #line 972 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 46:
-#line 210 "bisonparser.yy" // lalr1.cc:859
+  case 43:
+#line 247 "bisonparser.yy" // lalr1.cc:859
     { yylhs.value.as< obj_t > ().valor = yystack_[0].value.as< obj_t > ().valor; }
 #line 978 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 47:
-#line 213 "bisonparser.yy" // lalr1.cc:859
-    { yylhs.value.as< obj_t > ().valor = ((Variable*)(driver.getModel()->getElementManager()->getElement(Util::TypeOf<Variable>(), yystack_[0].value.as< obj_t > ().id)))->getValue();}
+  case 44:
+#line 248 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = yystack_[0].value.as< obj_t > ().valor; }
 #line 984 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 48:
-#line 214 "bisonparser.yy" // lalr1.cc:859
-    { yylhs.value.as< obj_t > ().valor = ((Variable*)(driver.getModel()->getElementManager()->getElement(Util::TypeOf<Variable>(), yystack_[3].value.as< obj_t > ().id)))->getValue(std::to_string(yystack_[1].value.as< obj_t > ().valor));}
+  case 45:
+#line 251 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = driver.getModel()->getSimulation()->getSimulatedTime();}
 #line 990 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 49:
-#line 215 "bisonparser.yy" // lalr1.cc:859
-    { std::string index(std::to_string(yystack_[3].value.as< obj_t > ().valor)); index.append(","); index.append(std::to_string(yystack_[1].value.as< obj_t > ().valor)); yylhs.value.as< obj_t > ().valor = ((Variable*)(driver.getModel()->getElementManager()->getElement(Util::TypeOf<Variable>(), yystack_[5].value.as< obj_t > ().id)))->getValue(index);}
+  case 46:
+#line 252 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = driver.getModel()->getInfos()->getReplicationLength();}
 #line 996 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 50:
-#line 219 "bisonparser.yy" // lalr1.cc:859
-    { yylhs.value.as< obj_t > ().valor = ((Formula*)(driver.getModel()->getElementManager()->getElement(Util::TypeOf<Formula>(), yystack_[0].value.as< obj_t > ().id)))->getValue();}
+  case 47:
+#line 255 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = sin(yystack_[1].value.as< obj_t > ().valor); }
 #line 1002 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 51:
-#line 222 "bisonparser.yy" // lalr1.cc:859
-    { yylhs.value.as< obj_t > ().valor = sin(yystack_[1].value.as< obj_t > ().valor); }
+  case 48:
+#line 256 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = cos(yystack_[1].value.as< obj_t > ().valor); }
 #line 1008 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 52:
-#line 223 "bisonparser.yy" // lalr1.cc:859
-    { yylhs.value.as< obj_t > ().valor = cos(yystack_[1].value.as< obj_t > ().valor); }
+  case 49:
+#line 259 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = (int) yystack_[1].value.as< obj_t > ().valor;}
 #line 1014 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 53:
-#line 226 "bisonparser.yy" // lalr1.cc:859
-    { yylhs.value.as< obj_t > ().valor = (int) yystack_[1].value.as< obj_t > ().valor;}
+  case 50:
+#line 260 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = yystack_[1].value.as< obj_t > ().valor - (int) yystack_[1].value.as< obj_t > ().valor;}
 #line 1020 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 54:
-#line 227 "bisonparser.yy" // lalr1.cc:859
-    { yylhs.value.as< obj_t > ().valor = yystack_[1].value.as< obj_t > ().valor - (int) yystack_[1].value.as< obj_t > ().valor;}
+  case 51:
+#line 261 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = (int) yystack_[1].value.as< obj_t > ().valor;}
 #line 1026 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 55:
-#line 228 "bisonparser.yy" // lalr1.cc:859
-    { yylhs.value.as< obj_t > ().valor = (int) yystack_[1].value.as< obj_t > ().valor;}
+  case 52:
+#line 262 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = (int) yystack_[3].value.as< obj_t > ().valor % (int) yystack_[1].value.as< obj_t > ().valor; }
 #line 1032 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 56:
-#line 229 "bisonparser.yy" // lalr1.cc:859
-    { yylhs.value.as< obj_t > ().valor = (int) yystack_[3].value.as< obj_t > ().valor % (int) yystack_[1].value.as< obj_t > ().valor; }
+  case 53:
+#line 265 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = driver.getProbs()->sampleExponential(yystack_[1].value.as< obj_t > ().valor); yylhs.value.as< obj_t > ().tipo = "Exponencial";}
 #line 1038 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 57:
-#line 232 "bisonparser.yy" // lalr1.cc:859
-    { yylhs.value.as< obj_t > ().valor = driver.getProbs()->sampleExponential(yystack_[1].value.as< obj_t > ().valor); yylhs.value.as< obj_t > ().tipo = "Exponencial";}
+  case 54:
+#line 266 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = driver.getProbs()->sampleNormal(yystack_[3].value.as< obj_t > ().valor,yystack_[1].value.as< obj_t > ().valor); yylhs.value.as< obj_t > ().tipo = "Normal"; }
 #line 1044 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 58:
-#line 233 "bisonparser.yy" // lalr1.cc:859
-    { yylhs.value.as< obj_t > ().valor = driver.getProbs()->sampleNormal(yystack_[3].value.as< obj_t > ().valor,yystack_[1].value.as< obj_t > ().valor); yylhs.value.as< obj_t > ().tipo = "Normal"; }
+  case 55:
+#line 267 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = driver.getProbs()->sampleUniform(yystack_[3].value.as< obj_t > ().valor,yystack_[1].value.as< obj_t > ().valor); yylhs.value.as< obj_t > ().tipo = "Unificada"; }
 #line 1050 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 59:
-#line 234 "bisonparser.yy" // lalr1.cc:859
-    { yylhs.value.as< obj_t > ().valor = driver.getProbs()->sampleUniform(yystack_[3].value.as< obj_t > ().valor,yystack_[1].value.as< obj_t > ().valor); yylhs.value.as< obj_t > ().tipo = "Unificada"; }
+  case 56:
+#line 268 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = driver.getProbs()->sampleWeibull(yystack_[3].value.as< obj_t > ().valor,yystack_[1].value.as< obj_t > ().valor); yylhs.value.as< obj_t > ().tipo = "Weibull"; }
 #line 1056 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 60:
-#line 235 "bisonparser.yy" // lalr1.cc:859
-    { yylhs.value.as< obj_t > ().valor = driver.getProbs()->sampleWeibull(yystack_[3].value.as< obj_t > ().valor,yystack_[1].value.as< obj_t > ().valor); yylhs.value.as< obj_t > ().tipo = "Weibull"; }
+  case 57:
+#line 269 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = driver.getProbs()->sampleLogNormal(yystack_[3].value.as< obj_t > ().valor,yystack_[1].value.as< obj_t > ().valor); yylhs.value.as< obj_t > ().tipo = "LOGNormal"; }
 #line 1062 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 61:
-#line 236 "bisonparser.yy" // lalr1.cc:859
-    { yylhs.value.as< obj_t > ().valor = driver.getProbs()->sampleLogNormal(yystack_[3].value.as< obj_t > ().valor,yystack_[1].value.as< obj_t > ().valor); yylhs.value.as< obj_t > ().tipo = "LOGNormal"; }
+  case 58:
+#line 270 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = driver.getProbs()->sampleGamma(yystack_[3].value.as< obj_t > ().valor,yystack_[1].value.as< obj_t > ().valor); yylhs.value.as< obj_t > ().tipo = "Gamma"; }
 #line 1068 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 62:
-#line 237 "bisonparser.yy" // lalr1.cc:859
-    { yylhs.value.as< obj_t > ().valor = driver.getProbs()->sampleGamma(yystack_[3].value.as< obj_t > ().valor,yystack_[1].value.as< obj_t > ().valor); yylhs.value.as< obj_t > ().tipo = "Gamma"; }
+  case 59:
+#line 271 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = driver.getProbs()->sampleErlang(yystack_[3].value.as< obj_t > ().valor,yystack_[1].value.as< obj_t > ().valor); yylhs.value.as< obj_t > ().tipo = "Erlang"; }
 #line 1074 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 63:
-#line 238 "bisonparser.yy" // lalr1.cc:859
-    { yylhs.value.as< obj_t > ().valor = driver.getProbs()->sampleErlang(yystack_[3].value.as< obj_t > ().valor,yystack_[1].value.as< obj_t > ().valor); yylhs.value.as< obj_t > ().tipo = "Erlang"; }
+  case 60:
+#line 272 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = driver.getProbs()->sampleTriangular(yystack_[5].value.as< obj_t > ().valor,yystack_[3].value.as< obj_t > ().valor,yystack_[1].value.as< obj_t > ().valor); yylhs.value.as< obj_t > ().tipo = "Triangular"; }
 #line 1080 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 64:
-#line 239 "bisonparser.yy" // lalr1.cc:859
-    { yylhs.value.as< obj_t > ().valor = driver.getProbs()->sampleTriangular(yystack_[5].value.as< obj_t > ().valor,yystack_[3].value.as< obj_t > ().valor,yystack_[1].value.as< obj_t > ().valor); yylhs.value.as< obj_t > ().tipo = "Triangular"; }
+  case 61:
+#line 273 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = driver.getProbs()->sampleBeta(yystack_[7].value.as< obj_t > ().valor,yystack_[5].value.as< obj_t > ().valor,yystack_[3].value.as< obj_t > ().valor,yystack_[1].value.as< obj_t > ().valor); yylhs.value.as< obj_t > ().tipo = "Beta"; }
 #line 1086 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
-  case 65:
-#line 240 "bisonparser.yy" // lalr1.cc:859
-    { yylhs.value.as< obj_t > ().valor = driver.getProbs()->sampleBeta(yystack_[7].value.as< obj_t > ().valor,yystack_[5].value.as< obj_t > ().valor,yystack_[3].value.as< obj_t > ().valor,yystack_[1].value.as< obj_t > ().valor); yylhs.value.as< obj_t > ().tipo = "Beta"; }
+  case 63:
+#line 279 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = yystack_[1].value.as< obj_t > ().valor; }
 #line 1092 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
+  case 66:
+#line 287 "bisonparser.yy" // lalr1.cc:859
+    {
+				  driver.setResult(-1);
+				  if(driver.getThrowsException()){
+				    if(yystack_[0].value.as< obj_t > ().valor == 0){
+				      throw std::string("Literal nao encontrado");
+				    }else if(yystack_[0].value.as< obj_t > ().valor == 1){
+				      throw std::string("Caracter invalido encontrado");
+				    }
+				  }else{
+				    if(yystack_[0].value.as< obj_t > ().valor == 0){
+				      driver.setErrorMessage(std::string("Literal nao encontrado"));
+				    }else if(yystack_[0].value.as< obj_t > ().valor == 1){
+				      driver.setErrorMessage(std::string("Caracter invalido encontrado"));
+				    }
+				  }
+				}
+#line 1113 "../GenesysParser.cpp" // lalr1.cc:859
+    break;
+
   case 67:
-#line 244 "bisonparser.yy" // lalr1.cc:859
-    { yylhs.value.as< obj_t > ().valor = ((Queue*)(driver.getModel()->getElementManager()->getElement(Util::TypeOf<Queue>(), yystack_[1].value.as< obj_t > ().id)))->size();}
-#line 1098 "../GenesysParser.cpp" // lalr1.cc:859
+#line 306 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = yystack_[0].value.as< obj_t > ().valor; }
+#line 1119 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
   case 68:
-#line 245 "bisonparser.yy" // lalr1.cc:859
-    {/*For now does nothing because need acces to list of QUEUE, or at least the last element*/ }
-#line 1104 "../GenesysParser.cpp" // lalr1.cc:859
+#line 310 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = yystack_[0].value.as< obj_t > ().valor; }
+#line 1125 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
   case 69:
-#line 246 "bisonparser.yy" // lalr1.cc:859
-    { if (((Queue*)(driver.getModel()->getElementManager()->getElement(Util::TypeOf<Queue>(), yystack_[1].value.as< obj_t > ().id)))->size() > 0){
-                                                                    //id da 1a entidade da fila, talvez pegar nome
-                                                                    yylhs.value.as< obj_t > ().valor = ((Queue*)(driver.getModel()->getElementManager()->getElement(Util::TypeOf<Queue>(), yystack_[1].value.as< obj_t > ().id)))->first()->getEntity()->getId();
-                                                                  }else{
-                                                                    yylhs.value.as< obj_t > ().valor = 0;
-                                                                  }
-                                                                }
-#line 1116 "../GenesysParser.cpp" // lalr1.cc:859
+#line 311 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = yystack_[0].value.as< obj_t > ().valor; }
+#line 1131 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
   case 70:
-#line 253 "bisonparser.yy" // lalr1.cc:859
-    { yylhs.value.as< obj_t > ().valor = ((Resource*)driver.getModel()->getElementManager()->getElement(Util::TypeOf<Resource>(), yystack_[1].value.as< obj_t > ().id))->getCapacity();}
-#line 1122 "../GenesysParser.cpp" // lalr1.cc:859
+#line 314 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = ((Variable*)(driver.getModel()->getElementManager()->getElement(Util::TypeOf<Variable>(), yystack_[0].value.as< obj_t > ().id)))->getValue();}
+#line 1137 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
   case 71:
-#line 254 "bisonparser.yy" // lalr1.cc:859
-    { yylhs.value.as< obj_t > ().valor = ((Resource*)driver.getModel()->getElementManager()->getElement(Util::TypeOf<Resource>(), yystack_[1].value.as< obj_t > ().id))->getNumberBusy();}
-#line 1128 "../GenesysParser.cpp" // lalr1.cc:859
+#line 315 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = ((Variable*)(driver.getModel()->getElementManager()->getElement(Util::TypeOf<Variable>(), yystack_[3].value.as< obj_t > ().id)))->getValue(std::to_string(yystack_[1].value.as< obj_t > ().valor));}
+#line 1143 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
   case 72:
-#line 255 "bisonparser.yy" // lalr1.cc:859
-    { /*For now does nothing because needs get Seizes, check with teacher*/}
-#line 1134 "../GenesysParser.cpp" // lalr1.cc:859
+#line 316 "bisonparser.yy" // lalr1.cc:859
+    { std::string index(std::to_string(yystack_[3].value.as< obj_t > ().valor)); index.append(","); index.append(std::to_string(yystack_[1].value.as< obj_t > ().valor)); yylhs.value.as< obj_t > ().valor = ((Variable*)(driver.getModel()->getElementManager()->getElement(Util::TypeOf<Variable>(), yystack_[5].value.as< obj_t > ().id)))->getValue(index);}
+#line 1149 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
   case 73:
-#line 256 "bisonparser.yy" // lalr1.cc:859
-    {  switch(((Resource*)driver.getModel()->getElementManager()->getElement(Util::TypeOf<Resource>(), yystack_[1].value.as< obj_t > ().id))->getResourceState()){
-                                                                    case Resource::ResourceState::IDLE:
-                                                                      yylhs.value.as< obj_t > ().valor = -1;
-                                                                      break;
-                                                                    case Resource::ResourceState::BUSY:
-                                                                      yylhs.value.as< obj_t > ().valor = -2;
-                                                                      break;
-                                                                    case Resource::ResourceState::FAILED:
-                                                                      yylhs.value.as< obj_t > ().valor = -4;
-                                                                      break;
-                                                                    case Resource::ResourceState::INACTIVE:
-                                                                      yylhs.value.as< obj_t > ().valor = -3;
-                                                                    default:
-                                                                      yylhs.value.as< obj_t > ().valor = -5;
-                                                                      break;
-                                                                  }
-                                                                }
-#line 1156 "../GenesysParser.cpp" // lalr1.cc:859
+#line 320 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = ((Formula*)(driver.getModel()->getElementManager()->getElement(Util::TypeOf<Formula>(), yystack_[0].value.as< obj_t > ().id)))->getValue();}
+#line 1155 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
   case 74:
-#line 274 "bisonparser.yy" // lalr1.cc:859
-    { yylhs.value.as< obj_t > ().valor = ((Resource*)driver.getModel()->getElementManager()->getElement(Util::TypeOf<Resource>(), yystack_[1].value.as< obj_t > ().id))->getResourceState() == Resource::ResourceState::FAILED ? 1 : 0; }
-#line 1162 "../GenesysParser.cpp" // lalr1.cc:859
+#line 324 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = 0; }
+#line 1161 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
   case 75:
-#line 275 "bisonparser.yy" // lalr1.cc:859
-    { yylhs.value.as< obj_t > ().valor = driver.getModel()->getSimulation()->getSimulatedTime();}
-#line 1168 "../GenesysParser.cpp" // lalr1.cc:859
+#line 329 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = ((Queue*)(driver.getModel()->getElementManager()->getElement(Util::TypeOf<Queue>(), yystack_[1].value.as< obj_t > ().id)))->size();}
+#line 1167 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
   case 76:
-#line 276 "bisonparser.yy" // lalr1.cc:859
-    { yylhs.value.as< obj_t > ().valor = driver.getModel()->getInfos()->getReplicationLength();}
-#line 1174 "../GenesysParser.cpp" // lalr1.cc:859
+#line 330 "bisonparser.yy" // lalr1.cc:859
+    {/*For now does nothing because need acces to list of QUEUE, or at least the last element*/ }
+#line 1173 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
   case 77:
-#line 280 "bisonparser.yy" // lalr1.cc:859
-    { yylhs.value.as< obj_t > ().valor = yystack_[1].value.as< obj_t > ().valor; }
-#line 1180 "../GenesysParser.cpp" // lalr1.cc:859
+#line 331 "bisonparser.yy" // lalr1.cc:859
+    { if (((Queue*)(driver.getModel()->getElementManager()->getElement(Util::TypeOf<Queue>(), yystack_[1].value.as< obj_t > ().id)))->size() > 0){
+                                                            //id da 1a entidade da fila, talvez pegar nome
+                                                            yylhs.value.as< obj_t > ().valor = ((Queue*)(driver.getModel()->getElementManager()->getElement(Util::TypeOf<Queue>(), yystack_[1].value.as< obj_t > ().id)))->first()->getEntity()->getId();
+                                                          }else{
+                                                            yylhs.value.as< obj_t > ().valor = 0;
+                                                          }
+                                                        }
+#line 1185 "../GenesysParser.cpp" // lalr1.cc:859
+    break;
+
+  case 78:
+#line 338 "bisonparser.yy" // lalr1.cc:859
+    {   // @TODO: how can I get the "name" of the atributo?
+							    yylhs.value.as< obj_t > ().valor = 0;
+							}
+#line 1193 "../GenesysParser.cpp" // lalr1.cc:859
+    break;
+
+  case 79:
+#line 345 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = ((Resource*)driver.getModel()->getElementManager()->getElement(Util::TypeOf<Resource>(), yystack_[1].value.as< obj_t > ().id))->getCapacity();}
+#line 1199 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
   case 80:
-#line 288 "bisonparser.yy" // lalr1.cc:859
-    {
-                                                                  driver.setResult(-1);
-                                                                  if(driver.getThrowsException()){
-                                                                    if(yystack_[0].value.as< obj_t > ().valor == 0){
-                                                                      throw std::string("Literal nao encontrado");
-                                                                    }else if(yystack_[0].value.as< obj_t > ().valor == 1){
-                                                                      throw std::string("Caracter invalido encontrado");
-                                                                    }
-                                                                  }else{
-                                                                    if(yystack_[0].value.as< obj_t > ().valor == 0){
-                                                                      driver.setErrorMessage(std::string("Literal nao encontrado"));
-                                                                    }else if(yystack_[0].value.as< obj_t > ().valor == 1){
-                                                                      driver.setErrorMessage(std::string("Caracter invalido encontrado"));
-                                                                    }
-                                                                  }
-                                                                }
-#line 1201 "../GenesysParser.cpp" // lalr1.cc:859
+#line 346 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = ((Resource*)driver.getModel()->getElementManager()->getElement(Util::TypeOf<Resource>(), yystack_[1].value.as< obj_t > ().id))->getNumberBusy();}
+#line 1205 "../GenesysParser.cpp" // lalr1.cc:859
+    break;
+
+  case 81:
+#line 347 "bisonparser.yy" // lalr1.cc:859
+    { /*For now does nothing because needs get Seizes, check with teacher*/}
+#line 1211 "../GenesysParser.cpp" // lalr1.cc:859
+    break;
+
+  case 82:
+#line 348 "bisonparser.yy" // lalr1.cc:859
+    {  yylhs.value.as< obj_t > ().valor = static_cast<int>(((Resource*)driver.getModel()->getElementManager()->getElement(Util::TypeOf<Resource>(), yystack_[1].value.as< obj_t > ().id))->getResourceState());
+							}
+#line 1218 "../GenesysParser.cpp" // lalr1.cc:859
+    break;
+
+  case 83:
+#line 351 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = ((Resource*)driver.getModel()->getElementManager()->getElement(Util::TypeOf<Resource>(), yystack_[1].value.as< obj_t > ().id))->getResourceState() == Resource::ResourceState::FAILED ? 1 : 0; }
+#line 1224 "../GenesysParser.cpp" // lalr1.cc:859
+    break;
+
+  case 84:
+#line 352 "bisonparser.yy" // lalr1.cc:859
+    {   unsigned int count=0;
+							    Resource* res;
+							    List<ModelElement*>* setList = ((Set*)driver.getModel()->getElementManager()->getElement(Util::TypeOf<Set>(),yystack_[1].value.as< obj_t > ().id))->getElementSet(); 
+							    for (std::list<ModelElement*>::iterator it = setList->getList()->begin(); it!=setList->getList()->end(); it++) {
+								res = dynamic_cast<Resource*>(*it);
+								if (res != nullptr) {
+								    if (res->getResourceState()==Resource::ResourceState::BUSY) {
+									count++;
+								    }
+								}
+							    }
+							    yylhs.value.as< obj_t > ().valor = count; 
+							}
+#line 1242 "../GenesysParser.cpp" // lalr1.cc:859
+    break;
+
+  case 85:
+#line 369 "bisonparser.yy" // lalr1.cc:859
+    { yylhs.value.as< obj_t > ().valor = ((Set*)driver.getModel()->getElementManager()->getElement(Util::TypeOf<Set>(),yystack_[1].value.as< obj_t > ().id))->getElementSet()->size(); }
+#line 1248 "../GenesysParser.cpp" // lalr1.cc:859
     break;
 
 
-#line 1205 "../GenesysParser.cpp" // lalr1.cc:859
+#line 1252 "../GenesysParser.cpp" // lalr1.cc:859
             default:
               break;
             }
@@ -1456,358 +1503,364 @@ namespace yy {
   }
 
 
-  const signed char genesyspp_parser::yypact_ninf_ = -71;
+  const signed char genesyspp_parser::yypact_ninf_ = -116;
 
   const signed char genesyspp_parser::yytable_ninf_ = -3;
 
   const short int
   genesyspp_parser::yypact_[] =
   {
-     185,   -46,   -71,   247,   -71,   -71,   -71,   -71,   -71,   -71,
-     -45,   -71,   -71,   -33,   -31,   -30,   -28,   -27,   -26,   -25,
-     -24,   -23,   -22,   -21,    -3,    -2,    -1,     0,     1,    16,
-      23,    24,    25,    26,    27,    28,    29,   -71,    36,     4,
-     309,   309,   -71,    37,   -71,   995,   -71,   -71,   -71,   -71,
-     -71,   -71,   -71,   -71,   -71,   -71,   -71,   -71,   -71,   -71,
-     309,    78,    79,    80,    81,    82,    86,    87,    88,   309,
-     309,   309,   309,   309,   309,   309,   309,   309,   309,   309,
-     309,   309,   309,   309,   309,   309,   -71,    39,    49,   119,
-      51,   309,   309,   309,   309,   309,   309,   309,   309,   309,
-     309,   309,   309,   309,   309,    47,    58,    68,    69,    70,
-      71,    74,    75,    85,   601,   640,   648,   343,   656,   664,
-     703,   355,   364,   405,   414,   423,   464,   473,   482,   523,
-     -48,   711,   309,   309,   -71,   719,   -47,   -47,   -47,   -47,
-     187,   187,   -41,   -41,    51,   995,    51,   -47,   -47,   309,
-     -71,   -71,   -71,   -71,   -71,   -71,   -71,   -71,   -71,   -71,
-     -71,   -71,   309,   -71,   -71,   -71,   309,   309,   309,   309,
-     309,   309,   309,   309,   309,   -71,   309,   309,   758,   770,
-     -71,    60,   778,   817,   825,   833,   841,   880,   888,   532,
-     541,   995,   582,   902,   309,   309,   -71,   -71,   -71,   -71,
-     -71,   -71,   -71,   -71,   309,   309,   309,   309,   928,   941,
-     949,   591,   995,   995,     4,     4,   -71,   309,    89,   -71,
-      90,   -71,   988,   309,   309,   -71,   995,   995
+     205,   -60,  -116,   260,  -116,  -116,  -116,  -116,  -116,  -116,
+     -42,   -39,   -38,   -33,   -32,   -31,   -30,    -6,    -5,    -4,
+      -3,    -2,    -1,     0,     2,     3,  -116,  -116,    18,   -35,
+    -116,    19,    20,    21,    22,    23,    24,    25,    26,    27,
+      28,    29,   -55,  -116,   315,   315,  -116,    30,  -116,   997,
+    -116,  -116,  -116,  -116,  -116,  -116,  -116,  -116,  -116,  -116,
+    -116,  -116,  -116,  -116,  -116,  -116,   315,   315,   315,   315,
+     315,   315,   315,   315,   315,   315,   315,   315,   315,   315,
+     315,   315,   315,    38,    39,    47,    48,    49,    50,    51,
+      52,    54,    59,    61,    62,    57,   315,   604,    53,   315,
+     315,   315,   315,   315,   315,   315,   315,   315,   315,   315,
+     315,   315,   315,   612,   628,   669,   381,   685,   693,   701,
+     390,   399,   408,   424,   467,   483,   492,   501,   510,   -50,
+     709,   315,   315,    55,    56,    58,    60,    68,    69,    70,
+      80,    83,    45,    84,    36,  -116,   726,   -49,   -49,   -49,
+     -49,   112,   112,   -40,   -40,    53,   997,    53,   -49,   -49,
+    -116,  -116,  -116,   315,  -116,  -116,  -116,   315,   315,   315,
+     315,   315,   315,   315,   315,   315,  -116,   315,   315,   766,
+     783,  -116,  -116,  -116,  -116,  -116,  -116,  -116,  -116,  -116,
+      78,  -116,   315,  -116,  -116,   795,   803,   823,   860,   880,
+     888,   896,   526,   569,   997,   585,   953,   315,   315,    85,
+     367,  -116,  -116,  -116,  -116,  -116,  -116,  -116,   315,   315,
+     315,   315,   960,   967,  -116,  -116,   980,   594,   997,   997,
+     -35,   -35,  -116,   315,    79,  -116,    81,  -116,   990,   315,
+     315,  -116,   997,   997
   };
 
   const unsigned char
   genesyspp_parser::yydefact_[] =
   {
-       0,     0,    80,     0,     5,     6,     1,    17,    18,    12,
-      47,    50,    76,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,    66,     0,     5,     6,     1,    17,    18,    74,
        0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
-       0,     0,     0,     0,     0,     0,     0,    75,     0,     0,
-       0,     0,     3,     0,     4,     7,    15,     8,     9,    16,
-      33,    34,    11,    13,    14,    40,    39,    41,    42,    43,
-       0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
-       0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
-       0,     0,     0,     0,     0,     0,    44,     0,     0,     0,
-      24,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,    45,    46,     0,     0,
+      67,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,    70,    73,     0,     0,     3,     0,     4,     7,
+       8,    11,    12,    10,    33,    34,     9,    42,    40,    39,
+      41,    44,    14,    15,    16,    43,     0,     0,     0,     0,
        0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
        0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,     0,     0,    24,     0,
        0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
-       0,     0,     0,     0,    10,     0,    28,    30,    31,    32,
-      25,    26,    19,    20,    22,    23,    21,    27,    29,     0,
-      48,    71,    70,    74,    72,    73,    67,    69,    68,    51,
-      52,    53,     0,    55,    54,    57,     0,     0,     0,     0,
-       0,     0,     0,     0,     0,    66,     0,     0,     0,     0,
-      77,     0,     0,     0,     0,     0,     0,     0,     0,     0,
-       0,    79,     0,    36,     0,     0,    49,    56,    58,    59,
-      60,    61,    62,    63,     0,     0,     0,     0,     0,     0,
-       0,     0,    78,    35,     0,     0,    64,     0,     0,    38,
-       0,    37,     0,     0,     0,    65,    45,    46
+       0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,    13,     0,    28,    30,    31,
+      32,    25,    26,    19,    20,    22,    23,    21,    27,    29,
+      47,    48,    49,     0,    51,    50,    53,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,    62,     0,     0,     0,
+       0,    80,    79,    83,    81,    82,    84,    75,    77,    76,
+       0,    85,     0,    71,    63,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,    65,     0,    36,     0,     0,     0,
+       0,    52,    54,    55,    56,    57,    58,    59,     0,     0,
+       0,     0,     0,     0,    78,    72,     0,     0,    64,    35,
+       0,     0,    60,     0,     0,    38,     0,    37,     0,     0,
+       0,    61,    68,    69
   };
 
   const signed char
   genesyspp_parser::yypgoto_[] =
   {
-     -71,   -71,   -71,   -40,   -71,   -71,   -71,   -71,   -71,   -71,
-     -71,   105,   -70,   -36,   -71,   -71,   -71,   -71,   -71,   -71,
-     -71,   -71
+    -116,  -116,  -116,   -41,  -116,  -116,  -116,  -116,  -116,  -116,
+    -116,  -116,  -116,  -116,  -116,  -116,  -116,  -116,   -29,  -115,
+     -27,  -116,  -116
   };
 
   const short int
   genesyspp_parser::yydefgoto_[] =
   {
-      -1,     3,    44,    45,    46,    47,    48,    49,    50,    51,
-      52,   218,   219,    53,    54,    55,    56,    57,    58,    59,
-     130,     4
+      -1,     3,    48,    49,    50,    51,    52,    53,    54,    55,
+      56,    57,    58,    59,    60,    61,   129,     4,    62,   235,
+      63,    64,    65
   };
 
   const short int
   genesyspp_parser::yytable_[] =
   {
-      89,    90,   175,    88,    98,    99,   100,   101,   102,    86,
-      10,   176,   100,   101,   102,     5,    61,    60,    62,    63,
-     105,    64,    65,    66,    67,    68,    69,    70,    71,   114,
-     115,   116,   117,   118,   119,   120,   121,   122,   123,   124,
-     125,   126,   127,   128,   129,   131,    72,    73,    74,    75,
-      76,   135,   136,   137,   138,   139,   140,   141,   142,   143,
-     144,   145,   146,   147,   148,    77,    92,    93,    94,    95,
-      96,    97,    78,    79,    80,    81,    82,    83,    84,    92,
-      93,    94,    95,    96,    97,    85,    91,   106,   107,   108,
-     109,   110,   178,   179,   111,   112,   113,   132,    98,    99,
-     100,   101,   102,   103,   104,   101,   149,   133,   151,   181,
-     150,    98,    99,   100,   101,   102,   103,   104,   152,   153,
-     154,   155,   182,   196,   156,   157,   183,   184,   185,   186,
-     187,   188,   189,   190,   191,   158,   192,   193,    92,    93,
-      94,    95,    96,    97,    87,   221,     0,   223,   224,     0,
-       0,     0,     0,     0,   208,   209,     0,     0,     0,     0,
-       0,     0,     0,     0,   210,   211,   212,   213,     0,   134,
-      98,    99,   100,   101,   102,   103,   104,   222,   220,   220,
-       0,     0,     0,   226,   227,    -2,     1,     0,    -2,    -2,
-      -2,    -2,    -2,     0,     0,    -2,    -2,    -2,    -2,    -2,
-      -2,    -2,    -2,    -2,     0,     0,    92,    93,    94,    95,
-       0,    -2,    -2,    -2,    -2,    -2,    -2,    -2,    -2,    -2,
-      -2,    -2,    -2,    -2,    -2,    -2,    -2,    -2,    -2,     0,
-      -2,     0,     0,     2,    -2,     0,     0,    -2,    98,    99,
-     100,   101,   102,   103,   104,     0,    -2,     6,     0,    -2,
-       7,     8,     9,    10,    11,     0,     0,    12,    13,    14,
-      15,    16,    17,    18,    19,    20,     0,     0,     0,     0,
-       0,     0,     0,    21,    22,    23,    24,    25,    26,    27,
-      28,    29,    30,    31,    32,    33,    34,    35,    36,    37,
-      38,     0,    39,     0,     0,     0,    40,     0,     0,    41,
-       0,     0,     0,     0,     0,     0,     0,     0,    42,     0,
-       0,    43,     7,     8,     9,    10,    11,     0,     0,    12,
-      13,    14,    15,    16,    17,    18,    19,    20,     0,     0,
-       0,     0,     0,     0,     0,    21,    22,    23,    24,    25,
-      26,    27,    28,    29,    30,    31,    32,    33,    34,    35,
-      36,    37,    38,     0,    39,     0,     0,     0,    40,     0,
-       0,    41,    92,    93,    94,    95,    96,    97,     0,     0,
-       0,     0,     0,    43,    92,    93,    94,    95,    96,    97,
-       0,     0,     0,    92,    93,    94,    95,    96,    97,     0,
-       0,     0,     0,     0,    98,    99,   100,   101,   102,   103,
-     104,     0,   162,     0,     0,     0,    98,    99,   100,   101,
-     102,   103,   104,     0,   166,    98,    99,   100,   101,   102,
-     103,   104,     0,   167,    92,    93,    94,    95,    96,    97,
-       0,     0,     0,    92,    93,    94,    95,    96,    97,     0,
-       0,     0,    92,    93,    94,    95,    96,    97,     0,     0,
-       0,     0,     0,     0,     0,     0,    98,    99,   100,   101,
-     102,   103,   104,     0,   168,    98,    99,   100,   101,   102,
-     103,   104,     0,   169,    98,    99,   100,   101,   102,   103,
-     104,     0,   170,    92,    93,    94,    95,    96,    97,     0,
-       0,     0,    92,    93,    94,    95,    96,    97,     0,     0,
-       0,    92,    93,    94,    95,    96,    97,     0,     0,     0,
-       0,     0,     0,     0,     0,    98,    99,   100,   101,   102,
-     103,   104,     0,   171,    98,    99,   100,   101,   102,   103,
-     104,     0,   172,    98,    99,   100,   101,   102,   103,   104,
-       0,   173,    92,    93,    94,    95,    96,    97,     0,     0,
-       0,    92,    93,    94,    95,    96,    97,     0,     0,     0,
-      92,    93,    94,    95,    96,    97,     0,     0,     0,     0,
-       0,     0,     0,     0,    98,    99,   100,   101,   102,   103,
-     104,     0,   174,    98,    99,   100,   101,   102,   103,   104,
-       0,   204,    98,    99,   100,   101,   102,   103,   104,     0,
-     205,    92,    93,    94,    95,    96,    97,     0,     0,     0,
-      92,    93,    94,    95,    96,    97,     0,     0,     0,     0,
-      92,    93,    94,    95,    96,    97,     0,     0,     0,     0,
-       0,     0,     0,    98,    99,   100,   101,   102,   103,   104,
-       0,   206,    98,    99,   100,   101,   102,   103,   104,     0,
-     217,   159,    98,    99,   100,   101,   102,   103,   104,    92,
-      93,    94,    95,    96,    97,     0,     0,    92,    93,    94,
-      95,    96,    97,     0,     0,    92,    93,    94,    95,    96,
-      97,     0,     0,    92,    93,    94,    95,    96,    97,     0,
-     160,    98,    99,   100,   101,   102,   103,   104,   161,    98,
-      99,   100,   101,   102,   103,   104,   163,    98,    99,   100,
-     101,   102,   103,   104,   164,    98,    99,   100,   101,   102,
-     103,   104,    92,    93,    94,    95,    96,    97,     0,     0,
-      92,    93,    94,    95,    96,    97,     0,     0,    92,    93,
-      94,    95,    96,    97,     0,     0,     0,     0,     0,     0,
-       0,     0,     0,   165,    98,    99,   100,   101,   102,   103,
-     104,   177,    98,    99,   100,   101,   102,   103,   104,   180,
-      98,    99,   100,   101,   102,   103,   104,    92,    93,    94,
-      95,    96,    97,     0,     0,     0,     0,     0,     0,    92,
-      93,    94,    95,    96,    97,     0,     0,    92,    93,    94,
-      95,    96,    97,     0,   194,     0,     0,     0,     0,    98,
-      99,   100,   101,   102,   103,   104,   195,     0,     0,     0,
-       0,    98,    99,   100,   101,   102,   103,   104,   197,    98,
-      99,   100,   101,   102,   103,   104,    92,    93,    94,    95,
-      96,    97,     0,     0,    92,    93,    94,    95,    96,    97,
-       0,     0,    92,    93,    94,    95,    96,    97,     0,     0,
-      92,    93,    94,    95,    96,    97,     0,   198,    98,    99,
-     100,   101,   102,   103,   104,   199,    98,    99,   100,   101,
-     102,   103,   104,   200,    98,    99,   100,   101,   102,   103,
-     104,   201,    98,    99,   100,   101,   102,   103,   104,    92,
-      93,    94,    95,    96,    97,     0,     0,    92,    93,    94,
-      95,    96,    97,     0,     0,     0,     0,     0,     0,     0,
-       0,    92,    93,    94,    95,    96,    97,     0,     0,     0,
-     202,    98,    99,   100,   101,   102,   103,   104,   203,    98,
-      99,   100,   101,   102,   103,   104,   207,    92,    93,    94,
-      95,    96,    97,    98,    99,   100,   101,   102,   103,   104,
-      92,    93,    94,    95,    96,    97,     0,     0,    92,    93,
-      94,    95,    96,    97,     0,   214,     0,     0,     0,    98,
-      99,   100,   101,   102,   103,   104,     0,     0,   215,     0,
-       0,     0,    98,    99,   100,   101,   102,   103,   104,   216,
-      98,    99,   100,   101,   102,   103,   104,    92,    93,    94,
-      95,    96,    97,     0,    92,    93,    94,    95,    96,    97,
-       0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
-       0,     0,     0,     0,     0,     0,     0,     0,   225,    98,
-      99,   100,   101,   102,   103,   104,    98,    99,   100,   101,
-     102,   103,   104
+      83,    30,    84,    97,    98,   176,     5,   106,   107,   108,
+     109,   110,    66,    96,   177,    67,    68,    42,   108,   109,
+     110,    69,    70,    71,    72,   113,   114,   115,   116,   117,
+     118,   119,   120,   121,   122,   123,   124,   125,   126,   127,
+     128,   130,   100,   101,   102,   103,   104,   105,    73,    74,
+      75,    76,    77,    78,    79,   144,    80,    81,   146,   147,
+     148,   149,   150,   151,   152,   153,   154,   155,   156,   157,
+     158,   159,    82,    85,    86,    87,    88,    89,    90,    91,
+      92,    93,    94,    95,    99,   133,   134,   135,   136,   137,
+     179,   180,   106,   107,   108,   109,   110,   111,   112,   139,
+     192,   131,   132,   138,   140,   193,   141,   142,   143,   190,
+     181,   182,   109,   183,    30,   184,   237,     0,   100,   101,
+     102,   103,   195,   185,   186,   187,   196,   197,   198,   199,
+     200,   201,   202,   203,   204,   188,   205,   206,   189,   191,
+     224,     0,   239,     0,   240,     0,     0,     0,     0,     0,
+       0,   210,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,   209,     0,     0,     0,     0,   222,   223,   106,   107,
+     108,   109,   110,   111,   112,     0,     0,   226,   227,   228,
+     229,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,   238,     0,     0,     0,     0,     0,   242,   243,
+       0,   234,   234,   236,   236,    -2,     1,     0,    -2,    -2,
+      -2,     0,     0,     0,     0,     0,     0,     0,    -2,    -2,
+      -2,    -2,    -2,    -2,    -2,    -2,    -2,    -2,    -2,    -2,
+      -2,    -2,    -2,    -2,    -2,    -2,    -2,     0,    -2,     0,
+       0,    -2,     2,     0,    -2,    -2,    -2,    -2,    -2,    -2,
+       0,    -2,    -2,    -2,    -2,    -2,     0,    -2,    -2,    -2,
+       6,     0,    -2,     7,     8,     9,     0,     0,     0,     0,
+       0,    -2,    -2,    10,    11,    12,    13,    14,    15,    16,
+      17,    18,    19,    20,    21,    22,    23,    24,    25,    26,
+      27,    28,     0,    29,     0,     0,    30,     0,     0,    31,
+      32,    33,    34,    35,    36,     0,    37,    38,    39,    40,
+      41,     0,    42,    43,    44,     0,     0,    45,     7,     8,
+       9,     0,     0,     0,     0,     0,    46,    47,    10,    11,
+      12,    13,    14,    15,    16,    17,    18,    19,    20,    21,
+      22,    23,    24,    25,    26,    27,    28,     0,    29,     0,
+       0,    30,     0,     0,    31,    32,    33,    34,    35,    36,
+       0,    37,    38,    39,    40,    41,     0,    42,    43,    44,
+       0,     0,    45,   100,   101,   102,   103,   104,   105,     0,
+       0,     0,    47,     0,     0,     0,     0,   100,   101,   102,
+     103,   104,   105,     0,     0,     0,   100,   101,   102,   103,
+     104,   105,     0,     0,     0,   100,   101,   102,   103,   104,
+     105,     0,     0,     0,   100,   101,   102,   103,   104,   105,
+       0,     0,     0,   106,   107,   108,   109,   110,   111,   112,
+     100,   101,   102,   103,   104,   105,   225,   106,   107,   108,
+     109,   110,   111,   112,     0,   163,   106,   107,   108,   109,
+     110,   111,   112,     0,   167,   106,   107,   108,   109,   110,
+     111,   112,     0,   168,   106,   107,   108,   109,   110,   111,
+     112,     0,   169,   100,   101,   102,   103,   104,   105,     0,
+     106,   107,   108,   109,   110,   111,   112,     0,   170,   100,
+     101,   102,   103,   104,   105,     0,     0,     0,   100,   101,
+     102,   103,   104,   105,     0,     0,     0,   100,   101,   102,
+     103,   104,   105,     0,     0,     0,   100,   101,   102,   103,
+     104,   105,     0,   106,   107,   108,   109,   110,   111,   112,
+       0,   171,   100,   101,   102,   103,   104,   105,     0,   106,
+     107,   108,   109,   110,   111,   112,     0,   172,   106,   107,
+     108,   109,   110,   111,   112,     0,   173,   106,   107,   108,
+     109,   110,   111,   112,     0,   174,   106,   107,   108,   109,
+     110,   111,   112,     0,   175,   100,   101,   102,   103,   104,
+     105,     0,   106,   107,   108,   109,   110,   111,   112,     0,
+     218,   100,   101,   102,   103,   104,   105,     0,     0,     0,
+     100,   101,   102,   103,   104,   105,     0,     0,     0,     0,
+     100,   101,   102,   103,   104,   105,     0,     0,   100,   101,
+     102,   103,   104,   105,     0,   106,   107,   108,   109,   110,
+     111,   112,     0,   219,   100,   101,   102,   103,   104,   105,
+       0,   106,   107,   108,   109,   110,   111,   112,     0,   220,
+     106,   107,   108,   109,   110,   111,   112,     0,   233,   145,
+     106,   107,   108,   109,   110,   111,   112,   160,   106,   107,
+     108,   109,   110,   111,   112,   100,   101,   102,   103,   104,
+     105,     0,     0,   161,   106,   107,   108,   109,   110,   111,
+     112,   100,   101,   102,   103,   104,   105,     0,     0,   100,
+     101,   102,   103,   104,   105,     0,     0,   100,   101,   102,
+     103,   104,   105,     0,     0,   100,   101,   102,   103,   104,
+     105,     0,     0,     0,   162,   106,   107,   108,   109,   110,
+     111,   112,   100,   101,   102,   103,   104,   105,     0,     0,
+     164,   106,   107,   108,   109,   110,   111,   112,   165,   106,
+     107,   108,   109,   110,   111,   112,   166,   106,   107,   108,
+     109,   110,   111,   112,   178,   106,   107,   108,   109,   110,
+     111,   112,   100,   101,   102,   103,   104,   105,     0,     0,
+       0,   194,   106,   107,   108,   109,   110,   111,   112,   100,
+     101,   102,   103,   104,   105,     0,     0,     0,     0,     0,
+     207,   100,   101,   102,   103,   104,   105,     0,     0,   100,
+     101,   102,   103,   104,   105,     0,     0,   208,     0,     0,
+       0,     0,   106,   107,   108,   109,   110,   111,   112,   100,
+     101,   102,   103,   104,   105,     0,     0,     0,     0,   106,
+     107,   108,   109,   110,   111,   112,     0,     0,     0,     0,
+     211,   106,   107,   108,   109,   110,   111,   112,   212,   106,
+     107,   108,   109,   110,   111,   112,   100,   101,   102,   103,
+     104,   105,     0,     0,     0,     0,     0,     0,   213,   106,
+     107,   108,   109,   110,   111,   112,   100,   101,   102,   103,
+     104,   105,     0,     0,   100,   101,   102,   103,   104,   105,
+       0,     0,   100,   101,   102,   103,   104,   105,     0,     0,
+       0,     0,     0,     0,     0,   214,   106,   107,   108,   109,
+     110,   111,   112,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,   215,   106,   107,   108,   109,
+     110,   111,   112,   216,   106,   107,   108,   109,   110,   111,
+     112,   217,   106,   107,   108,   109,   110,   111,   112,   100,
+     101,   102,   103,   104,   105,     0,   100,   101,   102,   103,
+     104,   105,     0,   100,   101,   102,   103,   104,   105,     0,
+       0,     0,     0,     0,     0,   221,   100,   101,   102,   103,
+     104,   105,     0,     0,     0,   230,   100,   101,   102,   103,
+     104,   105,   231,   100,   101,   102,   103,   104,   105,   106,
+     107,   108,   109,   110,   111,   112,   106,   107,   108,   109,
+     110,   111,   112,   106,   107,   108,   109,   110,   111,   112,
+       0,     0,     0,     0,     0,   232,   106,   107,   108,   109,
+     110,   111,   112,     0,     0,   241,   106,   107,   108,   109,
+     110,   111,   112,   106,   107,   108,   109,   110,   111,   112
   };
 
   const short int
   genesyspp_parser::yycheck_[] =
   {
-      40,    41,    50,    39,    51,    52,    53,    54,    55,     5,
-       6,    59,    53,    54,    55,    61,    49,    62,    49,    49,
-      60,    49,    49,    49,    49,    49,    49,    49,    49,    69,
-      70,    71,    72,    73,    74,    75,    76,    77,    78,    79,
-      80,    81,    82,    83,    84,    85,    49,    49,    49,    49,
-      49,    91,    92,    93,    94,    95,    96,    97,    98,    99,
-     100,   101,   102,   103,   104,    49,    19,    20,    21,    22,
-      23,    24,    49,    49,    49,    49,    49,    49,    49,    19,
-      20,    21,    22,    23,    24,    49,    49,     9,     9,     9,
-       9,     9,   132,   133,     8,     8,     8,    58,    51,    52,
-      53,    54,    55,    56,    57,    54,    59,    58,    50,   149,
-      63,    51,    52,    53,    54,    55,    56,    57,    50,    50,
-      50,    50,   162,    63,    50,    50,   166,   167,   168,   169,
-     170,   171,   172,   173,   174,    50,   176,   177,    19,    20,
-      21,    22,    23,    24,    39,   215,    -1,    58,    58,    -1,
-      -1,    -1,    -1,    -1,   194,   195,    -1,    -1,    -1,    -1,
-      -1,    -1,    -1,    -1,   204,   205,   206,   207,    -1,    50,
-      51,    52,    53,    54,    55,    56,    57,   217,   214,   215,
-      -1,    -1,    -1,   223,   224,     0,     1,    -1,     3,     4,
-       5,     6,     7,    -1,    -1,    10,    11,    12,    13,    14,
-      15,    16,    17,    18,    -1,    -1,    19,    20,    21,    22,
-      -1,    26,    27,    28,    29,    30,    31,    32,    33,    34,
-      35,    36,    37,    38,    39,    40,    41,    42,    43,    -1,
-      45,    -1,    -1,    48,    49,    -1,    -1,    52,    51,    52,
-      53,    54,    55,    56,    57,    -1,    61,     0,    -1,    64,
-       3,     4,     5,     6,     7,    -1,    -1,    10,    11,    12,
-      13,    14,    15,    16,    17,    18,    -1,    -1,    -1,    -1,
-      -1,    -1,    -1,    26,    27,    28,    29,    30,    31,    32,
-      33,    34,    35,    36,    37,    38,    39,    40,    41,    42,
-      43,    -1,    45,    -1,    -1,    -1,    49,    -1,    -1,    52,
-      -1,    -1,    -1,    -1,    -1,    -1,    -1,    -1,    61,    -1,
-      -1,    64,     3,     4,     5,     6,     7,    -1,    -1,    10,
-      11,    12,    13,    14,    15,    16,    17,    18,    -1,    -1,
-      -1,    -1,    -1,    -1,    -1,    26,    27,    28,    29,    30,
-      31,    32,    33,    34,    35,    36,    37,    38,    39,    40,
-      41,    42,    43,    -1,    45,    -1,    -1,    -1,    49,    -1,
-      -1,    52,    19,    20,    21,    22,    23,    24,    -1,    -1,
-      -1,    -1,    -1,    64,    19,    20,    21,    22,    23,    24,
-      -1,    -1,    -1,    19,    20,    21,    22,    23,    24,    -1,
-      -1,    -1,    -1,    -1,    51,    52,    53,    54,    55,    56,
-      57,    -1,    59,    -1,    -1,    -1,    51,    52,    53,    54,
-      55,    56,    57,    -1,    59,    51,    52,    53,    54,    55,
-      56,    57,    -1,    59,    19,    20,    21,    22,    23,    24,
-      -1,    -1,    -1,    19,    20,    21,    22,    23,    24,    -1,
-      -1,    -1,    19,    20,    21,    22,    23,    24,    -1,    -1,
-      -1,    -1,    -1,    -1,    -1,    -1,    51,    52,    53,    54,
-      55,    56,    57,    -1,    59,    51,    52,    53,    54,    55,
-      56,    57,    -1,    59,    51,    52,    53,    54,    55,    56,
-      57,    -1,    59,    19,    20,    21,    22,    23,    24,    -1,
-      -1,    -1,    19,    20,    21,    22,    23,    24,    -1,    -1,
-      -1,    19,    20,    21,    22,    23,    24,    -1,    -1,    -1,
-      -1,    -1,    -1,    -1,    -1,    51,    52,    53,    54,    55,
-      56,    57,    -1,    59,    51,    52,    53,    54,    55,    56,
-      57,    -1,    59,    51,    52,    53,    54,    55,    56,    57,
-      -1,    59,    19,    20,    21,    22,    23,    24,    -1,    -1,
-      -1,    19,    20,    21,    22,    23,    24,    -1,    -1,    -1,
-      19,    20,    21,    22,    23,    24,    -1,    -1,    -1,    -1,
-      -1,    -1,    -1,    -1,    51,    52,    53,    54,    55,    56,
-      57,    -1,    59,    51,    52,    53,    54,    55,    56,    57,
-      -1,    59,    51,    52,    53,    54,    55,    56,    57,    -1,
-      59,    19,    20,    21,    22,    23,    24,    -1,    -1,    -1,
-      19,    20,    21,    22,    23,    24,    -1,    -1,    -1,    -1,
-      19,    20,    21,    22,    23,    24,    -1,    -1,    -1,    -1,
-      -1,    -1,    -1,    51,    52,    53,    54,    55,    56,    57,
-      -1,    59,    51,    52,    53,    54,    55,    56,    57,    -1,
-      59,    50,    51,    52,    53,    54,    55,    56,    57,    19,
-      20,    21,    22,    23,    24,    -1,    -1,    19,    20,    21,
-      22,    23,    24,    -1,    -1,    19,    20,    21,    22,    23,
-      24,    -1,    -1,    19,    20,    21,    22,    23,    24,    -1,
-      50,    51,    52,    53,    54,    55,    56,    57,    50,    51,
-      52,    53,    54,    55,    56,    57,    50,    51,    52,    53,
-      54,    55,    56,    57,    50,    51,    52,    53,    54,    55,
-      56,    57,    19,    20,    21,    22,    23,    24,    -1,    -1,
-      19,    20,    21,    22,    23,    24,    -1,    -1,    19,    20,
-      21,    22,    23,    24,    -1,    -1,    -1,    -1,    -1,    -1,
-      -1,    -1,    -1,    50,    51,    52,    53,    54,    55,    56,
-      57,    50,    51,    52,    53,    54,    55,    56,    57,    50,
-      51,    52,    53,    54,    55,    56,    57,    19,    20,    21,
-      22,    23,    24,    -1,    -1,    -1,    -1,    -1,    -1,    19,
-      20,    21,    22,    23,    24,    -1,    -1,    19,    20,    21,
-      22,    23,    24,    -1,    46,    -1,    -1,    -1,    -1,    51,
-      52,    53,    54,    55,    56,    57,    46,    -1,    -1,    -1,
-      -1,    51,    52,    53,    54,    55,    56,    57,    50,    51,
-      52,    53,    54,    55,    56,    57,    19,    20,    21,    22,
-      23,    24,    -1,    -1,    19,    20,    21,    22,    23,    24,
-      -1,    -1,    19,    20,    21,    22,    23,    24,    -1,    -1,
-      19,    20,    21,    22,    23,    24,    -1,    50,    51,    52,
-      53,    54,    55,    56,    57,    50,    51,    52,    53,    54,
-      55,    56,    57,    50,    51,    52,    53,    54,    55,    56,
-      57,    50,    51,    52,    53,    54,    55,    56,    57,    19,
-      20,    21,    22,    23,    24,    -1,    -1,    19,    20,    21,
-      22,    23,    24,    -1,    -1,    -1,    -1,    -1,    -1,    -1,
-      -1,    19,    20,    21,    22,    23,    24,    -1,    -1,    -1,
-      50,    51,    52,    53,    54,    55,    56,    57,    50,    51,
-      52,    53,    54,    55,    56,    57,    44,    19,    20,    21,
-      22,    23,    24,    51,    52,    53,    54,    55,    56,    57,
-      19,    20,    21,    22,    23,    24,    -1,    -1,    19,    20,
-      21,    22,    23,    24,    -1,    47,    -1,    -1,    -1,    51,
-      52,    53,    54,    55,    56,    57,    -1,    -1,    47,    -1,
-      -1,    -1,    51,    52,    53,    54,    55,    56,    57,    50,
-      51,    52,    53,    54,    55,    56,    57,    19,    20,    21,
-      22,    23,    24,    -1,    19,    20,    21,    22,    23,    24,
-      -1,    -1,    -1,    -1,    -1,    -1,    -1,    -1,    -1,    -1,
-      -1,    -1,    -1,    -1,    -1,    -1,    -1,    -1,    50,    51,
-      52,    53,    54,    55,    56,    57,    51,    52,    53,    54,
-      55,    56,    57
+      29,    36,    29,    44,    45,    55,    66,    56,    57,    58,
+      59,    60,    54,    68,    64,    54,    54,    52,    58,    59,
+      60,    54,    54,    54,    54,    66,    67,    68,    69,    70,
+      71,    72,    73,    74,    75,    76,    77,    78,    79,    80,
+      81,    82,     6,     7,     8,     9,    10,    11,    54,    54,
+      54,    54,    54,    54,    54,    96,    54,    54,    99,   100,
+     101,   102,   103,   104,   105,   106,   107,   108,   109,   110,
+     111,   112,    54,    54,    54,    54,    54,    54,    54,    54,
+      54,    54,    54,    54,    54,    38,    38,    38,    38,    38,
+     131,   132,    56,    57,    58,    59,    60,    61,    62,    45,
+      64,    63,    63,    51,    45,    69,    45,    45,    51,    64,
+      55,    55,    59,    55,    36,    55,   231,    -1,     6,     7,
+       8,     9,   163,    55,    55,    55,   167,   168,   169,   170,
+     171,   172,   173,   174,   175,    55,   177,   178,    55,    55,
+      55,    -1,    63,    -1,    63,    -1,    -1,    -1,    -1,    -1,
+      -1,   192,    -1,    -1,    -1,    -1,    -1,    -1,    -1,    -1,
+      -1,   190,    -1,    -1,    -1,    -1,   207,   208,    56,    57,
+      58,    59,    60,    61,    62,    -1,    -1,   218,   219,   220,
+     221,    -1,    -1,    -1,    -1,    -1,    -1,    -1,    -1,    -1,
+      -1,    -1,   233,    -1,    -1,    -1,    -1,    -1,   239,   240,
+      -1,   230,   231,   230,   231,     0,     1,    -1,     3,     4,
+       5,    -1,    -1,    -1,    -1,    -1,    -1,    -1,    13,    14,
+      15,    16,    17,    18,    19,    20,    21,    22,    23,    24,
+      25,    26,    27,    28,    29,    30,    31,    -1,    33,    -1,
+      -1,    36,    37,    -1,    39,    40,    41,    42,    43,    44,
+      -1,    46,    47,    48,    49,    50,    -1,    52,    53,    54,
+       0,    -1,    57,     3,     4,     5,    -1,    -1,    -1,    -1,
+      -1,    66,    67,    13,    14,    15,    16,    17,    18,    19,
+      20,    21,    22,    23,    24,    25,    26,    27,    28,    29,
+      30,    31,    -1,    33,    -1,    -1,    36,    -1,    -1,    39,
+      40,    41,    42,    43,    44,    -1,    46,    47,    48,    49,
+      50,    -1,    52,    53,    54,    -1,    -1,    57,     3,     4,
+       5,    -1,    -1,    -1,    -1,    -1,    66,    67,    13,    14,
+      15,    16,    17,    18,    19,    20,    21,    22,    23,    24,
+      25,    26,    27,    28,    29,    30,    31,    -1,    33,    -1,
+      -1,    36,    -1,    -1,    39,    40,    41,    42,    43,    44,
+      -1,    46,    47,    48,    49,    50,    -1,    52,    53,    54,
+      -1,    -1,    57,     6,     7,     8,     9,    10,    11,    -1,
+      -1,    -1,    67,    -1,    -1,    -1,    -1,     6,     7,     8,
+       9,    10,    11,    -1,    -1,    -1,     6,     7,     8,     9,
+      10,    11,    -1,    -1,    -1,     6,     7,     8,     9,    10,
+      11,    -1,    -1,    -1,     6,     7,     8,     9,    10,    11,
+      -1,    -1,    -1,    56,    57,    58,    59,    60,    61,    62,
+       6,     7,     8,     9,    10,    11,    69,    56,    57,    58,
+      59,    60,    61,    62,    -1,    64,    56,    57,    58,    59,
+      60,    61,    62,    -1,    64,    56,    57,    58,    59,    60,
+      61,    62,    -1,    64,    56,    57,    58,    59,    60,    61,
+      62,    -1,    64,     6,     7,     8,     9,    10,    11,    -1,
+      56,    57,    58,    59,    60,    61,    62,    -1,    64,     6,
+       7,     8,     9,    10,    11,    -1,    -1,    -1,     6,     7,
+       8,     9,    10,    11,    -1,    -1,    -1,     6,     7,     8,
+       9,    10,    11,    -1,    -1,    -1,     6,     7,     8,     9,
+      10,    11,    -1,    56,    57,    58,    59,    60,    61,    62,
+      -1,    64,     6,     7,     8,     9,    10,    11,    -1,    56,
+      57,    58,    59,    60,    61,    62,    -1,    64,    56,    57,
+      58,    59,    60,    61,    62,    -1,    64,    56,    57,    58,
+      59,    60,    61,    62,    -1,    64,    56,    57,    58,    59,
+      60,    61,    62,    -1,    64,     6,     7,     8,     9,    10,
+      11,    -1,    56,    57,    58,    59,    60,    61,    62,    -1,
+      64,     6,     7,     8,     9,    10,    11,    -1,    -1,    -1,
+       6,     7,     8,     9,    10,    11,    -1,    -1,    -1,    -1,
+       6,     7,     8,     9,    10,    11,    -1,    -1,     6,     7,
+       8,     9,    10,    11,    -1,    56,    57,    58,    59,    60,
+      61,    62,    -1,    64,     6,     7,     8,     9,    10,    11,
+      -1,    56,    57,    58,    59,    60,    61,    62,    -1,    64,
+      56,    57,    58,    59,    60,    61,    62,    -1,    64,    55,
+      56,    57,    58,    59,    60,    61,    62,    55,    56,    57,
+      58,    59,    60,    61,    62,     6,     7,     8,     9,    10,
+      11,    -1,    -1,    55,    56,    57,    58,    59,    60,    61,
+      62,     6,     7,     8,     9,    10,    11,    -1,    -1,     6,
+       7,     8,     9,    10,    11,    -1,    -1,     6,     7,     8,
+       9,    10,    11,    -1,    -1,     6,     7,     8,     9,    10,
+      11,    -1,    -1,    -1,    55,    56,    57,    58,    59,    60,
+      61,    62,     6,     7,     8,     9,    10,    11,    -1,    -1,
+      55,    56,    57,    58,    59,    60,    61,    62,    55,    56,
+      57,    58,    59,    60,    61,    62,    55,    56,    57,    58,
+      59,    60,    61,    62,    55,    56,    57,    58,    59,    60,
+      61,    62,     6,     7,     8,     9,    10,    11,    -1,    -1,
+      -1,    55,    56,    57,    58,    59,    60,    61,    62,     6,
+       7,     8,     9,    10,    11,    -1,    -1,    -1,    -1,    -1,
+      34,     6,     7,     8,     9,    10,    11,    -1,    -1,     6,
+       7,     8,     9,    10,    11,    -1,    -1,    34,    -1,    -1,
+      -1,    -1,    56,    57,    58,    59,    60,    61,    62,     6,
+       7,     8,     9,    10,    11,    -1,    -1,    -1,    -1,    56,
+      57,    58,    59,    60,    61,    62,    -1,    -1,    -1,    -1,
+      55,    56,    57,    58,    59,    60,    61,    62,    55,    56,
+      57,    58,    59,    60,    61,    62,     6,     7,     8,     9,
+      10,    11,    -1,    -1,    -1,    -1,    -1,    -1,    55,    56,
+      57,    58,    59,    60,    61,    62,     6,     7,     8,     9,
+      10,    11,    -1,    -1,     6,     7,     8,     9,    10,    11,
+      -1,    -1,     6,     7,     8,     9,    10,    11,    -1,    -1,
+      -1,    -1,    -1,    -1,    -1,    55,    56,    57,    58,    59,
+      60,    61,    62,    -1,    -1,    -1,    -1,    -1,    -1,    -1,
+      -1,    -1,    -1,    -1,    -1,    55,    56,    57,    58,    59,
+      60,    61,    62,    55,    56,    57,    58,    59,    60,    61,
+      62,    55,    56,    57,    58,    59,    60,    61,    62,     6,
+       7,     8,     9,    10,    11,    -1,     6,     7,     8,     9,
+      10,    11,    -1,     6,     7,     8,     9,    10,    11,    -1,
+      -1,    -1,    -1,    -1,    -1,    32,     6,     7,     8,     9,
+      10,    11,    -1,    -1,    -1,    35,     6,     7,     8,     9,
+      10,    11,    35,     6,     7,     8,     9,    10,    11,    56,
+      57,    58,    59,    60,    61,    62,    56,    57,    58,    59,
+      60,    61,    62,    56,    57,    58,    59,    60,    61,    62,
+      -1,    -1,    -1,    -1,    -1,    55,    56,    57,    58,    59,
+      60,    61,    62,    -1,    -1,    55,    56,    57,    58,    59,
+      60,    61,    62,    56,    57,    58,    59,    60,    61,    62
   };
 
   const unsigned char
   genesyspp_parser::yystos_[] =
   {
-       0,     1,    48,    66,    86,    61,     0,     3,     4,     5,
-       6,     7,    10,    11,    12,    13,    14,    15,    16,    17,
-      18,    26,    27,    28,    29,    30,    31,    32,    33,    34,
-      35,    36,    37,    38,    39,    40,    41,    42,    43,    45,
-      49,    52,    61,    64,    67,    68,    69,    70,    71,    72,
-      73,    74,    75,    78,    79,    80,    81,    82,    83,    84,
-      62,    49,    49,    49,    49,    49,    49,    49,    49,    49,
-      49,    49,    49,    49,    49,    49,    49,    49,    49,    49,
-      49,    49,    49,    49,    49,    49,     5,    76,    78,    68,
-      68,    49,    19,    20,    21,    22,    23,    24,    51,    52,
-      53,    54,    55,    56,    57,    68,     9,     9,     9,     9,
-       9,     8,     8,     8,    68,    68,    68,    68,    68,    68,
-      68,    68,    68,    68,    68,    68,    68,    68,    68,    68,
-      85,    68,    58,    58,    50,    68,    68,    68,    68,    68,
-      68,    68,    68,    68,    68,    68,    68,    68,    68,    59,
-      63,    50,    50,    50,    50,    50,    50,    50,    50,    50,
-      50,    50,    59,    50,    50,    50,    59,    59,    59,    59,
-      59,    59,    59,    59,    59,    50,    59,    50,    68,    68,
-      50,    68,    68,    68,    68,    68,    68,    68,    68,    68,
-      68,    68,    68,    68,    46,    46,    63,    50,    50,    50,
-      50,    50,    50,    50,    59,    59,    59,    44,    68,    68,
-      68,    68,    68,    68,    47,    47,    50,    59,    76,    77,
-      78,    77,    68,    58,    58,    50,    68,    68
+       0,     1,    37,    71,    87,    66,     0,     3,     4,     5,
+      13,    14,    15,    16,    17,    18,    19,    20,    21,    22,
+      23,    24,    25,    26,    27,    28,    29,    30,    31,    33,
+      36,    39,    40,    41,    42,    43,    44,    46,    47,    48,
+      49,    50,    52,    53,    54,    57,    66,    67,    72,    73,
+      74,    75,    76,    77,    78,    79,    80,    81,    82,    83,
+      84,    85,    88,    90,    91,    92,    54,    54,    54,    54,
+      54,    54,    54,    54,    54,    54,    54,    54,    54,    54,
+      54,    54,    54,    88,    90,    54,    54,    54,    54,    54,
+      54,    54,    54,    54,    54,    54,    68,    73,    73,    54,
+       6,     7,     8,     9,    10,    11,    56,    57,    58,    59,
+      60,    61,    62,    73,    73,    73,    73,    73,    73,    73,
+      73,    73,    73,    73,    73,    73,    73,    73,    73,    86,
+      73,    63,    63,    38,    38,    38,    38,    38,    51,    45,
+      45,    45,    45,    51,    73,    55,    73,    73,    73,    73,
+      73,    73,    73,    73,    73,    73,    73,    73,    73,    73,
+      55,    55,    55,    64,    55,    55,    55,    64,    64,    64,
+      64,    64,    64,    64,    64,    64,    55,    64,    55,    73,
+      73,    55,    55,    55,    55,    55,    55,    55,    55,    55,
+      64,    55,    64,    69,    55,    73,    73,    73,    73,    73,
+      73,    73,    73,    73,    73,    73,    73,    34,    34,    88,
+      73,    55,    55,    55,    55,    55,    55,    55,    64,    64,
+      64,    32,    73,    73,    55,    69,    73,    73,    73,    73,
+      35,    35,    55,    64,    88,    89,    90,    89,    73,    63,
+      63,    55,    73,    73
   };
 
   const unsigned char
   genesyspp_parser::yyr1_[] =
   {
-       0,    65,    66,    66,    66,    66,    66,    67,    68,    68,
-      68,    68,    68,    68,    68,    68,    68,    69,    69,    70,
-      70,    70,    70,    70,    70,    71,    71,    71,    71,    71,
-      71,    71,    71,    72,    72,    73,    73,    74,    74,    75,
-      75,    75,    75,    75,    76,    77,    77,    78,    78,    78,
-      79,    80,    80,    81,    81,    81,    81,    82,    82,    82,
-      82,    82,    82,    82,    82,    82,    82,    83,    83,    83,
-      83,    83,    83,    83,    83,    83,    83,    84,    85,    85,
-      86
+       0,    70,    71,    71,    71,    71,    71,    72,    73,    73,
+      73,    73,    73,    73,    73,    73,    73,    74,    74,    75,
+      75,    75,    75,    75,    75,    76,    76,    76,    76,    76,
+      76,    76,    76,    77,    77,    78,    78,    79,    79,    80,
+      80,    80,    80,    80,    80,    81,    81,    82,    82,    83,
+      83,    83,    83,    84,    84,    84,    84,    84,    84,    84,
+      84,    84,    84,    85,    86,    86,    87,    88,    89,    89,
+      90,    90,    90,    91,    92,    92,    92,    92,    92,    92,
+      92,    92,    92,    92,    92,    92
   };
 
   const unsigned char
   genesyspp_parser::yyr2_[] =
   {
        0,     2,     0,     2,     2,     1,     2,     1,     1,     1,
-       3,     1,     1,     1,     1,     1,     1,     1,     1,     3,
+       1,     1,     1,     3,     1,     1,     1,     1,     1,     3,
        3,     3,     3,     3,     2,     3,     3,     3,     3,     3,
        3,     3,     3,     1,     1,     7,     5,     8,     8,     1,
-       1,     1,     1,     1,     1,     3,     3,     1,     4,     6,
-       1,     4,     4,     4,     4,     4,     6,     4,     6,     6,
-       6,     6,     6,     6,     8,    10,     4,     4,     4,     4,
-       4,     4,     4,     4,     4,     1,     1,     4,     5,     3,
-       1
+       1,     1,     1,     1,     1,     1,     1,     4,     4,     4,
+       4,     4,     6,     4,     6,     6,     6,     6,     6,     6,
+       8,    10,     4,     4,     5,     3,     1,     1,     3,     3,
+       1,     4,     6,     1,     1,     4,     4,     4,     6,     4,
+       4,     4,     4,     4,     4,     4
   };
 
 
@@ -1817,34 +1870,35 @@ namespace yy {
   const char*
   const genesyspp_parser::yytname_[] =
   {
-  "\"end of file\"", "error", "$undefined", "NUMD", "NUMH", "ATRIB",
-  "VARI", "FORM", "QUEUE", "RES", "fTFIN", "fNR", "fMR", "fIRF",
-  "fRESSEIZES", "fSTATE", "fNQ", "fFIRSTINQ", "fLASTINQ", "oLE", "oGE",
-  "oEQ", "oNE", "oAND", "oOR", "oNOT", "fSIN", "fCOS", "fAINT", "fMOD",
-  "fINT", "fFRAC", "fEXPO", "fNORM", "fUNIF", "fWEIB", "fLOGN", "fGAMM",
-  "fERLA", "fTRIA", "fBETA", "fDISC", "fTNOW", "cIF", "cELSE", "cFOR",
-  "cTO", "cDO", "ILLEGAL", "\"(\"", "\")\"", "\"+\"", "\"-\"", "\"*\"",
-  "\"^\"", "\"/\"", "\"<\"", "\">\"", "\"=\"", "\",\"", "NEG", "'\\n'",
-  "\"[\"", "\"]\"", "\"USER\"", "$accept", "input", "programa",
-  "expressao", "numero", "aritmetica", "relacional", "comando",
-  "comandoIF", "comandoFOR", "funcao", "atributo", "atribuicao",
-  "variavel", "formula", "funcaoTrig", "funcaoArit", "funcaoProb",
-  "funcaoStrc", "funcaoUser", "listaparm", "illegal", YY_NULLPTR
+  "\"end of file\"", "error", "$undefined", "NUMD", "NUMH", "CTEZERO",
+  "oLE", "oGE", "oEQ", "oNE", "oAND", "oOR", "oNOT", "fSIN", "fCOS",
+  "fAINT", "fMOD", "fINT", "fFRAC", "fEXPO", "fNORM", "fUNIF", "fWEIB",
+  "fLOGN", "fGAMM", "fERLA", "fTRIA", "fBETA", "fDISC", "fTNOW", "fTFIN",
+  "cIF", "cELSE", "cFOR", "cTO", "cDO", "ATRIB", "ILLEGAL", "RESOURCE",
+  "fNR", "fMR", "fIRF", "fRESSEIZES", "fSTATE", "fSETSUM", "QUEUE", "fNQ",
+  "fFIRSTINQ", "fLASTINQ", "fSAQUE", "fNUMSET", "SET", "VARI", "FORM",
+  "\"(\"", "\")\"", "\"+\"", "\"-\"", "\"*\"", "\"^\"", "\"/\"", "\"<\"",
+  "\">\"", "\"=\"", "\",\"", "NEG", "'\\n'", "\"USER\"", "\"[\"", "\"]\"",
+  "$accept", "input", "programa", "expressao", "numero", "aritmetica",
+  "relacional", "comando", "comandoIF", "comandoFOR", "funcao",
+  "funcaoKernel", "funcaoTrig", "funcaoArit", "funcaoProb", "funcaoUser",
+  "listaparm", "illegal", "atributo", "atribuicao", "variavel", "formula",
+  "funcaoPlugin", YY_NULLPTR
   };
 
 #if YYDEBUG
   const unsigned short int
   genesyspp_parser::yyrline_[] =
   {
-       0,   141,   141,   142,   143,   144,   145,   148,   151,   152,
-     153,   154,   155,   156,   157,   158,   159,   162,   163,   166,
-     167,   168,   169,   170,   171,   174,   175,   176,   177,   178,
-     179,   180,   181,   184,   185,   188,   189,   192,   193,   196,
-     197,   198,   199,   200,   205,   209,   210,   213,   214,   215,
-     219,   222,   223,   226,   227,   228,   229,   232,   233,   234,
-     235,   236,   237,   238,   239,   240,   241,   244,   245,   246,
-     253,   254,   255,   256,   274,   275,   276,   280,   284,   285,
-     288
+       0,   186,   186,   187,   188,   189,   190,   193,   196,   197,
+     198,   199,   200,   201,   202,   204,   206,   209,   210,   213,
+     214,   215,   216,   217,   218,   221,   222,   223,   224,   225,
+     226,   227,   228,   231,   232,   235,   236,   239,   240,   243,
+     244,   245,   246,   247,   248,   251,   252,   255,   256,   259,
+     260,   261,   262,   265,   266,   267,   268,   269,   270,   271,
+     272,   273,   274,   279,   283,   284,   287,   306,   310,   311,
+     314,   315,   316,   320,   324,   329,   330,   331,   338,   345,
+     346,   347,   348,   351,   352,   369
   };
 
   // Print the state stack on the debug stream.
@@ -1879,8 +1933,8 @@ namespace yy {
 
 
 } // yy
-#line 1883 "../GenesysParser.cpp" // lalr1.cc:1167
-#line 306 "bisonparser.yy" // lalr1.cc:1168
+#line 1937 "../GenesysParser.cpp" // lalr1.cc:1167
+#line 379 "bisonparser.yy" // lalr1.cc:1168
 
 void
 yy::genesyspp_parser::error (const location_type& l,

@@ -36,7 +36,8 @@
 #include "Attribute.h"
 #include "Variable.h"
 #include "ProbDistrib.h"
-#include "Group.h"
+#include "EntityGroup.h"
+#include "Set.h"
 #include "Formula.h"
 #include "ODE.h"
 

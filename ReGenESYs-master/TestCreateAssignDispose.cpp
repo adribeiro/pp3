@@ -36,7 +36,8 @@
 #include "Attribute.h"
 #include "Variable.h"
 #include "ProbDistrib.h"
-#include "Group.h"
+#include "EntityGroup.h"
+#include "Set.h"
 #include "Formula.h"
 #include "ODE.h"
 
@@ -98,13 +99,13 @@ int TestCreateAssignDispose::main(int argc, char** argv) {
     Attribute* attribute3 = new Attribute("collector");
     Attribute* attribute4 = new Attribute("tempo_caixa");
     Attribute* attribute5 = new Attribute("tipo");
-//    Attribute* attribute6 = new Attribute("nrProdutos");
+    Attribute* attribute6 = new Attribute("nrProdutos");
     elements->insert(Util::TypeOf<Attribute>(), attribute1);
     elements->insert(Util::TypeOf<Attribute>(), attribute2);
     elements->insert(Util::TypeOf<Attribute>(), attribute3);
     elements->insert(Util::TypeOf<Attribute>(), attribute4);
     elements->insert(Util::TypeOf<Attribute>(), attribute5);
-//    elements->insert(Util::TypeOf<Attribute>(), attribute6);
+    elements->insert(Util::TypeOf<Attribute>(), attribute6);
     
     Assign* define_tipo_cliente = new Assign(model);
     Assign::Assignment* qtd_fila_1 = new Assign::Assignment(Assign::DestinationType::Variable, "qtd_fila_1", "0");
@@ -117,7 +118,7 @@ int TestCreateAssignDispose::main(int argc, char** argv) {
     Assign::Assignment* collector = new Assign::Assignment(Assign::DestinationType::Attribute, "collector", "0");
     Assign::Assignment* tipo = new Assign::Assignment(Assign::DestinationType::Attribute, "tipo", "DISC(0.3,0,1,1)");
     Assign::Assignment* tempo_caixa = new Assign::Assignment(Assign::DestinationType::Attribute, "tempo_caixa", "TNOW");
-//    Assign::Assignment* nrProdutos = new Assign::Assignment(Assign::DestinationType::Attribute, "nrProdutos", "ANINT(DISC(0.45,UNIF(1,8),0.9,UNIF(9,12),1,UNIF(13,20)))");
+    Assign::Assignment* nrProdutos = new Assign::Assignment(Assign::DestinationType::Attribute, "nrProdutos", "AINT(DISC(0.45,UNIF(1,8),0.9,UNIF(9,12),1,UNIF(13,20)))");
     define_tipo_cliente->getAssignments()->insert(qtd_fila_1);
     define_tipo_cliente->getAssignments()->insert(qtd_fila_2);
     define_tipo_cliente->getAssignments()->insert(qtd_fila_3);
@@ -128,7 +129,7 @@ int TestCreateAssignDispose::main(int argc, char** argv) {
     define_tipo_cliente->getAssignments()->insert(collector);
     define_tipo_cliente->getAssignments()->insert(tipo);
     define_tipo_cliente->getAssignments()->insert(tempo_caixa);
-//    define_tipo_cliente->getAssignments()->insert(nrProdutos);
+    define_tipo_cliente->getAssignments()->insert(nrProdutos);
     components->insert(define_tipo_cliente);
     
     
