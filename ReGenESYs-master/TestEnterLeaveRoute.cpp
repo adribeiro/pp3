@@ -55,7 +55,7 @@ int TestEnterLeaveRoute::main(int argc, char** argv) {
     // set general info about the model
     ModelInfo* infos = model->getInfos();
     infos->setReplicationLength(30);
-    infos->setNumberOfReplications(1);
+    infos->setNumberOfReplications(3);
     // create a (Source)ModelElement of type EntityType, used by a ModelComponent that follows
     EntityType* entityType1 = new EntityType(elements, "AnyEntityType");
     elements->insert(Util::TypeOf<EntityType>(), entityType1);

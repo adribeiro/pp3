@@ -42,7 +42,7 @@
 #include "GenesysConsole.h"
 #include "TestEnterLeaveRoute.h"
 #include "TestSimulationControlAndSimulationResponse.h"
-#include "Pp3Model.h"
+
 //  Default implementations
 //statistics
 #include "CollectorDefaultImpl1.h"
@@ -77,7 +77,7 @@ template <> struct Traits<GenesysApplication_if> {
     //typedef FullSimulationOfComplexModel Application;
     //typedef FirstExampleOfSimulation Application;
     //typedef SecondExampleOfSimulation Application;
-    typedef Pp3Model Application;
+    typedef FourthExampleOfSimulation Application;
     //typedef TestSimulationControlAndSimulationResponse Application;
 };
 

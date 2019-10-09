@@ -335,10 +335,6 @@
         <itemPath>ThirdExampleOfSimulation.cpp</itemPath>
         <itemPath>ThirdExampleOfSimultion.h</itemPath>
       </logicalFolder>
-      <logicalFolder name="f4" displayName="PP3" projectFiles="true">
-        <itemPath>Pp3Model.cpp</itemPath>
-        <itemPath>Pp3Model.h</itemPath>
-      </logicalFolder>
       <logicalFolder name="f1" displayName="Tests" projectFiles="true">
         <logicalFolder name="f1" displayName="Oldies" projectFiles="true">
           <itemPath>BuildSimulationModel03.cpp</itemPath>
@@ -351,12 +347,10 @@
         <logicalFolder name="f2"
                        displayName="TestSpecificComponents"
                        projectFiles="true">
-          <itemPath>TestCreateAssignDispose.cpp</itemPath>
-          <itemPath>TestCreateAssignDispose.h</itemPath>
-          <itemPath>TestCreateDecideDispose.cpp</itemPath>
-          <itemPath>TestCreateDecideDispose.h</itemPath>
           <itemPath>TestEnterLeaveRoute.cpp</itemPath>
           <itemPath>TestEnterLeaveRoute.h</itemPath>
+          <itemPath>TestODE.cpp</itemPath>
+          <itemPath>TestODE.h</itemPath>
           <itemPath>TestParser.cpp</itemPath>
           <itemPath>TestParser.h</itemPath>
           <itemPath>TestSimulationControlAndSimulationResponse.cpp</itemPath>
@@ -728,10 +722,6 @@
       </item>
       <item path="PluginManager.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="Pp3Model.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Pp3Model.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="ProbDistrib.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="ProbDistrib.h" ex="false" tool="3" flavor2="0">
@@ -888,14 +878,6 @@
       </item>
       <item path="Submodel.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="TestCreateAssignDispose.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="TestCreateAssignDispose.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="TestCreateDecideDispose.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="TestCreateDecideDispose.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="TestEnterLeaveRoute.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="TestEnterLeaveRoute.h" ex="false" tool="3" flavor2="0">
@@ -903,6 +885,10 @@
       <item path="TestInputAnalyserTools.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="TestInputAnalyserTools.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TestODE.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TestODE.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="TestParser.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -1338,10 +1324,6 @@
       </item>
       <item path="PluginManager.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="Pp3Model.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Pp3Model.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="ProbDistrib.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="ProbDistrib.h" ex="false" tool="3" flavor2="0">
@@ -1498,14 +1480,6 @@
       </item>
       <item path="Submodel.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="TestCreateAssignDispose.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="TestCreateAssignDispose.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="TestCreateDecideDispose.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="TestCreateDecideDispose.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="TestEnterLeaveRoute.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="TestEnterLeaveRoute.h" ex="false" tool="3" flavor2="0">
@@ -1513,6 +1487,10 @@
       <item path="TestInputAnalyserTools.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="TestInputAnalyserTools.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TestODE.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TestODE.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="TestParser.cpp" ex="false" tool="1" flavor2="0">
       </item>

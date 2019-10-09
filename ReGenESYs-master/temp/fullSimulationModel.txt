@@ -1,168 +1,38 @@
 # Genesys simulation model 
-# Last saved on Fri Sep 27 23:19:17 2019
+# Last saved on Wed Sep 11 21:25:56 2019
 # simulator infos
 name=ReGenESyS - Reborn Generic and Expansible System Simulator; typename=SimulatorInfo; version=190909; 
 
 # model infos
-analystName=; description=./models/model01_CreDelDis.txt; name=Model 1; numberOfReplications=1; projectTitle=; replicationLength=4000.000000; replicationLengthTimeUnit=5; terminatingCondition=; typename=ModelInfo; version=1.0; warmUpTime=0.000000; warmUpTimeTimeUnit=5; 
+analystName=Your name; description=This simulation model tests the components and elements that have been implemented so far.; name=Model 1; numberOfReplications=30; projectTitle=The title of the project; replicationLength=1000.000000; replicationLengthTimeUnit=6; terminatingCondition=; typename=ModelInfo; version=1.0; warmUpTime=0.000000; warmUpTimeTimeUnit=5; 
 
 # model elements
-attributeName=; id=49; name=fila1_rapido; orderRule=1; typename=Queue; 
+attributeName=; id=12; name=Queue 1; orderRule=1; typename=Queue; 
 
-attributeName=; id=52; name=fila2_rapido; orderRule=1; typename=Queue; 
+capacity=1; costBusyHour=1.000000; costIdleHour=1.000000; costPerUse=1.000000; id=8; name=Máquina 1; typename=Resource; 
 
-attributeName=; id=55; name=fila3_rapido; orderRule=1; typename=Queue; 
+id=1; initialNVACost=0.000000; initialOtherCost=0.000000; initialPicture=report; initialVACost=0.000000; initialWaitingCost=0.000000; name=Representative_EntityType; typename=EntityType; 
 
-attributeName=; id=58; name=fila4_rapido; orderRule=1; typename=Queue; 
+id=22; name=Entity.ArrivalTime; typename=Attribute; 
 
-attributeName=; id=61; name=fila1_idoso; orderRule=1; typename=Queue; 
+id=23; name=Entity.WaitTime; typename=Attribute; 
 
-attributeName=; id=64; name=fila2_idoso; orderRule=1; typename=Queue; 
+id=4; name=Attribute_1; typename=Attribute; 
 
-attributeName=; id=67; name=fila1_jovem; orderRule=1; typename=Queue; 
-
-attributeName=; id=70; name=fila2_jovem; orderRule=1; typename=Queue; 
-
-capacity=1; costBusyHour=1.000000; costIdleHour=1.000000; costPerUse=1.000000; id=13; name=caixa1_idoso; typename=Resource; 
-
-capacity=1; costBusyHour=1.000000; costIdleHour=1.000000; costPerUse=1.000000; id=17; name=caixa2_idoso; typename=Resource; 
-
-capacity=1; costBusyHour=1.000000; costIdleHour=1.000000; costPerUse=1.000000; id=22; name=caixa1_jovem; typename=Resource; 
-
-capacity=1; costBusyHour=1.000000; costIdleHour=1.000000; costPerUse=1.000000; id=26; name=caixa2_jovem; typename=Resource; 
-
-capacity=1; costBusyHour=1.000000; costIdleHour=1.000000; costPerUse=1.000000; id=31; name=caixa1_rapido; typename=Resource; 
-
-capacity=1; costBusyHour=1.000000; costIdleHour=1.000000; costPerUse=1.000000; id=35; name=caixa2_rapido; typename=Resource; 
-
-capacity=1; costBusyHour=1.000000; costIdleHour=1.000000; costPerUse=1.000000; id=39; name=caixa3_rapido; typename=Resource; 
-
-capacity=1; costBusyHour=1.000000; costIdleHour=1.000000; costPerUse=1.000000; id=43; name=caixa4_rapido; typename=Resource; 
-
-id=10; name=qtd_fila_2; numCols=1; numRows=1; numValues=0; typename=Variable; 
-
-id=11; name=est_qtd_fila1; numCols=1; numRows=1; numValues=0; typename=Variable; 
-
-id=12; name=est_qtd_fila2; numCols=1; numRows=1; numValues=0; typename=Variable; 
-
-id=134; name=Entity.TransferTime; typename=Attribute; 
-
-id=135; name=Entity.Station; typename=Attribute; 
-
-id=137; name=Entity.ArrivalTime; typename=Attribute; 
-
-id=138; name=Entity.WaitTime; typename=Attribute; 
-
-id=141; name=Entity.ArrivalAtidoso; typename=Attribute; 
-
-id=143; name=Entity.ArrivalAtjovem; typename=Attribute; 
-
-id=144; name=Entity.ArrivalAtrapido; typename=Attribute; 
-
-id=1; name=embalar; typename=Attribute; 
-
-id=21; name=caixas_idoso; typename=Set; 
-
-id=2; name=pagar; typename=Attribute; 
-
-id=30; name=caixas_jovem; typename=Set; 
-
-id=3; name=collector; typename=Attribute; 
-
-id=47; name=caixas_nao_idoso; typename=Set; 
-
-id=48; name=caixas_rapido; typename=Set; 
-
-id=4; name=tipo; typename=Attribute; 
-
-id=5; name=nrProdutos; typename=Attribute; 
-
-id=6; name=caixa_selecionado; typename=Attribute; 
-
-id=7; name=tempo_caixa_idosos; typename=Attribute; 
-
-id=81; name=idoso; typename=Station; 
-
-id=84; name=jovem; typename=Station; 
-
-id=87; name=rapido; typename=Station; 
-
-id=8; name=tempo_caixa; typename=Attribute; 
-
-id=97; initialNVACost=0.000000; initialOtherCost=0.000000; initialPicture=report; initialVACost=0.000000; initialWaitingCost=0.000000; name=cliente; typename=EntityType; 
-
-id=9; name=qtd_fila_1; numCols=1; numRows=1; numValues=0; typename=Variable; 
+id=5; name=Variable_1; numCols=1; numRows=1; numValues=0; typename=Variable; 
 
 # model components
-allocationType=0; id=73; name=Seize 1; nextId0=113; nextSize=1; priority==0; quantity=1; queueId=49; queueName=fila1_rapido; resourceId=31; resourceName=caixa1_rapido; resourceType=2; rule=4; saveAttribute=; typename=Seize; 
+allocationType=0; id=15; name=Seize 1; nextId0=16; nextSize=1; priority==0; quantity=1; queueId=12; queueName=Queue 1; resourceId=8; resourceName=Máquina 1; resourceType=2; rule=4; saveAttribute=; typename=Seize; 
 
-allocationType=0; id=74; name=Seize 2; nextId0=114; nextSize=1; priority==0; quantity=1; queueId=52; queueName=fila2_rapido; resourceId=35; resourceName=caixa2_rapido; resourceType=2; rule=4; saveAttribute=; typename=Seize; 
+assignments=2; destination0=Variable_1; destinationType0=1; expression0=Variable_1 + 1; id=6; name=Assign 1; nextId0=7; nextSize=1; typename=Assign; 
 
-allocationType=0; id=75; name=Seize 3; nextId0=115; nextSize=1; priority==0; quantity=1; queueId=55; queueName=fila3_rapido; resourceId=39; resourceName=caixa3_rapido; resourceType=2; rule=4; saveAttribute=; typename=Seize; 
+delayExpression=NORM(5,1.5); delayExpressionTimeUnit=6; id=16; name=Delay 1; nextId0=17; nextSize=1; typename=Delay; 
 
-allocationType=0; id=76; name=Seize 4; nextId0=116; nextSize=1; priority==0; quantity=1; queueId=58; queueName=fila4_rapido; resourceId=43; resourceName=caixa4_rapido; resourceType=2; rule=4; saveAttribute=; typename=Seize; 
+entitiesPerCreation=1; entityTypename=Representative_EntityType; firstCreation=0.000000; id=2; maxCreations=4294967295; name=Create 1; nextId0=6; nextSize=1; timeBetweenCreations=EXPO(5); timeBetweenCreationsTimeUnit=6; typename=Create; 
 
-allocationType=0; id=77; name=Seize 5; nextId0=132; nextSize=1; priority==0; quantity=1; queueId=61; queueName=fila1_idoso; resourceId=13; resourceName=caixa1_idoso; resourceType=2; rule=4; saveAttribute=; typename=Seize; 
+expression0=TNOW - Entity.ArrivalTime; expressionName0=Tempo total no sistema; fileName0=./temp/TotalTimeInSystem.txt; id=18; name=Record 1; nextId0=20; nextSize=1; typename=Record; 
 
-allocationType=0; id=78; name=Seize 6; nextId0=132; nextSize=1; priority==0; quantity=1; queueId=64; queueName=fila2_idoso; resourceId=17; resourceName=caixa2_idoso; resourceType=2; rule=4; saveAttribute=; typename=Seize; 
+id=17; name=Release 1; nextId0=18; nextSize=1; priority=0; quantity=1; resourceId=8; resourceName=Máquina 1; resourceType=2; rule=4; saveAttribute=; typename=Release; 
 
-allocationType=0; id=79; name=Seize 7; nextId0=128; nextSize=1; priority==0; quantity=1; queueId=67; queueName=fila1_jovem; resourceId=22; resourceName=caixa1_jovem; resourceType=2; rule=4; saveAttribute=; typename=Seize; 
-
-allocationType=0; id=80; name=Seize 8; nextId0=129; nextSize=1; priority==0; quantity=1; queueId=70; queueName=fila2_jovem; resourceId=26; resourceName=caixa2_jovem; resourceType=2; rule=4; saveAttribute=; typename=Seize; 
-
-assignments=1; destination0=caixa_selecionado; destinationType0=0; expression0=1; id=110; name=Assign 6; nextId0=77; nextSize=1; typename=Assign; 
-
-assignments=1; destination0=caixa_selecionado; destinationType0=0; expression0=2; id=111; name=Assign 7; nextId0=78; nextSize=1; typename=Assign; 
-
-assignments=1; destination0=caixa_selecionado; destinationType0=0; expression0=5; id=113; name=Assign 8; nextId0=130; nextSize=1; typename=Assign; 
-
-assignments=1; destination0=caixa_selecionado; destinationType0=0; expression0=6; id=114; name=Assign 9; nextId0=130; nextSize=1; typename=Assign; 
-
-assignments=1; destination0=caixa_selecionado; destinationType0=0; expression0=7; id=115; name=Assign 10; nextId0=130; nextSize=1; typename=Assign; 
-
-assignments=1; destination0=caixa_selecionado; destinationType0=0; expression0=8; id=116; name=Assign 11; nextId0=130; nextSize=1; typename=Assign; 
-
-assignments=1; destination0=nrProdutos; destinationType0=0; expression0=AINT(UNIF(1,8)); id=104; name=Assign 2; nextId0=107; nextSize=1; typename=Assign; 
-
-assignments=1; destination0=nrProdutos; destinationType0=0; expression0=AINT(UNIF(13,20)); id=106; name=Assign 4; nextId0=107; nextSize=1; typename=Assign; 
-
-assignments=1; destination0=nrProdutos; destinationType0=0; expression0=AINT(UNIF(9,12)); id=105; name=Assign 3; nextId0=107; nextSize=1; typename=Assign; 
-
-assignments=1; destination0=qtd_fila_1; destinationType0=1; expression0=qtd_fila_1 - nrProdutos; id=128; name=Assign 15; nextId0=132; nextSize=1; typename=Assign; 
-
-assignments=1; destination0=qtd_fila_1; destinationType0=1; expression0=qtd_fila_1 - nrProdutos; id=129; name=Assign 16; nextId0=132; nextSize=1; typename=Assign; 
-
-assignments=2; destination0=caixa_selecionado; destinationType0=0; expression0=3; id=126; name=Assign 13; nextId0=79; nextSize=1; typename=Assign; 
-
-assignments=2; destination0=caixa_selecionado; destinationType0=0; expression0=4; id=127; name=Assign 14; nextId0=80; nextSize=1; typename=Assign; 
-
-assignments=2; destination0=est_qtd_fila1; destinationType0=1; expression0=UNIF(qtd_fila_1*0.7,qtd_fila_1*1.3); id=124; name=Assign 12; nextId0=125; nextSize=1; typename=Assign; 
-
-assignments=2; destination0=tempo_caixa_idosos; destinationType0=0; expression0=TNOW; id=108; name=Assign 5; nextId0=93; nextSize=1; typename=Assign; 
-
-assignments=6; destination0=embalar; destinationType0=0; expression0=8; id=102; name=Assign 1; nextId0=103; nextSize=1; typename=Assign; 
-
-delayExpression=NORM(30,50); delayExpressionTimeUnit=5; id=101; name=Delay 1; nextId0=102; nextSize=1; typename=Delay; 
-
-entitiesPerCreation=1; entityTypename=cliente; firstCreation=0.000000; id=98; maxCreations=4294967295; name=Create 1; nextId0=100; nextSize=1; timeBetweenCreations=50; timeBetweenCreationsTimeUnit=5; typename=Create; 
-
-id=121; name=Route 5; nextSize=0; routeDestinationType=0; routeTimeExpression=0; routeTimeTimeUnit=5; stationId=81; stationName=idoso; typename=Route; 
-
-id=130; name=Dispose 1; nextSize=0; typename=Dispose; 
-
-id=132; name=Dispose 2; nextSize=0; typename=Dispose; 
-
-id=90; name=Enter 1; nextId0=109; nextSize=1; stationName=idoso; typename=Enter; 
-
-id=91; name=Enter 2; nextId0=117; nextSize=1; stationName=jovem; typename=Enter; 
-
-id=92; name=Enter 3; nextId0=112; nextSize=1; stationName=rapido; typename=Enter; 
-
-id=93; name=Route 1; nextSize=0; routeDestinationType=0; routeTimeExpression=0; routeTimeTimeUnit=5; stationId=81; stationName=idoso; typename=Route; 
-
-id=94; name=Route 2; nextSize=0; routeDestinationType=0; routeTimeExpression=0; routeTimeTimeUnit=5; stationId=84; stationName=jovem; typename=Route; 
-
-id=95; name=Route 3; nextSize=0; routeDestinationType=0; routeTimeExpression=0; routeTimeTimeUnit=5; stationId=84; stationName=jovem; typename=Route; 
-
-id=96; name=Route 4; nextSize=0; routeDestinationType=0; routeTimeExpression=UNIF(2,5); routeTimeTimeUnit=5; stationId=87; stationName=rapido; typename=Route; 
+id=20; name=Dispose 1; nextSize=0; typename=Dispose; 
 
