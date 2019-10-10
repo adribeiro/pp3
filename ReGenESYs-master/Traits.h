@@ -42,6 +42,9 @@
 #include "GenesysConsole.h"
 #include "TestEnterLeaveRoute.h"
 #include "TestSimulationControlAndSimulationResponse.h"
+#include "TestCreateSeparateDispose.h"
+#include "Pp3Model.h"
+#include "Pp3Model2.h"
 
 //  Default implementations
 //statistics
@@ -77,8 +80,9 @@ template <> struct Traits<GenesysApplication_if> {
     //typedef FullSimulationOfComplexModel Application;
     //typedef FirstExampleOfSimulation Application;
     //typedef SecondExampleOfSimulation Application;
-    typedef FourthExampleOfSimulation Application;
+//    typedef FourthExampleOfSimulation Application;
     //typedef TestSimulationControlAndSimulationResponse Application;
+    typedef TestCreateSeparateDispose Application;
 };
 
 

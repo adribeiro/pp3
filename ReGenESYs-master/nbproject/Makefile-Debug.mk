@@ -106,6 +106,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/PluginConnectorDummyImpl1.o \
 	${OBJECTDIR}/PluginInformation.o \
 	${OBJECTDIR}/PluginManager.o \
+	${OBJECTDIR}/Pp3Model.o \
+	${OBJECTDIR}/Pp3Model2.o \
 	${OBJECTDIR}/ProbDistrib.o \
 	${OBJECTDIR}/ProcessAnalyserDefaultImpl1.o \
 	${OBJECTDIR}/Queue.o \
@@ -142,6 +144,9 @@ OBJECTFILES= \
 	${OBJECTDIR}/Storage.o \
 	${OBJECTDIR}/Store.o \
 	${OBJECTDIR}/Submodel.o \
+	${OBJECTDIR}/TestCreateAssignDispose.o \
+	${OBJECTDIR}/TestCreateDecideDispose.o \
+	${OBJECTDIR}/TestCreateSeparateDispose.o \
 	${OBJECTDIR}/TestEnterLeaveRoute.o \
 	${OBJECTDIR}/TestInputAnalyserTools.o \
 	${OBJECTDIR}/TestODE.o \
@@ -181,11 +186,11 @@ LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/rebornedgenesys
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/regenesys-master
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/rebornedgenesys: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/regenesys-master: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/rebornedgenesys ${OBJECTFILES} ${LDLIBSOPTIONS}
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/regenesys-master ${OBJECTFILES} ${LDLIBSOPTIONS}
 
 ${OBJECTDIR}/Access.o: Access.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}
@@ -542,6 +547,16 @@ ${OBJECTDIR}/PluginManager.o: PluginManager.cpp nbproject/Makefile-${CND_CONF}.m
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/PluginManager.o PluginManager.cpp
 
+${OBJECTDIR}/Pp3Model.o: Pp3Model.cpp nbproject/Makefile-${CND_CONF}.mk
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Pp3Model.o Pp3Model.cpp
+
+${OBJECTDIR}/Pp3Model2.o: Pp3Model2.cpp nbproject/Makefile-${CND_CONF}.mk
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Pp3Model2.o Pp3Model2.cpp
+
 ${OBJECTDIR}/ProbDistrib.o: ProbDistrib.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
@@ -721,6 +736,21 @@ ${OBJECTDIR}/Submodel.o: Submodel.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Submodel.o Submodel.cpp
+
+${OBJECTDIR}/TestCreateAssignDispose.o: TestCreateAssignDispose.cpp nbproject/Makefile-${CND_CONF}.mk
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TestCreateAssignDispose.o TestCreateAssignDispose.cpp
+
+${OBJECTDIR}/TestCreateDecideDispose.o: TestCreateDecideDispose.cpp nbproject/Makefile-${CND_CONF}.mk
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TestCreateDecideDispose.o TestCreateDecideDispose.cpp
+
+${OBJECTDIR}/TestCreateSeparateDispose.o: TestCreateSeparateDispose.cpp nbproject/Makefile-${CND_CONF}.mk
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TestCreateSeparateDispose.o TestCreateSeparateDispose.cpp
 
 ${OBJECTDIR}/TestEnterLeaveRoute.o: TestEnterLeaveRoute.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}
