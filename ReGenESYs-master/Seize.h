@@ -83,6 +83,8 @@ public: // get & set
     std::string getQueueName() const;
     void setResource(Resource* resource);
     Resource* getResource() const;
+    void setSet(Set* set);
+    void setQueues(List<Queue*>* queues);
     void setQueue(Queue* queue);
     Queue* getQueue() const;
 protected:
@@ -105,7 +107,8 @@ private:
 private: // not gets or sets
     Queue* _queue; // usually has a queue, but not always (it could be a hold) /* Todo: Evaluate if is better to associate queue to seize or to the resource */
     Resource* _resource; // usually has a resource, but not always (it could be a set)
-    //Set* _set;
+    Set* _set;
+    List<Queue*>* _queues;
     unsigned int _lastMemberSeized = 0;
 };
 

@@ -1,5 +1,5 @@
 # Genesys simulation model 
-# Last saved on Thu Oct 10 18:07:46 2019
+# Last saved on Fri Oct 18 10:30:06 2019
 # simulator infos
 name=ReGenESyS - Reborn Generic and Expansible System Simulator; typename=SimulatorInfo; version=190909; 
 

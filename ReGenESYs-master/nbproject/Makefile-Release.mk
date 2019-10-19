@@ -153,6 +153,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/TestParser.o \
 	${OBJECTDIR}/TestSimulationControlAndSimulationResponse.o \
 	${OBJECTDIR}/TestStatistics.o \
+	${OBJECTDIR}/TesteCreateSeparateBatchDispose.o \
 	${OBJECTDIR}/ThirdExampleOfSimulation.o \
 	${OBJECTDIR}/ToolManager.o \
 	${OBJECTDIR}/TraceManager.o \
@@ -781,6 +782,11 @@ ${OBJECTDIR}/TestStatistics.o: TestStatistics.cpp nbproject/Makefile-${CND_CONF}
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TestStatistics.o TestStatistics.cpp
+
+${OBJECTDIR}/TesteCreateSeparateBatchDispose.o: TesteCreateSeparateBatchDispose.cpp nbproject/Makefile-${CND_CONF}.mk
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TesteCreateSeparateBatchDispose.o TesteCreateSeparateBatchDispose.cpp
 
 ${OBJECTDIR}/ThirdExampleOfSimulation.o: ThirdExampleOfSimulation.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}

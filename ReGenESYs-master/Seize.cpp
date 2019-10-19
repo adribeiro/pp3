@@ -14,6 +14,7 @@
 #include "Seize.h"
 #include "Resource.h"
 #include "Attribute.h"
+#include "Set.h"
 
 Seize::Seize(Model* model) : ModelComponent(model, Util::TypeOf<Seize>()) {
 }
@@ -132,6 +133,17 @@ void Seize::setResource(Resource* resource) {
 
 Resource* Seize::getResource() const {
     return _resource;
+}
+
+void Seize::setSet(Set* set){
+    this->_set= set;
+    List<Resource*>* resources = _set->getElementSet();
+    for(int i = 0; i< resources->size();i++){
+        resources->getAtRank(i)->addResourceEventHandler(Resource::SetResourceEventHandler<Seize>(&Seize::_handlerForResourceEvent, this));
+    }
+}
+void Seize::setQueues(List<Queue*>* queues){
+    _queues = queues;
 }
 
 void Seize::setQueue(Queue* queue) {

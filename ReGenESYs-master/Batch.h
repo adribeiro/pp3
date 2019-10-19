@@ -29,6 +29,13 @@ public:  // virtual
 public:  // static
     static PluginInformation* GetPluginInformation();
     static ModelComponent* LoadInstance(Model* model, std::map<std::string, std::string>* fields);
+    
+    void setBatchSize(unsigned int value);
+    void setBatchName(std::string value);
+    void setPermanentBatch(bool value);
+    void setByAttributeBatch(bool value);
+    void setAttributeName(std::string value);
+    void setRepresentativeEntityTypeName(std::string value);
 protected:  // virtual
     virtual void _execute(Entity* entity);
     virtual void _initBetweenReplications();
@@ -36,8 +43,15 @@ protected:  // virtual
     virtual std::map<std::string, std::string>* _saveInstance();
     virtual bool _check(std::string* errorMessage);
 private: // methods
-private: // attributes 1:1
+    void initializeGroupAttribute();
 private: // attributes 1:n
+    unsigned int _batchSize;
+    unsigned int _batchesCount;
+    std::string _batchName;
+    bool _permanent;
+    bool _byAttribute;
+    std::string _attributeName;
+    std::string _representativeEntityTypeName;
 };
 
 

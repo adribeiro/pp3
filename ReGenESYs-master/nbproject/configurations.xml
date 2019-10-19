@@ -367,6 +367,8 @@
           <itemPath>TestParser.h</itemPath>
           <itemPath>TestSimulationControlAndSimulationResponse.cpp</itemPath>
           <itemPath>TestSimulationControlAndSimulationResponse.h</itemPath>
+          <itemPath>TesteCreateSeparateBatchDispose.cpp</itemPath>
+          <itemPath>TesteCreateSeparateBatchDispose.h</itemPath>
         </logicalFolder>
         <itemPath>FullSimulationOfComplexModel.cpp</itemPath>
         <itemPath>FullSimulationOfComplexModel.h</itemPath>
@@ -942,6 +944,13 @@
       <item path="TestStatistics.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="TestStatistics.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TesteCreateSeparateBatchDispose.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="TesteCreateSeparateBatchDispose.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="ThirdExampleOfSimulation.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -1564,6 +1573,13 @@
       <item path="TestStatistics.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="TestStatistics.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TesteCreateSeparateBatchDispose.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="TesteCreateSeparateBatchDispose.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="ThirdExampleOfSimulation.cpp" ex="false" tool="1" flavor2="0">
       </item>

@@ -5,13 +5,13 @@
  */
 
 /* 
- * File:   TestCreateSeparateDispose.cpp
+ * File:   TesteCreateSeparateBatchDispose.cpp
  * Author: ad
  * 
- * Created on 9 de outubro de 2019, 11:51
+ * Created on 18 de outubro de 2019, 10:19
  */
 
-#include "TestCreateSeparateDispose.h"
+#include "TesteCreateSeparateBatchDispose.h"
 
 // GEnSyS Simulator
 #include "Simulator.h"
@@ -30,6 +30,7 @@
 #include "Route.h"
 #include "Leave.h"
 #include "Separate.h"
+#include "Batch.h"
 
 // Model elements
 #include "EntityType.h"
@@ -42,16 +43,16 @@
 #include "Formula.h"
 #include "ODE.h"
 
-TestCreateSeparateDispose::TestCreateSeparateDispose() {
+TesteCreateSeparateBatchDispose::TesteCreateSeparateBatchDispose() {
 }
 
-TestCreateSeparateDispose::TestCreateSeparateDispose(const TestCreateSeparateDispose& orig) {
+TesteCreateSeparateBatchDispose::TesteCreateSeparateBatchDispose(const TesteCreateSeparateBatchDispose& orig) {
 }
 
-TestCreateSeparateDispose::~TestCreateSeparateDispose() {
+TesteCreateSeparateBatchDispose::~TesteCreateSeparateBatchDispose() {
 }
 
-int TestCreateSeparateDispose::main(int argc, char** argv){
+int TesteCreateSeparateBatchDispose::main(int argc, char** argv){
     Simulator* simulator = new Simulator();
 
     // insert "fake plugins" since plugins based on dynamic loaded library are not implemented yet
@@ -135,7 +136,7 @@ int TestCreateSeparateDispose::main(int argc, char** argv){
     
     Separate* divide_produtos = new Separate(model);
     divide_produtos->setSplitBatch(false);
-    divide_produtos->setAmountToDuplicate("20");
+    divide_produtos->setAmountToDuplicate("nrProdutos");
     components->insert(divide_produtos);
     
     Dispose* saida_cliente = new Dispose(model);

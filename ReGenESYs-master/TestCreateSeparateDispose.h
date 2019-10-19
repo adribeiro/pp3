@@ -15,7 +15,6 @@
 #define TESTCREATESEPARATEDISPOSE_H
 
 #include "BaseConsoleGenesysApplication.h"
-#include "Model.h"
 
 class TestCreateSeparateDispose : public BaseConsoleGenesysApplication{
 public:
