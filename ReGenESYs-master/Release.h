@@ -19,6 +19,7 @@
 #include "ModelComponent.h"
 #include "Resource.h"
 #include "Plugin.h"
+#include "Set.h"
 
 
 class Release : public ModelComponent {

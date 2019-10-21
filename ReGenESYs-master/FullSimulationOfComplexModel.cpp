@@ -106,7 +106,6 @@ int FullSimulationOfComplexModel::main(int argc, char** argv) {
     Delay* delay1 = new Delay(model);
     delay1->setDelayExpression("NORM(5,1.5)");
     delay1->setDelayTimeUnit(Util::TimeUnit::minute);
-
     components->insert(delay1);
 
     Release* release1 = new Release(model);

@@ -77,7 +77,7 @@ void Release::setResource(Resource* _resource) {
     this->_resource = _resource;
 }
 
-void Seize::setSet(Set* set){
+void Release::setSet(Set* set){
     if(set->getSetOfType() == Util::TypeOf<Resource>()){
         this->_set= set;
         this->_resourceType = Resource::ResourceType::SET;
@@ -92,6 +92,7 @@ Resource* Release::getResource() const {
 
 void Release::_execute(Entity* entity) {
     Resource* resource = nullptr;
+    TraceManager* traceManager = this->_model->getTraceManager();
     if (this->_resourceType == Resource::ResourceType::SET) {
 	int especificResource = entity->getAttributeValue(this->_saveAttribute);
         List<ModelElement*>* resources = _set->getElementSet();
@@ -99,15 +100,26 @@ void Release::_execute(Entity* entity) {
     } else {
 	resource = this->_resource;
     }
+    
     unsigned int quantity = _model->parseExpression(this->_quantity);
-    assert(_resource->getNumberBusy() >= quantity);
-    _model->getTraceManager()->traceSimulation(Util::TraceLevel::blockInternal, _model->getSimulation()->getSimulatedTime(), entity, this, "Entity frees " + std::to_string(quantity) + " units of resource \"" + resource->getName() + "\" seized on time " + std::to_string(_resource->getLastTimeSeized()));
-    _resource->release(quantity, _model->getSimulation()->getSimulatedTime()); //{releases and sets the 'LastTimeSeized'property}
+    assert(resource->getNumberBusy() >= quantity);
+    _model->getTraceManager()->traceSimulation(Util::TraceLevel::blockInternal, _model->getSimulation()->getSimulatedTime(), entity, this, "Entity frees " + std::to_string(quantity) + " units of resource \"" + resource->getName() + "\" seized on time " + std::to_string(resource->getLastTimeSeized()));
+    resource->release(quantity, _model->getSimulation()->getSimulatedTime()); //{releases and sets the 'LastTimeSeized'property}
     _model->sendEntityToComponent(entity, this->getNextComponents()->frontConnection(), 0.0);
 }
 
 void Release::_initBetweenReplications() {
-    this->_resource->initBetweenReplications();
+    
+    if (this->_resourceType == Resource::ResourceType::SET) {
+        Resource* resource = nullptr;
+        List<ModelElement*>* resources = _set->getElementSet();
+        for(int i = 0; i< resources->size();i++ ){
+                resource = (Resource *)resources->getAtRank(i);
+                resource->initBetweenReplications();
+        }
+    } else {
+        this->_resource->initBetweenReplications();
+    }
 }
 
 bool Release::_loadInstance(std::map<std::string, std::string>* fields) {
@@ -132,10 +144,14 @@ std::map<std::string, std::string>* Release::_saveInstance() {
     fields->emplace("priority", std::to_string(this->_priority));
     fields->emplace("quantity", this->_quantity);
     fields->emplace("resourceType", std::to_string(static_cast<int> (this->_resourceType)));
-    fields->emplace("resourceId", std::to_string(this->_resource->getId()));
-    fields->emplace("resourceName", (this->_resource->getName()));
     fields->emplace("rule", std::to_string(static_cast<int> (this->_rule)));
     fields->emplace("saveAttribute", this->_saveAttribute);
+    if (this->_resourceType == Resource::ResourceType::SET) {
+
+    } else {
+	fields->emplace("resourceId", std::to_string(this->_resource->getId()));
+        fields->emplace("resourceName", (this->_resource->getName()));
+    }
     return fields;
 
 }
@@ -143,7 +159,11 @@ std::map<std::string, std::string>* Release::_saveInstance() {
 bool Release::_check(std::string* errorMessage) {
     bool resultAll = true;
     resultAll &= _model->checkExpression(_quantity, "quantity", errorMessage);
-    resultAll &= _model->getElementManager()->check(Util::TypeOf<Resource>(), _resource, "resource", errorMessage);
+    if (this->_resourceType == Resource::ResourceType::SET) {
+        resultAll &= _model->getElementManager()->check(Util::TypeOf<Set>(), _set, "Set", errorMessage);
+    } else {
+        resultAll &= _model->getElementManager()->check(Util::TypeOf<Resource>(), _resource, "resource", errorMessage);
+    }
     resultAll &= _model->getElementManager()->check(Util::TypeOf<Attribute>(), _saveAttribute, "SaveAttribute", false, errorMessage);
     return resultAll;
 }

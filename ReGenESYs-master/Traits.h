@@ -46,6 +46,7 @@
 #include "Pp3Model.h"
 #include "Pp3Model2.h"
 #include "TestCreateAssignDispose.h"
+#include "TestCreateSetSeizeReleaseDispose.h"
 
 //  Default implementations
 //statistics
@@ -85,6 +86,7 @@ template <> struct Traits<GenesysApplication_if> {
     //typedef TestSimulationControlAndSimulationResponse Application;
 //    typedef TestCreateSeparateDispose Application;
 //    typedef TestCreateAssignDispose Application;
+        typedef TestCreateSetSeizeReleaseDispose Application;
 };
 
 

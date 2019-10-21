@@ -165,29 +165,32 @@ int TestCreateSetSeizeReleaseDispose::main(int argc, char** argv){
     components->insert(chegada_cliente);
     
     Assign* inicia_cliente = new Assign(model);
-    Assign::Assignment* a_nrCaixa = new Assign::Assignment(Assign::DestinationType::Attribute, "nrCaixa", "TRUNK(UNIF(0,5))");
+    Assign::Assignment* a_nrCaixa = new Assign::Assignment(Assign::DestinationType::Attribute, "nrCaixa", "TRUNC(UNIF(0,5))");
     inicia_cliente->getAssignments()->insert(a_nrCaixa);
     components->insert(inicia_cliente);
     
     Seize* seize1 = new Seize(model);
     seize1->setSet(caixas_nao_idoso);
+//    seize1->setQueue(fila1_rapido);
     seize1->insertQueue(fila1_rapido);
     seize1->insertQueue(fila2_rapido);
     seize1->insertQueue(fila3_rapido);
     seize1->insertQueue(fila4_rapido);
     seize1->insertQueue(fila1_jovem);
     seize1->insertQueue(fila2_jovem);
-    seize1->setSaveAttribute("nrCaixa")
+    seize1->setSaveAttribute("nrCaixa");
+//    seize1->setRule(Resource::ResourceRule::RANDOM);
     seize1->setRule(Resource::ResourceRule::ESPECIFIC);
     components->insert(seize1);
-    
+//    
     Delay* delay1 = new Delay(model);
     delay1->setDelayExpression("NORM(5,1.5)");
     delay1->setDelayTimeUnit(Util::TimeUnit::minute);
     components->insert(delay1);
-
+//
     Release* release1 = new Release(model);
     release1->setSet(caixas_nao_idoso);
+    release1->setSaveAttribute("nrCaixa");
     components->insert(release1);
     
     Dispose* saida_cliente = new Dispose(model);
@@ -197,9 +200,10 @@ int TestCreateSetSeizeReleaseDispose::main(int argc, char** argv){
 
     // connect model components to create a "workflow" -- should always start from a SourceModelComponent and end at a SinkModelComponent (it will be checked)
     chegada_cliente->getNextComponents()->insert(inicia_cliente);
-    inicia_cliente->getNextComponents()->insert(divide_produtos);
-    divide_produtos->getNextComponents()->insert(saida_cliente);
-    divide_produtos->getNextComponents()->insert(saida_produto);
+    inicia_cliente->getNextComponents()->insert(seize1);
+    seize1->getNextComponents()->insert(delay1);
+    delay1->getNextComponents()->insert(release1);
+    release1->getNextComponents()->insert(saida_cliente);
     
      // insert the model into the simulator 
     simulator->getModelManager()->insert(model);
