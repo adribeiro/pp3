@@ -95,17 +95,41 @@ void Seize::setQueueName(std::string queueName) throw () {
 }
 
 void Seize::_handlerForResourceEvent(Resource* resource) {
-    Waiting* first = _queue->first();
+    Queue* queue = nullptr;
+    
+    if(this->_resourceType == Resource::ResourceType::SET){
+        if(_rule == Resource::ResourceRule::RANDOM){
+            queue = this->_queue;
+        }else if(_rule == Resource::ResourceRule::ESPECIFIC){
+            List<Resource*>* resources = _set->getElementSet();
+            int index = -1;
+            bool cond = true;
+            for(int i = 0; cond && i< resources->size();i++){
+                if(resource->getId() == resources->getAtRank(i)->getId()){
+                    _model->getTraceManager()->trace(Util::TraceLevel::blockInternal ,"Queue index found");
+                    index = i;
+                    cond = false;
+                }
+            }
+            queue = this->_queues->getAtRank(index);
+        }
+    }else{
+        queue = this->_queue;
+    }
+    
+    Waiting* first = queue->first();
     if (first != nullptr) { // there are entities waiting in the queue
 	unsigned int quantity = _model->parseExpression(this->_quantity);
 	if ((resource->getCapacity() - resource->getNumberBusy()) >= quantity) { //enought quantity to seize
 	    double tnow = _model->getSimulation()->getSimulatedTime();
 	    resource->seize(quantity, tnow);
 	    _model->getEvents()->insert(new Event(tnow, first->getEntity(), this->getNextComponents()->frontConnection()));
-	    _queue->removeElement(first);
+	    queue->removeElement(first);
 	    _model->getTraceManager()->traceSimulation(Util::TraceLevel::blockInternal, tnow, first->getEntity(), this, "Waiting entity " + std::to_string(first->getEntity()->getEntityNumber()) + " now seizes " + std::to_string(quantity) + " elements of resource \"" + resource->getName() + "\"");
 
 	}
+    }else{
+        _model->getTraceManager()->trace(Util::TraceLevel::blockInternal ,"No queue selected");
     }
 }
 
@@ -136,10 +160,16 @@ Resource* Seize::getResource() const {
 }
 
 void Seize::setSet(Set* set){
-    this->_set= set;
-    List<Resource*>* resources = _set->getElementSet();
-    for(int i = 0; i< resources->size();i++){
-        resources->getAtRank(i)->addResourceEventHandler(Resource::SetResourceEventHandler<Seize>(&Seize::_handlerForResourceEvent, this));
+    if(set->getSetOfType() == Util::TypeOf<Resource>()){
+        this->_resourceType = Resource::ResourceType::SET;
+        this->_set= set;
+        List<Resource*>* resources = _set->getElementSet();
+        for(int i = 0; i< resources->size();i++){
+            resources->getAtRank(i)->addResourceEventHandler(Resource::SetResourceEventHandler<Seize>(&Seize::_handlerForResourceEvent, this));
+            _model->getTraceManager()->trace(Util::TraceLevel::blockInternal ,"Set added");
+        }
+    }else{
+        _model->getTraceManager()->trace(Util::TraceLevel::blockInternal ,"Not a Set to add");
     }
 }
 void Seize::setQueues(List<Queue*>* queues){
@@ -160,15 +190,38 @@ Seize::~Seize() {
 void Seize::_execute(Entity* entity) {
     /* TODO +: not implemented yet */
     Resource* resource = nullptr;
+    Queue* queue = nullptr;
     if (this->_resourceType == Resource::ResourceType::SET) {
-	/* TODO +: not implemented yet */
+	List<Resource*>* resources = _set->getElementSet();
+        if(_rule == Resource::ResourceRule::RANDOM){
+            
+            unsigned int quant = _model->parseExpression(this->_quantity);
+            bool cond = true;
+            resource = resources->getAtRank(_lastMemberSeized);
+            queue = this->_queue;
+            for(int i = 0; cond && i < resources->size();i++){
+                if(resources->getAtRank(i)->getCapacity() - resources->getAtRank(i)->getNumberBusy() > quant){
+                    resource = resources->getAtRank(i);
+                    cond = false;
+                    _lastMemberSeized = i;
+                }
+            }
+        }else if(_rule == Resource::ResourceRule::ESPECIFIC){
+            unsigned int especificNumber = _model->parseExpression(this->_saveAttribute);
+            if(especificNumber < resources->size()){
+                resource = resources->getAtRank(especificNumber);
+                queue = _queues->getAtRank(especificNumber);
+            }
+        }
     } else {
 	resource = this->_resource;
+        queue = this->_queue;
     }
+    
     unsigned int quantity = _model->parseExpression(this->_quantity);
     if (resource->getCapacity() - resource->getNumberBusy() < quantity) { // not enought free quantity to allocate. Entity goes to the queue
 	WaitingResource* waitingRec = new WaitingResource(entity, this, _model->getSimulation()->getSimulatedTime(), quantity);
-	this->_queue->insertElement(waitingRec); // ->getList()->insert(waitingRec);
+	queue->insertElement(waitingRec); // ->getList()->insert(waitingRec);
 	_model->getTraceManager()->traceSimulation(Util::TraceLevel::blockInternal, _model->getSimulation()->getSimulatedTime(), entity, this, "Entity starts to wait for resource in queue \"" + _queue->getName() + "\" with " + std::to_string(_queue->size()) + " elements");
 
     } else { // alocate the resource
