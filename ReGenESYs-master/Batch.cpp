@@ -12,8 +12,9 @@
  */
 
 #include "Batch.h"
-
+#include "EntityGroup.h"
 #include "Model.h"
+#include "Attribute.h"
 
 Batch::Batch(Model* model) : ModelComponent(model, Util::TypeOf<Batch>()) {
     this->_batchesCount = 0u;

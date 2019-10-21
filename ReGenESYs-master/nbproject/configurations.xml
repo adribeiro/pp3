@@ -359,6 +359,8 @@
           <itemPath>TestCreateDecideDispose.h</itemPath>
           <itemPath>TestCreateSeparateDispose.cpp</itemPath>
           <itemPath>TestCreateSeparateDispose.h</itemPath>
+          <itemPath>TestCreateSetSeizeReleaseDispose.cpp</itemPath>
+          <itemPath>TestCreateSetSeizeReleaseDispose.h</itemPath>
           <itemPath>TestEnterLeaveRoute.cpp</itemPath>
           <itemPath>TestEnterLeaveRoute.h</itemPath>
           <itemPath>TestODE.cpp</itemPath>
@@ -914,6 +916,13 @@
       <item path="TestCreateSeparateDispose.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="TestCreateSeparateDispose.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TestCreateSetSeizeReleaseDispose.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="TestCreateSetSeizeReleaseDispose.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="TestEnterLeaveRoute.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -1543,6 +1552,13 @@
       <item path="TestCreateSeparateDispose.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="TestCreateSeparateDispose.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TestCreateSetSeizeReleaseDispose.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="TestCreateSetSeizeReleaseDispose.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="TestEnterLeaveRoute.cpp" ex="false" tool="1" flavor2="0">
       </item>

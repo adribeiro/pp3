@@ -147,6 +147,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/TestCreateAssignDispose.o \
 	${OBJECTDIR}/TestCreateDecideDispose.o \
 	${OBJECTDIR}/TestCreateSeparateDispose.o \
+	${OBJECTDIR}/TestCreateSetSeizeReleaseDispose.o \
 	${OBJECTDIR}/TestEnterLeaveRoute.o \
 	${OBJECTDIR}/TestInputAnalyserTools.o \
 	${OBJECTDIR}/TestODE.o \
@@ -752,6 +753,11 @@ ${OBJECTDIR}/TestCreateSeparateDispose.o: TestCreateSeparateDispose.cpp nbprojec
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TestCreateSeparateDispose.o TestCreateSeparateDispose.cpp
+
+${OBJECTDIR}/TestCreateSetSeizeReleaseDispose.o: TestCreateSetSeizeReleaseDispose.cpp nbproject/Makefile-${CND_CONF}.mk
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TestCreateSetSeizeReleaseDispose.o TestCreateSetSeizeReleaseDispose.cpp
 
 ${OBJECTDIR}/TestEnterLeaveRoute.o: TestEnterLeaveRoute.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}

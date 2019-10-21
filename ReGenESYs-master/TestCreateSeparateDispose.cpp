@@ -119,7 +119,7 @@ int TestCreateSeparateDispose::main(int argc, char** argv){
 //    Assign::Assignment* a_collector = new Assign::Assignment(Assign::DestinationType::Attribute, "collector", "0");
 //    Assign::Assignment* a_tipo_jovem = new Assign::Assignment(Assign::DestinationType::Attribute, "tipo", "1");//DISC(0.3,0,1,1)
 //    Assign::Assignment* a_tempo_caixa = new Assign::Assignment(Assign::DestinationType::Attribute, "tempo_caixa", "TNOW");
-    Assign::Assignment* a_nrProdutos = new Assign::Assignment(Assign::DestinationType::Attribute, "nrProdutos", "20");//AINT(DISC(0.45,UNIF(1,8),0.9,UNIF(9,12),1,UNIF(13,20)))
+    Assign::Assignment* a_nrProdutos = new Assign::Assignment(Assign::DestinationType::Attribute, "nrProdutos", "5");//AINT(DISC(0.45,UNIF(1,8),0.9,UNIF(9,12),1,UNIF(13,20)))
 //    inicia_cliente->getAssignments()->insert(a_qtd_fila_1);
 //    inicia_cliente->getAssignments()->insert(a_qtd_fila_2);
 //    inicia_cliente->getAssignments()->insert(a_qtd_fila_3);
@@ -135,7 +135,8 @@ int TestCreateSeparateDispose::main(int argc, char** argv){
     
     Separate* divide_produtos = new Separate(model);
     divide_produtos->setSplitBatch(false);
-    divide_produtos->setAmountToDuplicate("20");
+    divide_produtos->setAmountToDuplicate("nrProdutos");
+    divide_produtos->setAttributeType(true);
     components->insert(divide_produtos);
     
     Dispose* saida_cliente = new Dispose(model);

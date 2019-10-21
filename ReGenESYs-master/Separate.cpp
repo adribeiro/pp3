@@ -98,7 +98,12 @@ void Separate::_execute(Entity* entity) {
 
     EntityGroup* group = (EntityGroup*) elementManager->getElement(Util::TypeOf<EntityGroup>(), batchEntityID);
     
-    double replicationsNumber = _model->parseExpression(this->_amountToDup);
+    double replicationsNumber = 0;
+    if(this->_attributeType){
+        replicationsNumber = entity->getAttributeValue(this->_amountToDup);
+    }else{
+        replicationsNumber = _model->parseExpression(this->_amountToDup);
+    }
     _model->getTraceManager()->trace(Util::TraceLevel::blockInternal, this->_amountToDup);
     _model->getTraceManager()->trace(Util::TraceLevel::blockInternal, std::to_string(replicationsNumber));
     if (this->_splitBatch) {
@@ -207,3 +212,6 @@ PluginInformation* Separate::GetPluginInformation(){
     return info;
 }
 
+void Separate::setAttributeType(bool value){
+    this->_attributeType = value;
+}

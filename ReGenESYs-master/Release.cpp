@@ -77,6 +77,15 @@ void Release::setResource(Resource* _resource) {
     this->_resource = _resource;
 }
 
+void Seize::setSet(Set* set){
+    if(set->getSetOfType() == Util::TypeOf<Resource>()){
+        this->_set= set;
+        this->_resourceType = Resource::ResourceType::SET;
+    }else{
+        _model->getTraceManager()->trace(Util::TraceLevel::blockInternal ,"Not a Set to add");
+    }
+}
+
 Resource* Release::getResource() const {
     return _resource;
 }
@@ -84,7 +93,9 @@ Resource* Release::getResource() const {
 void Release::_execute(Entity* entity) {
     Resource* resource = nullptr;
     if (this->_resourceType == Resource::ResourceType::SET) {
-	/* TODO +: not implemented yet */
+	int especificResource = entity->getAttributeValue(this->_saveAttribute);
+        List<ModelElement*>* resources = _set->getElementSet();
+        resource = (Resource *) resources->getAtRank(especificResource);
     } else {
 	resource = this->_resource;
     }

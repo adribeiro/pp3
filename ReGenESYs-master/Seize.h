@@ -20,6 +20,7 @@
 #include "Resource.h"
 #include "Queue.h"
 #include "Plugin.h"
+#include "Set.h"
 
 class WaitingResource : public Waiting {
 public:
@@ -84,7 +85,7 @@ public: // get & set
     void setResource(Resource* resource);
     Resource* getResource() const;
     void setSet(Set* set);
-    void setQueues(List<Queue*>* queues);
+    void insertQueue(Queue* queue);
     void setQueue(Queue* queue);
     Queue* getQueue() const;
 protected:
@@ -108,7 +109,7 @@ private: // not gets or sets
     Queue* _queue; // usually has a queue, but not always (it could be a hold) /* Todo: Evaluate if is better to associate queue to seize or to the resource */
     Resource* _resource; // usually has a resource, but not always (it could be a set)
     Set* _set;
-    List<Queue*>* _queues;
+    List<Queue*>* _queues= new List<Queue*>();
     unsigned int _lastMemberSeized = 0;
 };
 

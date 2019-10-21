@@ -43,6 +43,7 @@ public: // get & set
     void setSaveAttribute(std::string _saveAttribute);
     std::string getSaveAttribute() const;
     void setResource(Resource* _resource);
+    void setSet(Set* set);
     Resource* getResource() const;
     // indirect access to and Resource*
     void setResourceName(std::string resourceName) throw();
@@ -64,6 +65,7 @@ private:
 
 private: // no g&s
     Resource* _resource;
+    Set* _set;
 };
 
 #endif /* RELEASE_H */
