@@ -123,7 +123,6 @@ void Batch::_execute(Entity* entity) {
     EntityGroup* group = (EntityGroup*) elementManager->getElement(Util::TypeOf<EntityGroup>(), batchEntityID);
 
     if (group == nullptr) {
-        _model->getTraceManager()->trace(Util::TraceLevel::blockInternal,"new group");
         group = new EntityGroup(elementManager, batchEntityID);
         elementManager->insert(Util::TypeOf<EntityGroup>(), group);
     }

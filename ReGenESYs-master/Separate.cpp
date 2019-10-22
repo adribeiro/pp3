@@ -105,8 +105,6 @@ void Separate::_execute(Entity* entity) {
     }else{
         replicationsNumber = _model->parseExpression(this->_amountToDup);
     }
-    _model->getTraceManager()->trace(Util::TraceLevel::blockInternal, this->_amountToDup);
-    _model->getTraceManager()->trace(Util::TraceLevel::blockInternal, std::to_string(replicationsNumber));
     if (this->_splitBatch) {
       /* Split the existing Batch entity */
       traceManager->trace(Util::TraceLevel::blockInternal, "Split the existing Batch entity");
@@ -141,7 +139,6 @@ void Separate::_execute(Entity* entity) {
 
             if (entity->getEntityTypeName().find("_Batch") != std::string::npos) {
                 assert(group != nullptr);
-                _model->getTraceManager()->trace(Util::TraceLevel::blockInternal, "Batch");
                 duplicateEntity = new Entity(elementManager);
                 duplicateEntity->setEntityType(entity->getEntityType());
 
@@ -174,7 +171,6 @@ void Separate::_execute(Entity* entity) {
                 _model->getTraceManager()->trace(Util::TraceLevel::blockInternal, "Sending a copied entity forward to the second connection");
                 _model->sendEntityToComponent(duplicateEntity, this->getNextComponents()->getConnectionAtRank(1), 0.0);
             } else {
-                _model->getTraceManager()->trace(Util::TraceLevel::blockInternal, "Not a batch");
                 duplicateEntity = new Entity(elementManager);
                 duplicateEntity->setEntityType(entity->getEntityType());
                 ElementManager* elements = _model->getElementManager();

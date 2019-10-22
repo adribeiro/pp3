@@ -99,7 +99,6 @@ void Seize::_handlerForResourceEvent(Resource* resource) {
     
     if(this->_resourceType == Resource::ResourceType::SET){
         if(_rule == Resource::ResourceRule::RANDOM){
-            _model->getTraceManager()->trace(Util::TraceLevel::blockInternal ,"Queue RANDOM");
             queue = this->_queue;
         }else if(_rule == Resource::ResourceRule::ESPECIFIC){
             List<ModelElement*>* resources = _set->getElementSet();
@@ -170,7 +169,6 @@ void Seize::setSet(Set* set){
         for(int i = 0; i< resources->size();i++){
             resource = (Resource *) resources->getAtRank(i);
             resource->addResourceEventHandler(Resource::SetResourceEventHandler<Seize>(&Seize::_handlerForResourceEvent, this));
-            _model->getTraceManager()->trace(Util::TraceLevel::blockInternal ,"Set added");
         }
     }else{
         _model->getTraceManager()->trace(Util::TraceLevel::blockInternal ,"Not a Set to add");
@@ -198,29 +196,26 @@ void Seize::_execute(Entity* entity) {
     Queue* queue = nullptr;
     TraceManager* traceManager = this->_model->getTraceManager();
     if (this->_resourceType == Resource::ResourceType::SET) {
-        traceManager->trace(Util::TraceLevel::blockInternal, "Identificou que e um set");
 	List<ModelElement*>* resources = _set->getElementSet();
         if(_rule == Resource::ResourceRule::RANDOM){
-            traceManager->trace(Util::TraceLevel::blockInternal, "Identificou que a rule e RANDOM");
             unsigned int quant = _model->parseExpression(this->_quantity);
             bool cond = true;
             queue = this->_queue;
             int i = 0;
             while(cond && i < resources->size()){
                 resource = (Resource *)resources->getAtRank(i);
-                if(resource->getCapacity() - resource->getNumberBusy() > quant){
+                if(resource->getCapacity() - resource->getNumberBusy() >= quant){
                     cond = false;
                     _lastMemberSeized = i;
                 }
                 i++;
             }
+            traceManager->trace(Util::TraceLevel::blockInternal, "index: "+std::to_string(_lastMemberSeized));
             resource = (Resource *)resources->getAtRank(_lastMemberSeized);
             
         }else if(_rule == Resource::ResourceRule::ESPECIFIC){
-            traceManager->trace(Util::TraceLevel::blockInternal, "Identificou que a rule e ESPECIFIC");
             unsigned int especificNumber = entity->getAttributeValue(this->_saveAttribute);
             if(especificNumber < resources->size()){
-                traceManager->trace(Util::TraceLevel::blockInternal, std::to_string(especificNumber));
                 resource = resources->getAtRank(especificNumber);
                 queue = _queues->getAtRank(especificNumber);
             }
@@ -232,17 +227,16 @@ void Seize::_execute(Entity* entity) {
     
     unsigned int quantity = _model->parseExpression(this->_quantity);
     if (resource->getCapacity() - resource->getNumberBusy() < quantity) { // not enought free quantity to allocate. Entity goes to the queue
-	traceManager->trace(Util::TraceLevel::blockInternal, "not enought free quantity to allocate. Entity goes to the queue");
+//	traceManager->trace(Util::TraceLevel::blockInternal, "not enought free quantity to allocate. Entity goes to the queue");
         WaitingResource* waitingRec = new WaitingResource(entity, this, _model->getSimulation()->getSimulatedTime(), quantity);
 	queue->insertElement(waitingRec); // ->getList()->insert(waitingRec);
 	_model->getTraceManager()->traceSimulation(Util::TraceLevel::blockInternal, _model->getSimulation()->getSimulatedTime(), entity, this, "Entity starts to wait for resource in queue \"" + queue->getName() + "\" with " + std::to_string(queue->size()) + " elements");
 
     } else { // alocate the resource
-        traceManager->trace(Util::TraceLevel::blockInternal, "alocate the resource");
+//        traceManager->trace(Util::TraceLevel::blockInternal, "alocate the resource");
 	_model->getTraceManager()->traceSimulation(Util::TraceLevel::blockInternal, _model->getSimulation()->getSimulatedTime(), entity, this, "Entity seizes " + std::to_string(quantity) + " elements of resource \"" + resource->getName() + "\" (capacity:"+std::to_string(resource->getCapacity()) +", numberbusy:"+std::to_string(resource->getNumberBusy())+")");
 	resource->seize(quantity, _model->getSimulation()->getSimulatedTime());
 	if(this->_resourceType == Resource::ResourceType::SET &&_rule == Resource::ResourceRule::RANDOM){
-            traceManager->trace(Util::TraceLevel::blockInternal, "Salvando attribute");
             entity->setAttributeValue(this->_saveAttribute, this->_lastMemberSeized);  
         }
         _model->sendEntityToComponent(entity, this->getNextComponents()->frontConnection(), 0.0);

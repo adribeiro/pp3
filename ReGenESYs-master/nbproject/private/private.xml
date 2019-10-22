@@ -7,14 +7,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/ad/pp3/ReGenESYs-master/Batch.h</file>
-            <file>file:/home/ad/pp3/ReGenESYs-master/TesteCreateSeparateBatchDispose.cpp</file>
-            <file>file:/home/ad/pp3/ReGenESYs-master/Separate.h</file>
-            <file>file:/home/ad/pp3/ReGenESYs-master/Separate.cpp</file>
-            <file>file:/home/ad/pp3/ReGenESYs-master/Attribute.cpp</file>
-            <file>file:/home/ad/pp3/ReGenESYs-master/TestCreateSeparateDispose.cpp</file>
-            <file>file:/home/ad/pp3/ReGenESYs-master/Batch.cpp</file>
-            <file>file:/home/ad/pp3/ReGenESYs-master/TesteCreateSeparateBatchDispose.h</file>
+            <file>file:/home/ad/pp3/ReGenESYs-master/Seize.cpp</file>
+            <file>file:/home/ad/pp3/ReGenESYs-master/Seize.h</file>
+            <file>file:/home/ad/pp3/ReGenESYs-master/ProbDistrib.cpp</file>
+            <file>file:/home/ad/pp3/ReGenESYs-master/TestCreateSetSeizeReleaseDispose.cpp</file>
+            <file>file:/home/ad/pp3/ReGenESYs-master/ProbDistrib.h</file>
             <file>file:/home/ad/pp3/ReGenESYs-master/Traits.h</file>
         </group>
     </open-files>

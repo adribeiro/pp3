@@ -87,8 +87,8 @@ template <> struct Traits<GenesysApplication_if> {
     //typedef TestSimulationControlAndSimulationResponse Application;
 //    typedef TestCreateSeparateDispose Application;
 //    typedef TestCreateAssignDispose Application;
-//        typedef TestCreateSetSeizeReleaseDispose Application;
-    typedef TesteCreateSeparateBatchDispose Application;
+        typedef TestCreateSetSeizeReleaseDispose Application;
+//    typedef TesteCreateSeparateBatchDispose Application;
 };
 
 

@@ -83,13 +83,6 @@ int TestCreateSetSeizeReleaseDispose::main(int argc, char** argv){
     //variables
     
     //resources and sets
-    Resource* caixa1_jovem = new Resource(elements, "caixa1_jovem");
-    caixa1_jovem->setCapacity(1);
-    elements->insert(Util::TypeOf<Resource>(), caixa1_jovem);
-    
-    Resource* caixa2_jovem = new Resource(elements, "caixa2_jovem");
-    caixa2_jovem->setCapacity(1);
-    elements->insert(Util::TypeOf<Resource>(), caixa2_jovem);
     
     Resource* caixa1_rapido = new Resource(elements, "caixa1_rapido");
     caixa1_rapido->setCapacity(1);
@@ -113,8 +106,6 @@ int TestCreateSetSeizeReleaseDispose::main(int argc, char** argv){
     caixas_nao_idoso->getElementSet()->insert(caixa2_rapido);
     caixas_nao_idoso->getElementSet()->insert(caixa3_rapido);
     caixas_nao_idoso->getElementSet()->insert(caixa4_rapido);
-    caixas_nao_idoso->getElementSet()->insert(caixa1_jovem);
-    caixas_nao_idoso->getElementSet()->insert(caixa2_jovem);
     elements->insert(Util::TypeOf<Set>(), caixas_nao_idoso);
     
     //Queues
@@ -134,14 +125,6 @@ int TestCreateSetSeizeReleaseDispose::main(int argc, char** argv){
     fila4_rapido->setOrderRule(Queue::OrderRule::FIFO);
     elements->insert(Util::TypeOf<Queue>(), fila4_rapido);
     
-    Queue* fila1_jovem = new Queue(elements, "fila1_jovem");
-    fila1_jovem->setOrderRule(Queue::OrderRule::FIFO);
-    elements->insert(Util::TypeOf<Queue>(), fila1_jovem);
-    
-    Queue* fila2_jovem = new Queue(elements, "fila2_jovem");
-    fila2_jovem->setOrderRule(Queue::OrderRule::FIFO);
-    elements->insert(Util::TypeOf<Queue>(), fila2_jovem);
-    
     //seizes
     
     //releases
@@ -159,13 +142,13 @@ int TestCreateSetSeizeReleaseDispose::main(int argc, char** argv){
     //componentes
     Create* chegada_cliente = new Create(model);
     chegada_cliente->setEntityType(cliente);
-    chegada_cliente->setTimeBetweenCreationsExpression("1000");
+    chegada_cliente->setTimeBetweenCreationsExpression("200");
     chegada_cliente->setTimeUnit(Util::TimeUnit::second);
     chegada_cliente->setEntitiesPerCreation(1);
     components->insert(chegada_cliente);
     
     Assign* inicia_cliente = new Assign(model);
-    Assign::Assignment* a_nrCaixa = new Assign::Assignment(Assign::DestinationType::Attribute, "nrCaixa", "TRUNC(UNIF(0,5))");
+    Assign::Assignment* a_nrCaixa = new Assign::Assignment(Assign::DestinationType::Attribute, "nrCaixa", "TRUNC(UNIF(0,4))");
     inicia_cliente->getAssignments()->insert(a_nrCaixa);
     components->insert(inicia_cliente);
     
@@ -176,16 +159,14 @@ int TestCreateSetSeizeReleaseDispose::main(int argc, char** argv){
     seize1->insertQueue(fila2_rapido);
     seize1->insertQueue(fila3_rapido);
     seize1->insertQueue(fila4_rapido);
-    seize1->insertQueue(fila1_jovem);
-    seize1->insertQueue(fila2_jovem);
     seize1->setSaveAttribute("nrCaixa");
 //    seize1->setRule(Resource::ResourceRule::RANDOM);
     seize1->setRule(Resource::ResourceRule::ESPECIFIC);
     components->insert(seize1);
 //    
     Delay* delay1 = new Delay(model);
-    delay1->setDelayExpression("NORM(5,1.5)");
-    delay1->setDelayTimeUnit(Util::TimeUnit::minute);
+    delay1->setDelayExpression("UNIF(1500,1600)");
+    delay1->setDelayTimeUnit(Util::TimeUnit::second);
     components->insert(delay1);
 //
     Release* release1 = new Release(model);
