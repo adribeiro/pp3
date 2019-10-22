@@ -19,6 +19,7 @@
 #include <string>
 #include <list>
 #include <assert.h>
+#include "Attribute.h"
 
 Separate::Separate(Model* model) : ModelComponent(model, Util::TypeOf<Separate>()) {
 }
@@ -176,6 +177,15 @@ void Separate::_execute(Entity* entity) {
                 _model->getTraceManager()->trace(Util::TraceLevel::blockInternal, "Not a batch");
                 duplicateEntity = new Entity(elementManager);
                 duplicateEntity->setEntityType(entity->getEntityType());
+                ElementManager* elements = _model->getElementManager();
+                for(int i =0; i<elements->getNumberOfElements(Util::TypeOf<Attribute>());i++){
+                    List<ModelElement*>* variaveis = elements->getElements(Util::TypeOf<Attribute>());
+                    for(int j =0; j< variaveis->size();j++){
+                        Attribute * attr = (Attribute *) variaveis->getAtRank(j);
+                        duplicateEntity->setAttributeValue(attr->getName(),entity->getAttributeValue(attr->getName()));
+                        
+                    }
+                }
                 _model->getTraceManager()->trace(Util::TraceLevel::blockInternal, "Sending a copied entity forward to the second connection");
                 _model->sendEntityToComponent(duplicateEntity, this->getNextComponents()->getConnectionAtRank(1), 0.0);
             }

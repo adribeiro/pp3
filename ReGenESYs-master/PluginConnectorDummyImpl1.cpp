@@ -28,6 +28,7 @@
 #include "Leave.h"
 #include "Write.h"
 #include "Separate.h"
+#include "Batch.h"
 
 // Model elements
 #include "EntityType.h"
@@ -110,7 +111,8 @@ Plugin* PluginConnectorDummyImpl1::connect(const std::string dynamicLibraryFilen
 	GetInfo = &Leave::GetPluginInformation;
     else if (fn == "separate.so")
 	GetInfo = &Separate::GetPluginInformation;
-    //else if (fn=="")
+    else if (fn=="batch.so")
+        GetInfo = &Batch::GetPluginInformation;
 
     if (GetInfo != nullptr) {
 	pluginResult = new Plugin(GetInfo);

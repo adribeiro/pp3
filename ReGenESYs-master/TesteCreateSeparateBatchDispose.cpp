@@ -81,6 +81,9 @@ int TesteCreateSeparateBatchDispose::main(int argc, char** argv){
     Attribute* nrProdutos = new Attribute("nrProdutos");
     elements->insert(Util::TypeOf<Attribute>(), nrProdutos);
     
+    Attribute* nrCaixa = new Attribute("nrCaixa");
+    elements->insert(Util::TypeOf<Attribute>(), nrCaixa);
+    
     //variables
     
     //resources and sets
@@ -100,6 +103,7 @@ int TesteCreateSeparateBatchDispose::main(int argc, char** argv){
     //entities
     EntityType* cliente = new EntityType(elements, "cliente");
     elements->insert(Util::TypeOf<EntityType>(), cliente);
+
     
     //componentes
     Create* chegada_cliente = new Create(model);
@@ -110,47 +114,54 @@ int TesteCreateSeparateBatchDispose::main(int argc, char** argv){
     components->insert(chegada_cliente);
     
     Assign* inicia_cliente = new Assign(model);
-//    Assign::Assignment* a_qtd_fila_1 = new Assign::Assignment(Assign::DestinationType::Variable, "qtd_fila_1", "0");
-//    Assign::Assignment* a_qtd_fila_2 = new Assign::Assignment(Assign::DestinationType::Variable, "qtd_fila_2", "0");
-//    Assign::Assignment* a_qtd_fila_3 = new Assign::Assignment(Assign::DestinationType::Variable, "qtd_fila_3", "0");
-//    Assign::Assignment* a_qtd_fila_4 = new Assign::Assignment(Assign::DestinationType::Variable, "qtd_fila_4", "0");
-//    Assign::Assignment* a_qtd_fila_5 = new Assign::Assignment(Assign::DestinationType::Variable, "qtd_fila_5", "0");
-//    Assign::Assignment* a_embalar = new Assign::Assignment(Assign::DestinationType::Attribute, "embalar", "8");
-//    Assign::Assignment* a_pagar = new Assign::Assignment(Assign::DestinationType::Attribute, "pagar", "100");
-//    Assign::Assignment* a_collector = new Assign::Assignment(Assign::DestinationType::Attribute, "collector", "0");
-//    Assign::Assignment* a_tipo_jovem = new Assign::Assignment(Assign::DestinationType::Attribute, "tipo", "1");//DISC(0.3,0,1,1)
-//    Assign::Assignment* a_tempo_caixa = new Assign::Assignment(Assign::DestinationType::Attribute, "tempo_caixa", "TNOW");
-    Assign::Assignment* a_nrProdutos = new Assign::Assignment(Assign::DestinationType::Attribute, "nrProdutos", "20");//AINT(DISC(0.45,UNIF(1,8),0.9,UNIF(9,12),1,UNIF(13,20)))
-//    inicia_cliente->getAssignments()->insert(a_qtd_fila_1);
-//    inicia_cliente->getAssignments()->insert(a_qtd_fila_2);
-//    inicia_cliente->getAssignments()->insert(a_qtd_fila_3);
-//    inicia_cliente->getAssignments()->insert(a_qtd_fila_4);
-//    inicia_cliente->getAssignments()->insert(a_qtd_fila_5);
-//    inicia_cliente->getAssignments()->insert(a_embalar);
-//    inicia_cliente->getAssignments()->insert(a_pagar);
-//    inicia_cliente->getAssignments()->insert(a_collector);
-//    inicia_cliente->getAssignments()->insert(a_tipo_jovem);
-//    inicia_cliente->getAssignments()->insert(a_tempo_caixa);
+
+    Assign::Assignment* a_nrProdutos = new Assign::Assignment(Assign::DestinationType::Attribute, "nrProdutos", "10");
+    Assign::Assignment* a_nrCaixa = new Assign::Assignment(Assign::DestinationType::Attribute, "nrCaixa", "0");
     inicia_cliente->getAssignments()->insert(a_nrProdutos);
+    inicia_cliente->getAssignments()->insert(a_nrCaixa);
     components->insert(inicia_cliente);
     
     Separate* divide_produtos = new Separate(model);
     divide_produtos->setSplitBatch(false);
     divide_produtos->setAmountToDuplicate("nrProdutos");
+    divide_produtos->setAttributeType(true);
     components->insert(divide_produtos);
+    
+    Delay* delay1 = new Delay(model);
+    delay1->setDelayExpression("NORM(5,1.5)");
+    delay1->setDelayTimeUnit(Util::TimeUnit::minute);
+    components->insert(delay1);
+    
+    Batch* junta_produtos = new Batch(model);
+    junta_produtos->setByAttributeBatch(true);
+    junta_produtos->setAttributeName("nrCaixa");
+    junta_produtos->setPermanentBatch(true);
+    junta_produtos->setAttributeBatch(true);
+    junta_produtos->setExpression("nrProdutos");
+    junta_produtos->setBatchName("juntaProdutos");
+    components->insert(junta_produtos);
+    
+    Batch* sai_caixa = new Batch(model);
+    sai_caixa->setByAttributeBatch(true);
+    sai_caixa->setAttributeName("nrCaixa");
+    sai_caixa->setPermanentBatch(true);
+    sai_caixa->setBatchSize(2);
+    junta_produtos->setBatchName("saiCaixa");
+    components->insert(sai_caixa);
+    
     
     Dispose* saida_cliente = new Dispose(model);
     components->insert(saida_cliente);
-    
-    Dispose* saida_produto = new Dispose(model);
-    components->insert(saida_produto);
 
 
     // connect model components to create a "workflow" -- should always start from a SourceModelComponent and end at a SinkModelComponent (it will be checked)
     chegada_cliente->getNextComponents()->insert(inicia_cliente);
     inicia_cliente->getNextComponents()->insert(divide_produtos);
-    divide_produtos->getNextComponents()->insert(saida_cliente);
-    divide_produtos->getNextComponents()->insert(saida_produto);
+    divide_produtos->getNextComponents()->insert(sai_caixa);
+    divide_produtos->getNextComponents()->insert(delay1);
+    delay1->getNextComponents()->insert(junta_produtos);
+    junta_produtos->getNextComponents()->insert(sai_caixa);
+    sai_caixa->getNextComponents()->insert(saida_cliente);
     
      // insert the model into the simulator 
     simulator->getModelManager()->insert(model);
