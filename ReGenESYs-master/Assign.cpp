@@ -58,15 +58,43 @@ void Assign::_execute(Entity* entity) {
     std::list<Assignment*>* lets = this->_assignments->getList();
     for (std::list<Assignment*>::iterator it = lets->begin(); it != lets->end(); it++) {
 	let = (*it);
-	double value = _model->parseExpression(let->getExpression());
-	_model->getTraceManager()->trace(Util::TraceLevel::blockInternal, "Let \"" + let->getDestination() + "\" = " + std::to_string(value) + "  // " + let->getExpression());
+        double value;
+        if(let->getExpressionType() == DestinationType::Variable){
+            value = _model->parseExpression(let->getExpression());
+        }else if(let->getExpressionType() == DestinationType::Attribute){
+            value = entity->getAttributeValue(let->getExpression());
+        }else if(let->getExpressionType() == DestinationType::VariableArray){
+            Variable* auxvar = (Variable*) this->_model->getElementManager()->getElement(Util::TypeOf<Variable>(), let->getExpression());
+            std::string index = let->getExpressionIndex();
+            std::string indice = "";
+            if(let->getExpressionIndexType() == DestinationType::Attribute){
+                indice = std::to_string(entity->getAttributeValue(let->getExpressionIndex()));
+            }else if(let->getExpressionIndexType() == DestinationType::Variable){
+                indice = std::to_string(_model->parseExpression(let->getExpressionIndex()));
+            }
+            value = auxvar->getValue(indice);
+        }
+       
 	/* TODO: this is NOT the best way to do it (enum comparision) */
 	if (let->getDestinationType() == DestinationType::Variable) {
 	    Variable* myvar = (Variable*) this->_model->getElementManager()->getElement(Util::TypeOf<Variable>(), let->getDestination());
 	    myvar->setValue(value);
+            _model->getTraceManager()->trace(Util::TraceLevel::blockInternal, "Let \"" + let->getDestination() + "\" = " + std::to_string(value) + "  // " + let->getExpression());
 	} else if (let->getDestinationType() == DestinationType::Attribute) {
 	    entity->setAttributeValue(let->getDestination(), value);
-	}
+            _model->getTraceManager()->trace(Util::TraceLevel::blockInternal, "Let \"" + let->getDestination() + "\" = " + std::to_string(value) + "  // " + let->getExpression());
+	}else if (let->getDestinationType() == DestinationType::VariableArray) {
+            Variable* myvar = (Variable*) this->_model->getElementManager()->getElement(Util::TypeOf<Variable>(), let->getDestination());
+            std::string index = let->getDestinationIndex();
+            std::string indice = "";
+            if(let->getDestinationIndexType() == DestinationType::Attribute){
+                indice = std::to_string(entity->getAttributeValue(let->getDestinationIndex()));
+            }else if(let->getDestinationIndexType() == DestinationType::Variable){
+                indice = std::to_string(_model->parseExpression(let->getDestinationIndex()));
+            }
+            myvar->setValue(indice,value);
+            _model->getTraceManager()->trace(Util::TraceLevel::blockInternal, "Let \"" + let->getDestination() + "("+indice+")\" = " + std::to_string(value) + "  // " + let->getExpression());
+        }
     }
 
     this->_model->sendEntityToComponent(entity, this->getNextComponents()->frontConnection(), 0.0);

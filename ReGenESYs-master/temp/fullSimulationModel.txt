@@ -1,5 +1,5 @@
 # Genesys simulation model 
-# Last saved on Tue Oct 22 16:35:29 2019
+# Last saved on Tue Oct 29 19:35:11 2019
 # simulator infos
 name=ReGenESyS - Reborn Generic and Expansible System Simulator; typename=SimulatorInfo; version=190909; 
 
@@ -7,42 +7,20 @@ name=ReGenESyS - Reborn Generic and Expansible System Simulator; typename=Simula
 analystName=; description=./models/model01_CreDelDis.txt; name=Model 1; numberOfReplications=1; projectTitle=; replicationLength=4000.000000; replicationLengthTimeUnit=5; terminatingCondition=; typename=ModelInfo; version=1.0; warmUpTime=0.000000; warmUpTimeTimeUnit=5; 
 
 # model elements
-attributeName=; id=19; name=fila1_rapido; orderRule=1; typename=Queue; 
+id=11; name=Entity.ArrivalTime; typename=Attribute; 
 
-attributeName=; id=22; name=fila2_rapido; orderRule=1; typename=Queue; 
+id=1; name=nrProdutos; typename=Attribute; 
 
-attributeName=; id=25; name=fila3_rapido; orderRule=1; typename=Queue; 
-
-attributeName=; id=28; name=fila4_rapido; orderRule=1; typename=Queue; 
-
-capacity=1; costBusyHour=1.000000; costIdleHour=1.000000; costPerUse=1.000000; id=10; name=caixa3_rapido; typename=Resource; 
-
-capacity=1; costBusyHour=1.000000; costIdleHour=1.000000; costPerUse=1.000000; id=14; name=caixa4_rapido; typename=Resource; 
-
-capacity=1; costBusyHour=1.000000; costIdleHour=1.000000; costPerUse=1.000000; id=2; name=caixa1_rapido; typename=Resource; 
-
-capacity=1; costBusyHour=1.000000; costIdleHour=1.000000; costPerUse=1.000000; id=6; name=caixa2_rapido; typename=Resource; 
-
-id=18; name=caixas_nao_idoso; typename=Set; 
-
-id=1; name=nrCaixa; typename=Attribute; 
-
-id=31; initialNVACost=0.000000; initialOtherCost=0.000000; initialPicture=report; initialVACost=0.000000; initialWaitingCost=0.000000; name=cliente; typename=EntityType; 
-
-id=40; name=Entity.ArrivalTime; typename=Attribute; 
-
-id=41; name=Entity.WaitTime; typename=Attribute; 
+id=2; initialNVACost=0.000000; initialOtherCost=0.000000; initialPicture=report; initialVACost=0.000000; initialWaitingCost=0.000000; name=cliente; typename=EntityType; 
 
 # model components
-allocationType=0; id=35; name=Seize 1; nextId0=36; nextSize=1; priority==0; quantity=1; resourceType=1; rule=3; saveAttribute=nrCaixa; typename=Seize; 
+assignments=1; destination0=nrProdutos; destinationType0=0; expression0=5; id=5; name=Assign 1; nextId0=6; nextSize=1; typename=Assign; 
 
-assignments=1; destination0=nrCaixa; destinationType0=0; expression0=TRUNC(UNIF(0,4)); id=34; name=Assign 1; nextId0=35; nextSize=1; typename=Assign; 
+entitiesPerCreation=1; entityTypename=cliente; firstCreation=0.000000; id=3; maxCreations=4294967295; name=Create 1; nextId0=5; nextSize=1; timeBetweenCreations=5000; timeBetweenCreationsTimeUnit=5; typename=Create; 
 
-delayExpression=UNIF(1500,1600); delayExpressionTimeUnit=5; id=36; name=Delay 1; nextId0=37; nextSize=1; typename=Delay; 
+id=6; name=Separate 1; nextId0=7; nextId1=9; nextSize=2; typename=Separate; 
 
-entitiesPerCreation=1; entityTypename=cliente; firstCreation=0.000000; id=32; maxCreations=4294967295; name=Create 1; nextId0=34; nextSize=1; timeBetweenCreations=200; timeBetweenCreationsTimeUnit=5; typename=Create; 
+id=7; name=Dispose 1; nextSize=0; typename=Dispose; 
 
-id=37; name=Release 1; nextId0=38; nextSize=1; priority=0; quantity=1; resourceType=1; rule=4; saveAttribute=nrCaixa; typename=Release; 
-
-id=38; name=Dispose 1; nextSize=0; typename=Dispose; 
+id=9; name=Dispose 2; nextSize=0; typename=Dispose; 
 

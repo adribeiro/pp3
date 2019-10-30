@@ -24,7 +24,7 @@ public:
 
     /* TODO: +- an enun is not a good idea. Should be a list of possible classes, so TypeOf could be set */
     enum class DestinationType : int {
-	Attribute=0, Variable=1
+	Attribute=0, Variable=1, VariableArray=2, Entity=3
     };
 
     /*!
@@ -65,10 +65,77 @@ public:
 	std::string getExpression() const {
 	    return _expression;
 	}
+        
+        std::string getDestinationIndex() const {
+            return _destinationIndex;
+        }
+
+        DestinationType getDestinationIndexType() const {
+            return _destinationIndexType;
+        }
+
+        std::string getExpressionIndex() const {
+            return _expressionIndex;
+        }
+
+        DestinationType getExpressionIndexType() const {
+            return _expressionIndexType;
+        }
+
+        DestinationType getExpressionType() const {
+            return _expressionType;
+        }
+        
+        void setDestinationArray(bool isAttributeIndex, std::string _destinationIndex){
+            if(isAttributeIndex){
+                this->_destinationIndexType = DestinationType::Attribute;
+            }else{
+                this->_destinationIndexType = DestinationType::Variable;
+            }
+            this->_destinationIndex = _destinationIndex;
+        }
+        
+        void setExpressionArray(bool isAttributeIndex,std::string _expressionIndex){
+            this->_expressionType = DestinationType::VariableArray;
+            if(isAttributeIndex){
+                this->_expressionIndexType = DestinationType::Attribute;
+            }else{
+                this->_expressionIndexType = DestinationType::Variable;
+            }
+            this->_expressionIndex = _expressionIndex;
+            
+        }
+        
+        void setDestinationExpressionArray(bool isAttributeDestinationIndex, std::string _destinationIndex,bool isAttributeExpressionIndex,std::string _expressionIndex){
+            if(isAttributeDestinationIndex){
+                this->_destinationIndexType = DestinationType::Attribute;
+            }else{
+                this->_destinationIndexType = DestinationType::Variable;
+            }
+            this->_destinationIndex = _destinationIndex;
+            
+            this->_expressionType = DestinationType::VariableArray;
+            if(isAttributeExpressionIndex){
+                this->_expressionIndexType = DestinationType::Attribute;
+            }else{
+                this->_expressionIndexType = DestinationType::Variable;
+            }
+            this->_expressionIndex = _expressionIndex;
+        }
+
     private:
 	DestinationType _destinationType = DestinationType::Attribute;
 	std::string _destination = "";
+        
+        DestinationType _destinationIndexType = DestinationType::Variable;
+        std::string _destinationIndex = "";
+        
+        DestinationType _expressionType = DestinationType::Variable;
 	std::string _expression = "";
+        
+        DestinationType _expressionIndexType = DestinationType::Variable;
+        std::string _expressionIndex = "";
+        
 
     };
 public:
@@ -94,4 +161,3 @@ private:
 };
 
 #endif /* ASSIGN_H */
-

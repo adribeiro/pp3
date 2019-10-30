@@ -58,7 +58,7 @@ int TestCreateAssignDispose::main(int argc, char** argv) {
     TraceManager* tm = model->getTraceManager();
     this->setDefaultTraceHandlers(tm);
     // set the trace level of simulation to "blockArrival" level, which is an intermediate level of tracing
-    tm->setTraceLevel(Util::TraceLevel::blockArrival);
+    tm->setTraceLevel(Util::TraceLevel::mostDetailed);
     // insert "fake plugins" since plugins based on dynamic loaded library are not implemented yet
     this->insertFakePluginsByHand(simulator);
     // get easy access to classes used to insert components and elements into a model
@@ -82,60 +82,50 @@ int TestCreateAssignDispose::main(int argc, char** argv) {
     chegada_cliente->setEntitiesPerCreation(1);
     components->insert(chegada_cliente);
     
-    Variable* variable1 = new Variable("qtd_fila_1");
-    Variable* variable2 = new Variable("qtd_fila_2");
-    Variable* variable3 = new Variable("qtd_fila_3");
-    Variable* variable4 = new Variable("qtd_fila_4");
-    Variable* variable5 = new Variable("qtd_fila_5");
-    elements->insert(Util::TypeOf<Variable>(), variable1);
-    elements->insert(Util::TypeOf<Variable>(), variable2);
-    elements->insert(Util::TypeOf<Variable>(), variable3);
-    elements->insert(Util::TypeOf<Variable>(), variable4);
-    elements->insert(Util::TypeOf<Variable>(), variable5);
+    Variable* variable = new Variable("variable");
+    Variable* variableArray = new Variable("variableArray");
+    elements->insert(Util::TypeOf<Variable>(), variable);
+    elements->insert(Util::TypeOf<Variable>(), variableArray);
     
     
-    Attribute* attribute1 = new Attribute("embalar");
-    Attribute* attribute2 = new Attribute("pagar");
-    Attribute* attribute3 = new Attribute("collector");
-    Attribute* attribute4 = new Attribute("tempo_caixa");
-    Attribute* attribute5 = new Attribute("tipo");
-    Attribute* attribute6 = new Attribute("nrProdutos");
-    elements->insert(Util::TypeOf<Attribute>(), attribute1);
-    elements->insert(Util::TypeOf<Attribute>(), attribute2);
-    elements->insert(Util::TypeOf<Attribute>(), attribute3);
-    elements->insert(Util::TypeOf<Attribute>(), attribute4);
-    elements->insert(Util::TypeOf<Attribute>(), attribute5);
-    elements->insert(Util::TypeOf<Attribute>(), attribute6);
+    Attribute* attribute = new Attribute("attribute");
+    elements->insert(Util::TypeOf<Attribute>(), attribute);
     
     Assign* define_tipo_cliente = new Assign(model);
-    Assign::Assignment* qtd_fila_1 = new Assign::Assignment(Assign::DestinationType::Variable, "qtd_fila_1", "0");
-    Assign::Assignment* qtd_fila_2 = new Assign::Assignment(Assign::DestinationType::Variable, "qtd_fila_2", "0");
-    Assign::Assignment* qtd_fila_3 = new Assign::Assignment(Assign::DestinationType::Variable, "qtd_fila_3", "0");
-    Assign::Assignment* qtd_fila_4 = new Assign::Assignment(Assign::DestinationType::Variable, "qtd_fila_4", "0");
-    Assign::Assignment* qtd_fila_5 = new Assign::Assignment(Assign::DestinationType::Variable, "qtd_fila_5", "0");
-    Assign::Assignment* embalar = new Assign::Assignment(Assign::DestinationType::Attribute, "embalar", "8");
-    Assign::Assignment* pagar = new Assign::Assignment(Assign::DestinationType::Attribute, "pagar", "100");
-    Assign::Assignment* collector = new Assign::Assignment(Assign::DestinationType::Attribute, "collector", "0");
-    Assign::Assignment* tipo = new Assign::Assignment(Assign::DestinationType::Attribute, "tipo", "DISC(0.3,0,1,1)");
-    Assign::Assignment* tempo_caixa = new Assign::Assignment(Assign::DestinationType::Attribute, "tempo_caixa", "TNOW");
-    Assign::Assignment* nrProdutos = new Assign::Assignment(Assign::DestinationType::Attribute, "nrProdutos", "AINT(DISC(0.45,UNIF(1,8),0.9,UNIF(9,12),1,UNIF(13,20)))");
-    define_tipo_cliente->getAssignments()->insert(qtd_fila_1);
-    define_tipo_cliente->getAssignments()->insert(qtd_fila_2);
-    define_tipo_cliente->getAssignments()->insert(qtd_fila_3);
-    define_tipo_cliente->getAssignments()->insert(qtd_fila_4);
-    define_tipo_cliente->getAssignments()->insert(qtd_fila_5);
-    define_tipo_cliente->getAssignments()->insert(embalar);
-    define_tipo_cliente->getAssignments()->insert(pagar);
-    define_tipo_cliente->getAssignments()->insert(collector);
-    define_tipo_cliente->getAssignments()->insert(tipo);
-    define_tipo_cliente->getAssignments()->insert(tempo_caixa);
-    define_tipo_cliente->getAssignments()->insert(nrProdutos);
+    Assign::Assignment* a_variable = new Assign::Assignment(Assign::DestinationType::Variable, "variable", "1");
+    Assign::Assignment* a_attribute = new Assign::Assignment(Assign::DestinationType::Attribute, "attribute", "2");
+    Assign::Assignment* a_variableArray1 = new Assign::Assignment(Assign::DestinationType::VariableArray, "variableArray", "10");
+    a_variableArray1->setDestinationArray(true,"attribute");
+    Assign::Assignment* a_variableArray2 = new Assign::Assignment(Assign::DestinationType::VariableArray, "variableArray", "20");
+    a_variableArray2->setDestinationArray(false,"variable");
+    Assign::Assignment* a_variableArray3 = new Assign::Assignment(Assign::DestinationType::Variable, "variable", "variableArray");
+    a_variableArray3->setExpressionArray(false, "variable");
+    Assign::Assignment* a_variableArray4 = new Assign::Assignment(Assign::DestinationType::Attribute, "attribute", "variableArray");
+    a_variableArray4->setExpressionArray(true, "attribute");
+    Assign::Assignment* a_variableArray5 = new Assign::Assignment(Assign::DestinationType::VariableArray, "variableArray", "variableArray");
+    a_variableArray5->setDestinationExpressionArray(true, "attribute",false, "1");
+    Assign::Assignment* a_variableArray6 = new Assign::Assignment(Assign::DestinationType::VariableArray, "variableArray", "variableArray");
+    a_variableArray6->setDestinationExpressionArray(true, "attribute",true, "attribute");
+    Assign::Assignment* a_variableArray7 = new Assign::Assignment(Assign::DestinationType::VariableArray, "variableArray", "variableArray");
+    a_variableArray7->setDestinationExpressionArray(false, "2",false, "1");
+    Assign::Assignment* a_variableArray8 = new Assign::Assignment(Assign::DestinationType::VariableArray, "variableArray", "variableArray");
+    a_variableArray8->setDestinationExpressionArray(false, "2",true, "attribute");
+    define_tipo_cliente->getAssignments()->insert(a_variable);
+    define_tipo_cliente->getAssignments()->insert(a_attribute);
+    define_tipo_cliente->getAssignments()->insert(a_variableArray1);
+    define_tipo_cliente->getAssignments()->insert(a_variableArray2);
+    define_tipo_cliente->getAssignments()->insert(a_variableArray3);
+    define_tipo_cliente->getAssignments()->insert(a_variableArray4);
+    define_tipo_cliente->getAssignments()->insert(a_variableArray5);
+    define_tipo_cliente->getAssignments()->insert(a_variableArray6);
+    define_tipo_cliente->getAssignments()->insert(a_variableArray7);
+    define_tipo_cliente->getAssignments()->insert(a_variableArray8);
     components->insert(define_tipo_cliente);
     
     
 
     Decide* decide1 = new Decide(model);
-    decide1->getConditions()->insert("tipo == 1");
+    decide1->getConditions()->insert("attribute == 10");
 //    decide1->getConditions()->insert("NQ(Queue_Machine_1) <= 2*NQ(Queue_Machine_2)");
 
     Dispose* dispose1 = new Dispose(model);

@@ -272,7 +272,7 @@ funcaoProb  : fEXPO  "(" expressao ")"                           { $$.valor = dr
             | fERLA  "(" expressao "," expressao ")"                              { $$.valor = driver.getProbs()->sampleErlang($3.valor,$5.valor); $$.tipo = "Erlang"; }
             | fTRIA  "(" expressao "," expressao "," expressao ")"                { $$.valor = driver.getProbs()->sampleTriangular($3.valor,$5.valor,$7.valor); $$.tipo = "Triangular"; }
             | fBETA  "(" expressao "," expressao "," expressao "," expressao ")"  { $$.valor = driver.getProbs()->sampleBeta($3.valor,$5.valor,$7.valor,$9.valor); $$.tipo = "Beta"; }
-            | fDISC  "(" listaparm ")"
+            | fDISC  "(" listaparm ")"                           { $$.valor = driver.getProbs()->sampleDiscrete(); $$.tipo = "Discreta"; }
             ;
 
 

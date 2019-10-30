@@ -48,6 +48,7 @@
 #include "TestCreateAssignDispose.h"
 #include "TestCreateSetSeizeReleaseDispose.h"
 #include "TesteCreateSeparateBatchDispose.h"
+#include "TestCreateAssignDispose.h"
 
 //  Default implementations
 //statistics
@@ -87,8 +88,10 @@ template <> struct Traits<GenesysApplication_if> {
     //typedef TestSimulationControlAndSimulationResponse Application;
 //    typedef TestCreateSeparateDispose Application;
 //    typedef TestCreateAssignDispose Application;
-        typedef TestCreateSetSeizeReleaseDispose Application;
+//        typedef TestCreateSetSeizeReleaseDispose Application;
 //    typedef TesteCreateSeparateBatchDispose Application;
+//    typedef Pp3Model Application;
+    typedef TestCreateAssignDispose Application;
 };
 
 

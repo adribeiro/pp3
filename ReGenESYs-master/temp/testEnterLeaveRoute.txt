@@ -1,5 +1,5 @@
 # Genesys simulation model 
-# Last saved on Mon Oct 21 10:53:46 2019
+# Last saved on Tue Oct 29 23:16:47 2019
 # simulator infos
 name=ReGenESyS - Reborn Generic and Expansible System Simulator; typename=SimulatorInfo; version=190909; 
 
@@ -7,38 +7,22 @@ name=ReGenESyS - Reborn Generic and Expansible System Simulator; typename=Simula
 analystName=; description=./models/model01_CreDelDis.txt; name=Model 1; numberOfReplications=1; projectTitle=; replicationLength=36000.000000; replicationLengthTimeUnit=5; terminatingCondition=; typename=ModelInfo; version=1.0; warmUpTime=0.000000; warmUpTimeTimeUnit=5; 
 
 # model elements
-id=10; name=pagar; typename=Attribute; 
-
-id=11; name=collector; typename=Attribute; 
-
-id=12; name=tempo_caixa; typename=Attribute; 
-
-id=13; name=tipo; typename=Attribute; 
-
-id=14; name=nrProdutos; typename=Attribute; 
+id=13; name=Entity.ArrivalTime; typename=Attribute; 
 
 id=1; initialNVACost=0.000000; initialOtherCost=0.000000; initialPicture=report; initialVACost=0.000000; initialWaitingCost=0.000000; name=Cliente; typename=EntityType; 
 
-id=21; name=Entity.ArrivalTime; typename=Attribute; 
+id=4; name=variable; numCols=1; numRows=1; numValues=0; typename=Variable; 
 
-id=4; name=qtd_fila_1; numCols=1; numRows=1; numValues=0; typename=Variable; 
+id=5; name=variableArray; numCols=1; numRows=1; numValues=0; typename=Variable; 
 
-id=5; name=qtd_fila_2; numCols=1; numRows=1; numValues=0; typename=Variable; 
-
-id=6; name=qtd_fila_3; numCols=1; numRows=1; numValues=0; typename=Variable; 
-
-id=7; name=qtd_fila_4; numCols=1; numRows=1; numValues=0; typename=Variable; 
-
-id=8; name=qtd_fila_5; numCols=1; numRows=1; numValues=0; typename=Variable; 
-
-id=9; name=embalar; typename=Attribute; 
+id=6; name=attribute; typename=Attribute; 
 
 # model components
-assignments=11; destination0=qtd_fila_1; destinationType0=1; expression0=0; id=15; name=Assign 1; nextId0=16; nextSize=1; typename=Assign; 
+assignments=10; destination0=variable; destinationType0=1; expression0=1; id=7; name=Assign 1; nextId0=8; nextSize=1; typename=Assign; 
 
-entitiesPerCreation=1; entityTypename=Cliente; firstCreation=0.000000; id=2; maxCreations=4294967295; name=Create 1; nextId0=15; nextSize=1; timeBetweenCreations=EXPO(20); timeBetweenCreationsTimeUnit=5; typename=Create; 
+entitiesPerCreation=1; entityTypename=Cliente; firstCreation=0.000000; id=2; maxCreations=4294967295; name=Create 1; nextId0=7; nextSize=1; timeBetweenCreations=EXPO(20); timeBetweenCreationsTimeUnit=5; typename=Create; 
 
-id=17; name=Dispose 1; nextSize=0; typename=Dispose; 
+id=11; name=Dispose 2; nextSize=0; typename=Dispose; 
 
-id=19; name=Dispose 2; nextSize=0; typename=Dispose; 
+id=9; name=Dispose 1; nextSize=0; typename=Dispose; 
 
