@@ -1,0 +1,220 @@
+|  |  Statistis for Queue:
+|  |  |  fila_1_IDOSO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  fila_1_IDOSO.Number_In_Queue........... 10          0.000000    208.000000  127.800000  7757.310000 88.075593   0.689167    54.589818   0.950000    
+|  |  |  |  fila_1_IDOSO.Time_In_Queue............. 10          0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.950000    
+|  |  |  fila_1_OUTRO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  fila_1_OUTRO.Number_In_Queue........... 10          0.000000    57.500000   32.450000   465.972500  21.586396   0.665220    13.379387   0.950000    
+|  |  |  |  fila_1_OUTRO.Time_In_Queue............. 10          0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.950000    
+|  |  |  fila_2_IDOSO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  fila_2_IDOSO.Number_In_Queue........... 10          0.000000    208.000000  128.100000  7785.940000 88.237974   0.688821    54.690463   0.950000    
+|  |  |  |  fila_2_IDOSO.Time_In_Queue............. 10          0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.950000    
+|  |  |  fila_2_OUTRO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  fila_2_OUTRO.Number_In_Queue........... 10          0.000000    57.000000   32.300000   461.110000  21.473472   0.664813    13.309396   0.950000    
+|  |  |  |  fila_2_OUTRO.Time_In_Queue............. 10          0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.950000    
+|  |  |  fila_3_OUTRO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  fila_3_OUTRO.Number_In_Queue........... 10          0.000000    57.000000   32.100000   456.190000  21.358605   0.665377    13.238200   0.950000    
+|  |  |  |  fila_3_OUTRO.Time_In_Queue............. 10          0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.950000    
+|  |  |  fila_4_OUTRO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  fila_4_OUTRO.Number_In_Queue........... 10          0.000000    56.500000   31.900000   450.290000  21.220038   0.665205    13.152316   0.950000    
+|  |  |  |  fila_4_OUTRO.Time_In_Queue............. 10          0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.950000    
+|  |  |  fila_5_OUTRO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  fila_5_OUTRO.Number_In_Queue........... 10          0.000000    73.000000   50.500000   1093.400000 33.066599   0.654784    20.494891   0.950000    
+|  |  |  |  fila_5_OUTRO.Time_In_Queue............. 10          0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.950000    
+|  |  |  fila_caixas_RAPIDO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  fila_caixas_RAPIDO.Number_In_Queue..... 10          0.000000    410.500000  244.400000  33983.040000184.344894  0.754275    114.258149  0.950000    
+|  |  |  |  fila_caixas_RAPIDO.Time_In_Queue....... 10          0.000000    17.776730   1.777673    28.441092   5.333019    3.000000    3.305439    0.950000    
+|  |  |  fila_esteira_1_IDOSO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  fila_esteira_1_IDOSO.Number_In_Queue... 10          0.000000    0.972924    0.197292    0.105734    0.325167    1.648150    0.201541    0.950000    
+|  |  |  |  fila_esteira_1_IDOSO.Time_In_Queue..... 10          0.000000    1.322641    0.221677    0.165771    0.407149    1.836679    0.252354    0.950000    
+|  |  |  fila_esteira_1_OUTRO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  fila_esteira_1_OUTRO.Number_In_Queue... 10          0.000000    3.532694    0.353269    1.123194    1.059808    3.000000    0.656876    0.950000    
+|  |  |  |  fila_esteira_1_OUTRO.Time_In_Queue..... 10          0.000000    1.801722    0.180172    0.292158    0.540516    3.000000    0.335016    0.950000    
+|  |  |  fila_esteira_2_IDOSO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  fila_esteira_2_IDOSO.Number_In_Queue... 10          0.000000    0.500000    0.100000    0.040000    0.200000    2.000000    0.123961    0.950000    
+|  |  |  |  fila_esteira_2_IDOSO.Time_In_Queue..... 10          0.000000    0.447064    0.089413    0.031979    0.178826    2.000000    0.110837    0.950000    
+|  |  |  fila_esteira_2_OUTRO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  fila_esteira_2_OUTRO.Number_In_Queue... 10          0.000000    3.367224    0.669243    1.244070    1.115379    1.666629    0.691319    0.950000    
+|  |  |  |  fila_esteira_2_OUTRO.Time_In_Queue..... 10          0.000000    1.694775    0.425580    0.444983    0.667070    1.567439    0.413454    0.950000    
+|  |  |  fila_esteira_3_OUTRO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  fila_esteira_3_OUTRO.Number_In_Queue... 10          0.000000    3.593704    0.808088    1.657070    1.287272    1.592985    0.797860    0.950000    
+|  |  |  |  fila_esteira_3_OUTRO.Time_In_Queue..... 10          0.000000    1.833510    0.503205    0.595454    0.771657    1.533482    0.478278    0.950000    
+|  |  |  fila_esteira_4_OUTRO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  fila_esteira_4_OUTRO.Number_In_Queue... 10          0.000000    2.995012    0.499501    1.047508    1.023479    2.049001    0.634359    0.950000    
+|  |  |  |  fila_esteira_4_OUTRO.Time_In_Queue..... 10          0.000000    1.668540    0.331184    0.438764    0.662392    2.000073    0.410555    0.950000    
+|  |  |  fila_esteira_5_OUTRO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  fila_esteira_5_OUTRO.Number_In_Queue... 10          0.000000    1.000000    0.100000    0.090000    0.300000    3.000000    0.185942    0.950000    
+|  |  |  |  fila_esteira_5_OUTRO.Time_In_Queue..... 10          0.000000    0.857229    0.085723    0.066136    0.257169    3.000000    0.159395    0.950000    
+|  |  |  fila_esteira_Rapido:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  fila_esteira_Rapido.Number_In_Queue.... 10          0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.950000    
+|  |  |  |  fila_esteira_Rapido.Time_In_Queue...... 10          0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.950000    
+|  |  |  fila_registrador_1_IDOSO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  fila_registrador_1_IDOSO.Number_In_Queu 10          0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.950000    
+|  |  |  |  fila_registrador_1_IDOSO.Time_In_Queue. 10          0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.950000    
+|  |  |  fila_registrador_1_OUTRO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  fila_registrador_1_OUTRO.Number_In_Queu 10          0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.950000    
+|  |  |  |  fila_registrador_1_OUTRO.Time_In_Queue. 10          0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.950000    
+|  |  |  fila_registrador_2_IDOSO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  fila_registrador_2_IDOSO.Number_In_Queu 10          0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.950000    
+|  |  |  |  fila_registrador_2_IDOSO.Time_In_Queue. 10          0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.950000    
+|  |  |  fila_registrador_2_OUTRO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  fila_registrador_2_OUTRO.Number_In_Queu 10          0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.950000    
+|  |  |  |  fila_registrador_2_OUTRO.Time_In_Queue. 10          0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.950000    
+|  |  |  fila_registrador_3_OUTRO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  fila_registrador_3_OUTRO.Number_In_Queu 10          0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.950000    
+|  |  |  |  fila_registrador_3_OUTRO.Time_In_Queue. 10          0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.950000    
+|  |  |  fila_registrador_4_OUTRO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  fila_registrador_4_OUTRO.Number_In_Queu 10          0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.950000    
+|  |  |  |  fila_registrador_4_OUTRO.Time_In_Queue. 10          0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.950000    
+|  |  |  fila_registrador_5_OUTRO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  fila_registrador_5_OUTRO.Number_In_Queu 10          0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.950000    
+|  |  |  |  fila_registrador_5_OUTRO.Time_In_Queue. 10          0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.950000    
+|  |  |  fila_registrador_RAPIDO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  fila_registrador_RAPIDO.Number_In_Queue 10          0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.950000    
+|  |  |  |  fila_registrador_RAPIDO.Time_In_Queue.. 10          0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.000000    0.950000    
+|  |  Statistis for Resource:
+|  |  |  caixa_1_IDOSO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  caixa_1_IDOSO.Time_Seized.............. 10          0.000000    23.648358   6.270019    92.913584   9.639169    1.537343    5.974419    0.950000    
+|  |  |  |  caixa_1_IDOSO.Seizes................... 10          0.000000    733.000000  114.500000  49110.850000221.609679  1.935456    137.355102  0.950000    
+|  |  |  |  caixa_1_IDOSO.Releases................. 10          0.000000    733.000000  114.400000  49093.640000221.570846  1.936808    137.331033  0.950000    
+|  |  |  caixa_1_OUTRO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  caixa_1_OUTRO.Time_Seized.............. 10          0.000000    32.511467   3.251147    95.129596   9.753440    3.000000    6.045245    0.950000    
+|  |  |  |  caixa_1_OUTRO.Seizes................... 10          0.000000    433.000000  43.300000   16874.010000129.900000  3.000000    80.512854   0.950000    
+|  |  |  |  caixa_1_OUTRO.Releases................. 10          0.000000    433.000000  43.300000   16874.010000129.900000  3.000000    80.512854   0.950000    
+|  |  |  caixa_2_IDOSO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  caixa_2_IDOSO.Time_Seized.............. 10          0.000000    27.757492   3.756519    72.555500   8.517952    2.267512    5.279481    0.950000    
+|  |  |  |  caixa_2_IDOSO.Seizes................... 10          0.000000    584.000000  64.400000   30318.240000174.121337  2.703747    107.921523  0.950000    
+|  |  |  |  caixa_2_IDOSO.Releases................. 10          0.000000    583.000000  64.400000   30213.640000173.820712  2.699079    107.735194  0.950000    
+|  |  |  caixa_2_OUTRO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  caixa_2_OUTRO.Time_Seized.............. 10          0.000000    33.313019   6.579658    173.201977  13.160622   2.000199    8.157038    0.950000    
+|  |  |  |  caixa_2_OUTRO.Seizes................... 10          0.000000    179.000000  32.300000   4205.810000 64.852217   2.007809    40.195820   0.950000    
+|  |  |  |  caixa_2_OUTRO.Releases................. 10          0.000000    178.000000  32.100000   4182.890000 64.675266   2.014806    40.086145   0.950000    
+|  |  |  caixa_3_OUTRO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  caixa_3_OUTRO.Time_Seized.............. 10          0.000000    35.332332   10.092866   238.119098  15.431108   1.528912    9.564300    0.950000    
+|  |  |  |  caixa_3_OUTRO.Seizes................... 10          0.000000    451.000000  53.800000   17872.160000133.686798  2.484885    82.859936   0.950000    
+|  |  |  |  caixa_3_OUTRO.Releases................. 10          0.000000    451.000000  53.800000   17872.160000133.686798  2.484885    82.859936   0.950000    
+|  |  |  caixa_4_OUTRO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  caixa_4_OUTRO.Time_Seized.............. 10          0.000000    34.863856   6.752485    182.626852  13.513950   2.001330    8.376033    0.950000    
+|  |  |  |  caixa_4_OUTRO.Seizes................... 10          0.000000    163.000000  19.300000   2374.410000 48.727918   2.524763    30.201877   0.950000    
+|  |  |  |  caixa_4_OUTRO.Releases................. 10          0.000000    163.000000  19.300000   2374.410000 48.727918   2.524763    30.201877   0.950000    
+|  |  |  caixa_5_OUTRO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  caixa_5_OUTRO.Time_Seized.............. 10          0.000000    23.463153   2.346315    49.546758   7.038946    3.000000    4.362784    0.950000    
+|  |  |  |  caixa_5_OUTRO.Seizes................... 10          0.000000    38.000000   3.800000    129.960000  11.400000   3.000000    7.065793    0.950000    
+|  |  |  |  caixa_5_OUTRO.Releases................. 10          0.000000    38.000000   3.800000    129.960000  11.400000   3.000000    7.065793    0.950000    
+|  |  |  caixa_RAPIDO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  caixa_RAPIDO.Time_Seized............... 10          0.000000    18.785329   5.132979    62.031212   7.875990    1.534390    4.881589    0.950000    
+|  |  |  |  caixa_RAPIDO.Seizes.................... 10          0.000000    732.000000  118.900000  50644.090000225.042418  1.892703    139.482736  0.950000    
+|  |  |  |  caixa_RAPIDO.Releases.................. 10          0.000000    732.000000  118.900000  50644.090000225.042418  1.892703    139.482736  0.950000    
+|  |  |  esteira_1_IDOSO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  esteira_1_IDOSO.Time_Seized............ 10          0.000000    9331.024131 2457.345390 14542468.2623813.458832 1.551861    2363.606272 0.950000    
+|  |  |  |  esteira_1_IDOSO.Seizes................. 10          0.000000    5637.000000 739.400000  2786128.24001669.169925 2.257465    1034.562238 0.950000    
+|  |  |  |  esteira_1_IDOSO.Releases............... 10          0.000000    5637.000000 739.000000  2786072.40001669.153198 2.258665    1034.551871 0.950000    
+|  |  |  esteira_1_OUTRO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  esteira_1_OUTRO.Time_Seized............ 10          0.000000    4424.047311 442.404731  1761497.51521327.214193 3.000000    822.615880  0.950000    
+|  |  |  |  esteira_1_OUTRO.Seizes................. 10          0.000000    5690.000000 569.000000  2913849.00001707.000000 3.000000    1058.009561 0.950000    
+|  |  |  |  esteira_1_OUTRO.Releases............... 10          0.000000    5690.000000 569.000000  2913849.00001707.000000 3.000000    1058.009561 0.950000    
+|  |  |  esteira_2_IDOSO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  esteira_2_IDOSO.Time_Seized............ 10          0.000000    6955.732266 1055.875447 5021525.07642240.875962 2.122292    1388.909311 0.950000    
+|  |  |  |  esteira_2_IDOSO.Seizes................. 10          0.000000    1064.000000 157.700000  114657.21000338.610706  2.147183    209.873090  0.950000    
+|  |  |  |  esteira_2_IDOSO.Releases............... 10          0.000000    1064.000000 157.700000  114657.21000338.610706  2.147183    209.873090  0.950000    
+|  |  |  esteira_2_OUTRO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  esteira_2_OUTRO.Time_Seized............ 10          0.000000    5522.712897 1150.720719 4238872.94102058.852336 1.789185    1276.089898 0.950000    
+|  |  |  |  esteira_2_OUTRO.Seizes................. 10          0.000000    2330.000000 383.300000  618886.01000786.693085  2.052421    487.597426  0.950000    
+|  |  |  |  esteira_2_OUTRO.Releases............... 10          0.000000    2330.000000 383.300000  618886.01000786.693085  2.052421    487.597426  0.950000    
+|  |  |  esteira_3_OUTRO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  esteira_3_OUTRO.Time_Seized............ 10          0.000000    5773.281212 1594.601681 6045747.60912458.810202 1.541959    1523.986352 0.950000    
+|  |  |  |  esteira_3_OUTRO.Seizes................. 10          0.000000    5881.000000 683.600000  3042654.44001744.320624 2.551669    1081.141124 0.950000    
+|  |  |  |  esteira_3_OUTRO.Releases............... 10          0.000000    5881.000000 683.600000  3042654.44001744.320624 2.551669    1081.141124 0.950000    
+|  |  |  esteira_4_OUTRO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  esteira_4_OUTRO.Time_Seized............ 10          0.000000    5817.408273 1070.857821 4629841.76372151.706710 2.009330    1333.641636 0.950000    
+|  |  |  |  esteira_4_OUTRO.Seizes................. 10          0.000000    1943.000000 227.300000  336749.61000580.301310  2.553019    359.674478  0.950000    
+|  |  |  |  esteira_4_OUTRO.Releases............... 10          0.000000    1943.000000 227.300000  336749.61000580.301310  2.553019    359.674478  0.950000    
+|  |  |  esteira_5_OUTRO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  esteira_5_OUTRO.Time_Seized............ 10          0.000000    6982.837914 698.283791  4388402.28062094.851374 3.000000    1298.402334 0.950000    
+|  |  |  |  esteira_5_OUTRO.Seizes................. 10          0.000000    342.000000  34.200000   10526.760000102.600000  3.000000    63.592139   0.950000    
+|  |  |  |  esteira_5_OUTRO.Releases............... 10          0.000000    342.000000  34.200000   10526.760000102.600000  3.000000    63.592139   0.950000    
+|  |  |  esteira_RAPIDO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  esteira_RAPIDO.Time_Seized............. 10          0.000000    8751.475339 2396.021230 13490385.9633672.926076 1.532927    2276.503168 0.950000    
+|  |  |  |  esteira_RAPIDO.Seizes.................. 10          0.000000    1735.000000 283.600000  290491.64000538.972764  1.900468    334.058780  0.950000    
+|  |  |  |  esteira_RAPIDO.Releases................ 10          0.000000    1735.000000 283.600000  290491.64000538.972764  1.900468    334.058780  0.950000    
+|  |  |  registrador_1_IDOSO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  registrador_1_IDOSO.Time_Seized........ 10          0.000000    2461.398357 386.445979  604878.10316777.739097  2.012543    482.047687  0.950000    
+|  |  |  |  registrador_1_IDOSO.Seizes............. 10          0.000000    6370.000000 853.400000  3564668.24001888.032902 2.212366    1170.214917 0.950000    
+|  |  |  |  registrador_1_IDOSO.Releases........... 10          0.000000    6370.000000 853.400000  3564668.24001888.032902 2.212366    1170.214917 0.950000    
+|  |  |  registrador_1_OUTRO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  registrador_1_OUTRO.Time_Seized........ 10          0.000000    1806.180603 180.618060  293605.95340541.854181  3.000000    335.844701  0.950000    
+|  |  |  |  registrador_1_OUTRO.Seizes............. 10          0.000000    6123.000000 612.300000  3374201.61001836.900000 3.000000    1138.522415 0.950000    
+|  |  |  |  registrador_1_OUTRO.Releases........... 10          0.000000    6123.000000 612.300000  3374201.61001836.900000 3.000000    1138.522415 0.950000    
+|  |  |  registrador_2_IDOSO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  registrador_2_IDOSO.Time_Seized........ 10          0.000000    2039.457042 281.599854  396941.69413630.033090  2.237335    390.498555  0.950000    
+|  |  |  |  registrador_2_IDOSO.Seizes............. 10          0.000000    1648.000000 222.100000  255094.89000505.069193  2.274062    313.045129  0.950000    
+|  |  |  |  registrador_2_IDOSO.Releases........... 10          0.000000    1647.000000 222.100000  254880.09000504.856504  2.273104    312.913303  0.950000    
+|  |  |  registrador_2_OUTRO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  registrador_2_OUTRO.Time_Seized........ 10          0.000000    2040.120421 281.451471  396748.73372629.879936  2.237970    390.403629  0.950000    
+|  |  |  |  registrador_2_OUTRO.Seizes............. 10          0.000000    2509.000000 415.600000  724446.44000851.144195  2.047989    527.544637  0.950000    
+|  |  |  |  registrador_2_OUTRO.Releases........... 10          0.000000    2508.000000 415.500000  724027.85000850.898261  2.047890    527.392206  0.950000    
+|  |  |  registrador_3_OUTRO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  registrador_3_OUTRO.Time_Seized........ 10          0.000000    1755.340206 347.347260  482259.74078694.449236  1.999294    430.424096  0.950000    
+|  |  |  |  registrador_3_OUTRO.Seizes............. 10          0.000000    6332.000000 737.400000  3526796.84001877.976794 2.546755    1163.982076 0.950000    
+|  |  |  |  registrador_3_OUTRO.Releases........... 10          0.000000    6332.000000 737.400000  3526796.84001877.976794 2.546755    1163.982076 0.950000    
+|  |  |  registrador_4_OUTRO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  registrador_4_OUTRO.Time_Seized........ 10          0.000000    790.887158  79.208102   56276.468846237.226619  2.994979    147.034582  0.950000    
+|  |  |  |  registrador_4_OUTRO.Seizes............. 10          0.000000    2106.000000 246.600000  395672.04000629.024674  2.550789    389.873532  0.950000    
+|  |  |  |  registrador_4_OUTRO.Releases........... 10          0.000000    2106.000000 246.600000  395672.04000629.024674  2.550789    389.873532  0.950000    
+|  |  |  registrador_5_OUTRO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  registrador_5_OUTRO.Time_Seized........ 10          0.000000    1.416922    0.141692    0.180690    0.425077    3.000000    0.263465    0.950000    
+|  |  |  |  registrador_5_OUTRO.Seizes............. 10          0.000000    380.000000  38.000000   12996.000000114.000000  3.000000    70.657932   0.950000    
+|  |  |  |  registrador_5_OUTRO.Releases........... 10          0.000000    380.000000  38.000000   12996.000000114.000000  3.000000    70.657932   0.950000    
+|  |  |  registrador_RAPIDO:
+|  |  |  |  name                                    elems       min         max         average     variance    stddev      varCoef     confInterv  confLevel   
+|  |  |  |  registrador_RAPIDO.Time_Seized......... 10          0.000000    52.294691   10.254132   410.559562  20.262269   1.976010    12.558685   0.950000    
+|  |  |  |  registrador_RAPIDO.Seizes.............. 10          0.000000    2467.000000 402.500000  583316.65000763.751694  1.897520    473.378204  0.950000    
+|  |  |  |  registrador_RAPIDO.Releases............ 10          0.000000    2467.000000 402.500000  583316.65000763.751694  1.897520    473.378204  0.950000    
+|  End of Report for Simulation
+

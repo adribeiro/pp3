@@ -16,7 +16,6 @@
 
 class ProbDistrib {
 public:
-    static double random();
     static double uniform(double x, double min, double max);
     static double exponential(double x, double mean);
     static double erlang(double x, double mean, double M); // int M
@@ -30,7 +29,6 @@ public:
     static double tStudent(double x, double mean, double stddev, unsigned int degreeFreedom);
     static double fFisher(double x, double k, double m);
     static double chi2(double x, double m);
-    static double discrete(double accProb, double value,...);
     // inverse
     static double inverseNormal(double cumulativeProbability, double mean, double stddev);
     static double inverseTStudent(double cumulativeProbability, double mean, double stddev, double degreeFreedom);

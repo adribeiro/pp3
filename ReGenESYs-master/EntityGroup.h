@@ -35,7 +35,10 @@ public:
     void removeElement(Entity* element);
     unsigned int size();
     Entity* first();
-    List<Entity*>* getList();
+    List<Entity*>* getList() const {
+        return _list;
+    }
+
 public:
     void initBetweenReplications();
 protected:

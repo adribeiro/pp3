@@ -92,40 +92,20 @@ int TestCreateAssignDispose::main(int argc, char** argv) {
     elements->insert(Util::TypeOf<Attribute>(), attribute);
     
     Assign* define_tipo_cliente = new Assign(model);
-    Assign::Assignment* a_variable = new Assign::Assignment(Assign::DestinationType::Variable, "variable", "1");
+    Assign::Assignment* a_variable = new Assign::Assignment(Assign::DestinationType::VariableArray, "variable", "1");
+    a_variable->setDestinationArray("1",0);
     Assign::Assignment* a_attribute = new Assign::Assignment(Assign::DestinationType::Attribute, "attribute", "2");
-    Assign::Assignment* a_variableArray1 = new Assign::Assignment(Assign::DestinationType::VariableArray, "variableArray", "10");
-    a_variableArray1->setDestinationArray(true,"attribute");
-    Assign::Assignment* a_variableArray2 = new Assign::Assignment(Assign::DestinationType::VariableArray, "variableArray", "20");
-    a_variableArray2->setDestinationArray(false,"variable");
-    Assign::Assignment* a_variableArray3 = new Assign::Assignment(Assign::DestinationType::Variable, "variable", "variableArray");
-    a_variableArray3->setExpressionArray(false, "variable");
-    Assign::Assignment* a_variableArray4 = new Assign::Assignment(Assign::DestinationType::Attribute, "attribute", "variableArray");
-    a_variableArray4->setExpressionArray(true, "attribute");
-    Assign::Assignment* a_variableArray5 = new Assign::Assignment(Assign::DestinationType::VariableArray, "variableArray", "variableArray");
-    a_variableArray5->setDestinationExpressionArray(true, "attribute",false, "1");
-    Assign::Assignment* a_variableArray6 = new Assign::Assignment(Assign::DestinationType::VariableArray, "variableArray", "variableArray");
-    a_variableArray6->setDestinationExpressionArray(true, "attribute",true, "attribute");
-    Assign::Assignment* a_variableArray7 = new Assign::Assignment(Assign::DestinationType::VariableArray, "variableArray", "variableArray");
-    a_variableArray7->setDestinationExpressionArray(false, "2",false, "1");
-    Assign::Assignment* a_variableArray8 = new Assign::Assignment(Assign::DestinationType::VariableArray, "variableArray", "variableArray");
-    a_variableArray8->setDestinationExpressionArray(false, "2",true, "attribute");
+    Assign::Assignment* a_variable2 = new Assign::Assignment(Assign::DestinationType::VariableArray, "variable", "attribute");
+    a_variable2->setDestinationArray("2",0);
     define_tipo_cliente->getAssignments()->insert(a_variable);
     define_tipo_cliente->getAssignments()->insert(a_attribute);
-    define_tipo_cliente->getAssignments()->insert(a_variableArray1);
-    define_tipo_cliente->getAssignments()->insert(a_variableArray2);
-    define_tipo_cliente->getAssignments()->insert(a_variableArray3);
-    define_tipo_cliente->getAssignments()->insert(a_variableArray4);
-    define_tipo_cliente->getAssignments()->insert(a_variableArray5);
-    define_tipo_cliente->getAssignments()->insert(a_variableArray6);
-    define_tipo_cliente->getAssignments()->insert(a_variableArray7);
-    define_tipo_cliente->getAssignments()->insert(a_variableArray8);
+    define_tipo_cliente->getAssignments()->insert(a_variable2);
     components->insert(define_tipo_cliente);
     
     
 
     Decide* decide1 = new Decide(model);
-    decide1->getConditions()->insert("attribute == 10");
+    decide1->getConditions()->insert("attribute == 2");
 //    decide1->getConditions()->insert("NQ(Queue_Machine_1) <= 2*NQ(Queue_Machine_2)");
 
     Dispose* dispose1 = new Dispose(model);

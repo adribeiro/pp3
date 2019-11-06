@@ -1,5 +1,5 @@
 # Genesys simulation model 
-# Last saved on Tue Oct 29 19:35:11 2019
+# Last saved on Wed Nov  6 00:43:39 2019
 # simulator infos
 name=ReGenESyS - Reborn Generic and Expansible System Simulator; typename=SimulatorInfo; version=190909; 
 
@@ -7,20 +7,36 @@ name=ReGenESyS - Reborn Generic and Expansible System Simulator; typename=Simula
 analystName=; description=./models/model01_CreDelDis.txt; name=Model 1; numberOfReplications=1; projectTitle=; replicationLength=4000.000000; replicationLengthTimeUnit=5; terminatingCondition=; typename=ModelInfo; version=1.0; warmUpTime=0.000000; warmUpTimeTimeUnit=5; 
 
 # model elements
-id=11; name=Entity.ArrivalTime; typename=Attribute; 
+id=10; name=Entity.GroupRankID; typename=Attribute; 
+
+id=11; name=Entity.Permanent; typename=Attribute; 
+
+id=12; name=Entity.CopyNumber; typename=Attribute; 
+
+id=13; name=Entity.AttributeValue; typename=Attribute; 
+
+id=19; name=Entity.ArrivalTime; typename=Attribute; 
 
 id=1; name=nrProdutos; typename=Attribute; 
 
-id=2; initialNVACost=0.000000; initialOtherCost=0.000000; initialPicture=report; initialVACost=0.000000; initialWaitingCost=0.000000; name=cliente; typename=EntityType; 
+id=20; name=Entity.WaitTime; typename=Attribute; 
+
+id=2; name=nrCaixa; typename=Attribute; 
+
+id=3; initialNVACost=0.000000; initialOtherCost=0.000000; initialPicture=report; initialVACost=0.000000; initialWaitingCost=0.000000; name=cliente; typename=EntityType; 
 
 # model components
-assignments=1; destination0=nrProdutos; destinationType0=0; expression0=5; id=5; name=Assign 1; nextId0=6; nextSize=1; typename=Assign; 
+assignments=2; destination0=nrProdutos; destinationType0=0; expression0=10; id=6; name=Assign_1; nextId0=7; nextSize=1; typename=Assign; 
 
-entitiesPerCreation=1; entityTypename=cliente; firstCreation=0.000000; id=3; maxCreations=4294967295; name=Create 1; nextId0=5; nextSize=1; timeBetweenCreations=5000; timeBetweenCreationsTimeUnit=5; typename=Create; 
+attributeName=nrCaixa; batchName=; batchSize=0; id=14; name=Batch_2; nextId0=15; nextSize=1; permanent=1; representativeType=; typename=Batch; 
 
-id=6; name=Separate 1; nextId0=7; nextId1=9; nextSize=2; typename=Separate; 
+attributeName=nrCaixa; batchName=saiCaixa; batchSize=0; id=9; name=Batch_1; nextId0=14; nextSize=1; permanent=0; representativeType=; typename=Batch; 
 
-id=7; name=Dispose 1; nextSize=0; typename=Dispose; 
+delayExpression=NORM(5,1.5); delayExpressionTimeUnit=6; id=8; name=Delay_1; nextId0=9; nextSize=1; typename=Delay; 
 
-id=9; name=Dispose 2; nextSize=0; typename=Dispose; 
+entitiesPerCreation=1; entityTypename=cliente; firstCreation=0.000000; id=4; maxCreations=4294967295; name=Create_1; nextId0=6; nextSize=1; timeBetweenCreations=5000; timeBetweenCreationsTimeUnit=5; typename=Create; 
+
+id=15; name=Dispose_1; nextSize=0; typename=Dispose; 
+
+id=7; name=Separate_1; nextId0=14; nextId1=8; nextSize=2; typename=Separate; 
 

@@ -40,7 +40,7 @@ public: // methods
     void setSplitBatch(bool value);
     void setAmountToDuplicate(std::string value);
     void setTakeAllRepresentativeValues(bool value);
-    void setAttributeType(bool value);
+
     
 private: // attributes 1:1
 private: // attributes 1:n
@@ -48,7 +48,6 @@ private: // attributes 1:n
     std::string _separateName;
     bool _splitBatch;
     bool _takeAllRepresentativeValues;
-    bool _attributeType = false;
 };
 
 

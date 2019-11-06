@@ -66,9 +66,9 @@ Entity* EntityGroup::first() {
     return _list->front();
 }
 
-List<Entity*>* EntityGroup::getList(){
-    return _list;
-}
+//List<Waiting*>* Group::getList() const {
+//	return _list;
+//}
 
 PluginInformation* EntityGroup::GetPluginInformation() {
     PluginInformation* info = new PluginInformation(Util::TypeOf<EntityGroup>(), &EntityGroup::LoadInstance); 

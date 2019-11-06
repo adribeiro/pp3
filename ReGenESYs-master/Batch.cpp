@@ -101,22 +101,27 @@ void Batch::setRepresentativeEntityTypeName(std::string value) {
  */
 void Batch::_execute(Entity* entity) {
     double currentTime = this->_model->getSimulation()->getSimulatedTime();
-    double attributeValue = entity->getAttributeValue("Entity.AttributeValue");
-    std::string batchEntityName = "";
-    if(entity->getEntityTypeName().find("_Batch")){
-        batchEntityName = entity->getEntityTypeName();
-    }else{
-        batchEntityName = entity->getEntityTypeName() + "_Batch";
-    }
-    std::string batchesCountStr = std::to_string(this->_batchesCount);
-    std::string copyId = std::to_string(entity->getAttributeValue("Entity.CopyNumber"));
-
-    if (this->_byAttribute)
-    	attributeValue = entity->getAttributeValue(this->_attributeName);
-
-    std::string batchEntityID = this->_batchName + batchEntityName + batchesCountStr + std::to_string(attributeValue) + copyId;
     ElementManager* elementManager = this->_model->getElementManager();
     TraceManager* traceManager = this->_model->getTraceManager();
+//    traceManager->trace(Util::TraceLevel::mostDetailed, "Chegou no batch");
+    double attributeValue = 0;
+    std::string batchEntityName = entity->getEntityTypeName();
+    
+//    if(entity->getEntityTypeName().find("_Batch")){
+//        batchEntityName = entity->getEntityTypeName();
+//    }else{
+//        batchEntityName = entity->getEntityTypeName() + "_Batch";
+//    }
+    std::string batchesCountStr = std::to_string(this->_batchesCount);
+
+    std::string batchEntityID = "";
+    if (this->_byAttribute){
+    	attributeValue = _model->parseExpression(this->_attributeName);
+        batchEntityID = this->_batchName + batchesCountStr  + batchEntityName + std::to_string(attributeValue);
+    }else{
+        batchEntityID = this->_batchName+ batchesCountStr + batchEntityName;
+    }
+
 
     traceManager->trace(Util::TraceLevel::blockInternal, "Arrival of entity " + std::to_string(entity->getId()) +
                                                          " at time " + std::to_string(currentTime));
@@ -132,20 +137,22 @@ void Batch::_execute(Entity* entity) {
     unsigned int alreadyGrouped = group->size();
     unsigned int batchSize = 0;
     
-    if(this->_variable){
-        unsigned int attr = entity->getAttributeValue(this->_expresssion);
-        batchSize = attr + this->_batchSize;
-    }else{
-        unsigned int attr = entity->getAttributeValue(this->_expresssion);
-        batchSize = this->_batchSize + attr;
-    }
-
+    batchSize = _model->parseExpression(this->_expression);
+    traceManager->trace(Util::TraceLevel::blockInternal, "BatchSize = "+std::to_string(batchSize));
     if (alreadyGrouped == batchSize) {
        
         traceManager->trace(Util::TraceLevel::blockInternal, "Release of batch entity " + std::to_string(entity->getId()) +
                                                              " at time " + std::to_string(currentTime));
 
         Entity* batchEntity = new Entity(elementManager);
+        for (int i = 0; i < elementManager->getNumberOfElements(Util::TypeOf<Attribute>()); i++) {
+            List<ModelElement*>* attributes = elementManager->getElements(Util::TypeOf<Attribute>());
+            for (int j = 0; j < attributes->size(); j++) {
+                Attribute * attr = (Attribute *) attributes->getAtRank(j);
+                batchEntity->setAttributeValue(attr->getName(), entity->getAttributeValue(attr->getName()));
+
+            }
+        }
         EntityType* batchEntityType = (EntityType*) elementManager->getElement(Util::TypeOf<EntityType>(), batchEntityName);
 
         if (batchEntityType == nullptr) {
@@ -159,10 +166,14 @@ void Batch::_execute(Entity* entity) {
         batchEntity->setAttributeValue("Entity.AttributeValue", (double)attributeValue);
 
         if (this->_permanent) { batchEntity->setAttributeValue("Entity.Permanent", 1.0); }
+        
+        
 
         elementManager->insert(Util::TypeOf<Entity>(), batchEntity);
-
+        elementManager->remove(Util::TypeOf<EntityType>(), batchEntityType);
+        elementManager->remove(Util::TypeOf<EntityGroup>(), group);
         this->_model->sendEntityToComponent(batchEntity, this->getNextComponents()->front(), 0.0);
+        
         this->_batchesCount++;
     }
 }
@@ -242,10 +253,7 @@ PluginInformation* Batch::GetPluginInformation(){
     return info;
 }
 
-void Batch::setAttributeBatch(bool value){
-    this->_variable = value;
-}
 void Batch::setExpression(std::string value){
-    this->_expresssion = value;
+    this->_expression = value;
 }
 

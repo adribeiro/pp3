@@ -27,9 +27,9 @@ LicenceManager::~LicenceManager() {
 void LicenceManager::setDefaultLicenceAndLimits() {
     _licence = "LICENCE: Academic Mode. In academic mode this software has full functionality and executing training-size simulation models. This software may be duplicated and used for educational purposes only; any commercial application is a violation of the license agreement. Designed and developed by prof. Dr. Ing Rafael Luiz Cancian, 2018-2019";
     _activationCode = "";
-    _components = 50;
-    _elements = 100;
-    _entities = 200;
+    _components = 500;
+    _elements = 1000;
+    _entities = 2000;
     _hosts = 1;
     _threads = 1;
 }

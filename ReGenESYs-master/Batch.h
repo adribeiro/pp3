@@ -15,6 +15,7 @@
 #define BATCH_H
 
 #include "ModelComponent.h"
+#include <vector>
 
 /*!
  This component ...
@@ -36,7 +37,6 @@ public:  // static
     void setByAttributeBatch(bool value);
     void setAttributeName(std::string value);
     void setRepresentativeEntityTypeName(std::string value);
-    void setAttributeBatch(bool value);
     void setExpression(std::string value);
     void setConstBatch(unsigned int value);
 protected:  // virtual
@@ -49,15 +49,15 @@ private: // methods
     void initializeGroupAttribute();
 private: // attributes 1:n
     unsigned int _batchSize = 0;
-    std::string _expresssion;
-    unsigned int _batchesCount;
+    std::string _expression;
+    unsigned int _batchesCount = 0;
     unsigned int _const = 0;
     std::string _batchName;
     bool _permanent;
     bool _byAttribute;
-    bool _variable = false;
     std::string _attributeName;
     std::string _representativeEntityTypeName;
+
 };
 
 

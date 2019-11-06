@@ -136,7 +136,6 @@ int TestCreateSeparateDispose::main(int argc, char** argv){
     Separate* divide_produtos = new Separate(model);
     divide_produtos->setSplitBatch(false);
     divide_produtos->setAmountToDuplicate("nrProdutos");
-    divide_produtos->setAttributeType(true);
     components->insert(divide_produtos);
     
     Dispose* saida_cliente = new Dispose(model);

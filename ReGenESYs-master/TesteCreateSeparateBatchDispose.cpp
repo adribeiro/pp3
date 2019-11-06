@@ -124,7 +124,6 @@ int TesteCreateSeparateBatchDispose::main(int argc, char** argv){
     Separate* divide_produtos = new Separate(model);
     divide_produtos->setSplitBatch(false);
     divide_produtos->setAmountToDuplicate("nrProdutos");
-    divide_produtos->setAttributeType(true);
     components->insert(divide_produtos);
     
     Delay* delay1 = new Delay(model);
@@ -135,8 +134,7 @@ int TesteCreateSeparateBatchDispose::main(int argc, char** argv){
     Batch* junta_produtos = new Batch(model);
     junta_produtos->setByAttributeBatch(true);
     junta_produtos->setAttributeName("nrCaixa");
-    junta_produtos->setPermanentBatch(true);
-    junta_produtos->setAttributeBatch(true);
+    junta_produtos->setPermanentBatch(false);
     junta_produtos->setExpression("nrProdutos");
     junta_produtos->setBatchName("juntaProdutos");
     components->insert(junta_produtos);
@@ -145,7 +143,7 @@ int TesteCreateSeparateBatchDispose::main(int argc, char** argv){
     sai_caixa->setByAttributeBatch(true);
     sai_caixa->setAttributeName("nrCaixa");
     sai_caixa->setPermanentBatch(true);
-    sai_caixa->setBatchSize(2);
+    sai_caixa->setExpression("2");
     junta_produtos->setBatchName("saiCaixa");
     components->insert(sai_caixa);
     

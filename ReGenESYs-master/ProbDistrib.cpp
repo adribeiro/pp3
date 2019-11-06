@@ -16,17 +16,6 @@
 #include <cmath>
 #include <complex>
 #include <random>
-#include <cstdarg>
-
-// @brief This method generates pseudorandom numbers using the xorshift method
-double ProbDistrib::random() {
-    constexpr auto upperBound = static_cast<double>(static_cast<unsigned int>(-1)) + 1.0;
-    unsigned int seed = 4202369;
-    seed ^= seed << 13u;
-    seed ^= seed >> 17u;
-    seed ^= seed << 5u;
-    return double(seed) / upperBound;
-}
 
 double ProbDistrib::uniform(double x, double min, double max) {
     if (x >= min && x <= max)
@@ -159,16 +148,4 @@ double ProbDistrib::inverseFSnedecor(double cumulativeProbability, double u, dou
 }
 
 double ProbDistrib::inverseChi2(double cumulativeProbability, double m) {
-}
-
-double ProbDistrib::discrete(double accProb, double value, ...) {
-    double val = value, acc = accProb, u = random();
-    va_list args;
-    va_start(args, accProb); 
-    while (acc < 1.0 && u < acc) {
-        val = va_arg(args, double);
-        acc += va_arg(args, double);
-    }
-    va_end(args);
-    return val;
 }

@@ -165,7 +165,7 @@ int TestCreateSetSeizeReleaseDispose::main(int argc, char** argv){
     components->insert(seize1);
 //    
     Delay* delay1 = new Delay(model);
-    delay1->setDelayExpression("UNIF(1500,1600)");
+    delay1->setDelayExpression("UNIF(0,100)");
     delay1->setDelayTimeUnit(Util::TimeUnit::second);
     components->insert(delay1);
 //

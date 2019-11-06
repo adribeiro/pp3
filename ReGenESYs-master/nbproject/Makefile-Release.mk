@@ -107,7 +107,6 @@ OBJECTFILES= \
 	${OBJECTDIR}/PluginInformation.o \
 	${OBJECTDIR}/PluginManager.o \
 	${OBJECTDIR}/Pp3Model.o \
-	${OBJECTDIR}/Pp3Model2.o \
 	${OBJECTDIR}/ProbDistrib.o \
 	${OBJECTDIR}/ProcessAnalyserDefaultImpl1.o \
 	${OBJECTDIR}/Queue.o \
@@ -553,11 +552,6 @@ ${OBJECTDIR}/Pp3Model.o: Pp3Model.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Pp3Model.o Pp3Model.cpp
-
-${OBJECTDIR}/Pp3Model2.o: Pp3Model2.cpp nbproject/Makefile-${CND_CONF}.mk
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Pp3Model2.o Pp3Model2.cpp
 
 ${OBJECTDIR}/ProbDistrib.o: ProbDistrib.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}
